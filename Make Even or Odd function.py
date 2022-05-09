@@ -4,5 +4,6 @@ def even_odd(x):
     print("even")
   else:
     print("odd")
-  even_odd(2)
-  even_odd(3)
+    
+even_odd(2)
+even_odd(3)
