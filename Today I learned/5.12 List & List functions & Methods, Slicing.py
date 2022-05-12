@@ -1,20 +1,24 @@
+5/12 Today I learned..
+
+1. usages of these functions
+
 .append
 .remove
-
 .insert
 .pop
-
 range()
 .count()
 .sort()
 sorted()
 
-#difference between .append and .insert
+2.
+# difference between .append and .insert
 #.append is only for adding an element at the end of a list
 #.insert is for adding an element at a specific index in a list
 
+3. Change variable type
 
----examples of .append, .insert, .remove, .pop
+---examples of .append, .insert, .remove, .pop, range(), .count(), .sort(), sorted()
 #.append is used to add an element
 grade = [100,80,60,40]
 grade.append(50)
@@ -138,4 +142,11 @@ randomstocks = ["AAPL","KO","COST","AMZN","NFLX","Z"]
 randomstocks = sorted(randomstocks)     #we can assign this again back to the original list
 print(randomstocks)
 
+
+---example of change of variable
+assets = ["stocks","bonds","real estate","crypto"]
+num_assets = len(assets)
+print(num_assets)
+print("There are " + str(num_assets) + " number of assets")         #There are 4 number of assets
+print("There are " + num_assets + " number of assets")              #TypeError: can only concatenate str (not "int") to str
 
