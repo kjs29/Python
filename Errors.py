@@ -11,5 +11,15 @@ NameError is reported when the interpreter detects a variable that is unknown.
 TypeError is thrown when an operation is applied to an objectof an inappropriate type
 '''
 
+
+---example of common Syntax error
+
+Misspelling a Python keyword
+Missing colon :
+Missing closing parenthesis ), square bracket ], or curly brace }
+
+---
 print("Hello')      #this will produce SyntaxError
 print(Greeting)     #this will produce NameError
+
+   
