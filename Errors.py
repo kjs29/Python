@@ -1,10 +1,14 @@
 '''
-There are two types of erros
+There are three types of erros
 1.SyntaxError
 2.NameError
+3.TypeError
 
-SyntaxError is about grammar.
-NameError is all the rest of errors other than SyntaxError
+SyntaxError is about grammar, caused by not following the proper structure(syntax) of the language.
+
+NameError is reported when the interpreter detects a variable that is unknown.
+
+TypeError is thrown when an operation is applied to an objectof an inappropriate type
 '''
 
 print("Hello')      #this will produce SyntaxError
