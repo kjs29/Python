@@ -1,3 +1,9 @@
+'The number of erros that one encounters'
+&
+'Complexity of codes'
+are correlated.
+Don't be frustrated!
+
 '''
 There are three types of erros
 1.SyntaxError
