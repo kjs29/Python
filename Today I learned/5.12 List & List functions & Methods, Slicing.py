@@ -1,0 +1,141 @@
+.append
+.remove
+
+.insert
+.pop
+
+range()
+.count()
+.sort()
+sorted()
+
+#difference between .append and .insert
+#.append is only for adding an element at the end of a list
+#.insert is for adding an element at a specific index in a list
+
+
+---examples of .append, .insert, .remove, .pop
+#.append is used to add an element
+grade = [100,80,60,40]
+grade.append(50)
+print(grade)                                      #[100, 80, 60, 40, 50]
+
+#.append can also be used to 2Dlist
+stocks = [["Apple",130],["KO",55],["KORU",50]]
+stocks.append(["NFLX",350])
+print(stocks)                                      #[['Apple', 130], ['KO', 55], ['KORU', 50], ['NFLX', 350]]
+
+#.append is used to add an element
+stocks = [["Apple",130],["KO",55],["KORU",50],["NFLX",350]]
+
+#I want to add ["GPRO",80] after ["KO",55]
+stocks[2].append(["GPRO",80])
+
+#BUT! this adds ["GPRO",80] inside of ["KO",55]
+print(stocks)                                     #[['Apple', 130], ['KO', 55, ['GPRO', 80]], ['KORU', 50], ['NFLX', 350]]
+
+#reset the original list
+stocks = [["Apple",130],["KO",55],["KORU",50],["NFLX",350]]
+
+#if we want to add another list use .insert
+stocks.insert(2, ["GPRO",80])               
+print(stocks)                                   #[['Apple', 130], ['KO', 55], ['GPRO', 80], ['KORU', 50], ['NFLX', 350]]
+
+
+#reset the original list
+stocks = [["Apple",130],["KO",55],["KORU",50],["NFLX",350]]
+#usage of .remove
+#We want to remove ["KORU",50] from the list
+stocks.remove(["KORU",50])
+print(stocks)   
+
+#if we want to remove 55 in ["KO",55]
+stocks = [["Apple",130],["KO",55],["KORU",50],["NFLX",350]]
+stocks[1].remove(55)
+print(stocks)               #[['Apple', 130], ['KO'], ['KORU', 50], ['NFLX', 350]]
+
+#usage of .pop
+#.pop doesn't require any argument in parenthesis
+stocks = [["Apple",130],["KO",55],["KORU",50],["NFLX",350]]
+stocks.pop()
+print(stocks)         #[['Apple', 130], ['KO', 55], ['KORU', 50]]
+
+#.pop can be used like this
+stocks = [["Apple",130],["KO",55],["KORU",50],["NFLX",350]]
+stocks.pop(-2)
+print(stocks)         #[['Apple', 130], ['KO', 55], ['NFLX', 350]]
+
+#we can also track what was removed from using .pop
+stocks = [["Apple",130],["KO",55],["KORU",50],["NFLX",350]]
+removed = stocks.pop(0)
+print(stocks)               #[['KO', 55], ['KORU', 50], ['NFLX', 350]]
+print(removed)            #['Apple', 130]
+
+#range
+list1 = range(5)   
+print(list(list1))        #[0,1,2,3,4]
+
+#if we want to create a list that goes from 5 ~ 10
+list2 = range(5,11)     #5 is included, 11 is excluded
+print(list(list2))
+
+#if we want to create a list that goes from 5, 9, 13, 17, 21
+list3 = range(5,22,4)   #5 is included, 22 is excluded, 4 is interval
+print(list(list3))
+
+#to create a list [10,20,30,40 . . .100]
+list4 = range(10,101,10)
+print(list(list4))
+
+#slicing
+#sometimes we wanna cut the list in however we want
+list5 = ["eat","code","sleep","play","code","eat"]
+#if I want to have only ["eat","code","sleep"]
+print(list5[0:3])         #['eat', 'code', 'sleep']
+
+#we can also use slicing like this
+#if I want to slice list5 like ["play","code","eat"]
+print(list5[3:])                          #['play', 'code', 'eat']
+#or
+print(list5[-3:])                           #['play', 'code', 'eat']
+
+
+#usage of .count
+signal = ["yes","no","yes","yes","no","yes","yes","no","yes","yes","no","yes","yes","no","yes","yes","no","yes","yes","no","yes","yes","no","yes","yes","no","yes","yes","no","yes","yes","no","yes","yes"]
+#if we want to count how many times we have "yes"
+yes_signal = signal.count("yes")
+#if we want to count how many times we have "no"
+no_signal = signal.count("no")
+
+print(yes_signal,no_signal,len(signal))                 #23 11 34
+
+
+#sometimes we want to sort list by alphabetical order
+randomstocks = ["AAPL","KO","COST","AMZN","NFLX","Z"]
+
+#if we want to sort this list in an alphabetical order
+randomstocks.sort()
+print(randomstocks)               #['AAPL', 'AMZN', 'COST', 'KO', 'NFLX', 'Z']
+
+#but if we try to assign this to a variable, we get 'None', it's because .sort() does not return any value
+randomstocks_sorted = randomstocks.sort()
+print(randomstocks_sorted)                #None
+
+#if we want to sort the list in descending order
+randomstocks.sort(reverse = True)
+print(randomstocks)
+
+
+#sorted()
+#we can use sorted function
+randomstocks = ["AAPL","KO","COST","AMZN","NFLX","Z"]
+sortedstocks = sorted(randomstocks)
+print(sortedstocks)                 #['AAPL', 'AMZN', 'COST', 'KO', 'NFLX', 'Z']
+print(randomstocks)                 #['AAPL', 'KO', 'COST', 'AMZN', 'NFLX', 'Z'] sorted() function doesn't change the original list
+
+#if we want to permanently change the list in an alphabetical order
+randomstocks = ["AAPL","KO","COST","AMZN","NFLX","Z"]
+randomstocks = sorted(randomstocks)     #we can assign this again back to the original list
+print(randomstocks)
+
+
