@@ -1,0 +1,120 @@
+5/13 Today I learned..
+1.
+Tuples
+2.
+zip()
+3.
+for loop
+4.
+while loop
+5.
+how to comment on line
+# highlight the line and press CTRL + /
+6.
+how to break out of infinite loop
+press CTRL + C
+7.break
+8.continue
+
+---Tuples
+#Creating a Tuple
+stocks = ("AAPL", 147, "Technology")
+
+#unpacking a tuple
+ticker, price, sector = stocks
+print(stocks)             #('AAPL', 147, 'Technology')
+print(ticker)             #AAPL
+print(price)              #147
+print(sector)             #Technology
+
+#creating 1 element tuple
+one_tuple = (4)       #but this will NOT create a tuple
+print(one_tuple)      #4
+one_tuple_real = (4,)
+print(one_tuple_real) #(4,)
+
+---zip()
+
+#zip() is used to combine two lists together
+tickersofstocks = ["AAPL","KO","GPRO"]
+namesofstocks = ["APPLE","COCA-COLA","GOPRO"]
+stockstotrade = zip(tickersofstocks,namesofstocks)              #<zip object at 0x00000283F0B9BE80>
+#use list() to show list
+stockstotrade = list(stockstotrade)                             #reassign the list of stockstotrade to stockstotrade
+print(stockstotrade)                                            #[('AAPL', 'APPLE'), ('KO', 'COCA-COLA'), ('GPRO', 'GOPRO')] but this is in tuples
+
+---for loop
+"""
+basic syntax for for loop
+
+for <temporary variable> in <collection>:
+  <action>
+
+"""
+
+#temporary variable is arbitrary, which doesn't need to be defined
+
+stocks = ["AAPL", "KO", "PEP", "GPRO", "KORU", "BABA"]
+
+#if we want to name all elements in a list 'stocks'
+for name in stocks:
+  print(name)                                   
+
+"""
+result:
+KO
+PEP
+GPRO
+KORU
+BABA
+"""
+
+#print the same sentence 5 times using for loops
+for temp in range(5):
+  print("I will create an amazing product.")
+
+for temp in range(5):
+#if I want to see what iteration we are on
+  print("I will create an amazing product." + str(temp))
+  
+---while loop
+#while loop
+"""
+Basic syntax for while loop is this
+
+while <conditional statement>:
+  <action>
+
+"""
+
+#if we want to write countdown from 10 to 0 using while loop
+countdown = 10
+while countdown >= 0:
+  print(countdown)
+  countdown -= 1
+  
+#if we want to list each elements in a list using while loop
+stocks = ["AAPL", "KO", "PEP", "GPRO", "KORU", "BABA"]
+count = 0
+while count < len(stocks):
+  print(stocks[count])
+  count += 1
+  
+---example of finding certain element, example of break
+
+stocks = ["AAPL", "KO", "PEP", "GPRO", "KORU", "BABA"]
+
+#if we want to see if GPRO exists in a stocks list
+for i in stocks:
+  if i == "GPRO":
+    print(i+ " exists")
+    #if we want to break out of the loop we can use break statement, this can be used when we have lots of elements in a list
+    break
+
+---example of continue
+stockstotrade = ["AAPL","KORU","NFLX","KO"]
+#check if stockstotrade list has NFLX and skip it
+for skip in stockstotrade:
+    if skip == "NFLX":
+        continue
+    print(skip)
