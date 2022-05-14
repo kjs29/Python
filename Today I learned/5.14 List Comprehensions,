@@ -1,0 +1,26 @@
+5/14 Today I learned...
+1.
+List comprehensions
+
+
+---example of list comprehensions
+"""
+Syntax for list comprehensions
+[<expression> for <element> in <collection>]
+"""
+
+stockprices = [124, 0.055, 25, 2350, 444000]
+
+#we want 5% up on each stock price - list comprehension
+today = [num * 1.05 for num in stockprices]
+
+print(today)                      #[130.20000000000002, 0.05775, 26.25, 2467.5, 466200.0]
+
+"""
+Normally we would write like
+today = []
+for num in stockprices:
+  num * 1.05
+  num = today.append(num)
+print(today)
+"""
