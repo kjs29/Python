@@ -2,7 +2,7 @@
 let's say
 there is a list in a list.
 stockstotrade = [["AAPL","Technology"],["KORU","leveraged"],["NFLX","Technology"],["KO","Consumer"]]
-and I want to find a list that has "Techology" and print it
+and I want to find a list that has "Techology" and print it ex) ["AAPL", "Technology"]
 How can I do this?
 """
 
