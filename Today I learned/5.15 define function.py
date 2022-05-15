@@ -38,7 +38,7 @@ def hello(name, age, country):
 #calling a function using positional arguments - Jake being the first position, 24 the second, and the Korea the third.
 hello("Jake", 24, "Korea")
 
-#2. calling a function using keyword arguments - notice that the orders of the arguments are different. It is because we used keyword arguments.
+#2. calling a function using keyword arguments - notice that the orders of the arguments are different than the order defined in function definition. It is because we used keyword arguments.
 hello(country = "CANADA", age = 29, name = "Jin")         
 
 #3. calling a function using default arguments
