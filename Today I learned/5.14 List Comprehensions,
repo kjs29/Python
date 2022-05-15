@@ -2,6 +2,9 @@
 1.
 List comprehensions
 
+2.
+create a list
+I can use either while or range() functions
 
 ---example of list comprehensions
 """
