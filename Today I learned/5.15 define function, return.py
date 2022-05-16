@@ -1,6 +1,7 @@
 5/15 Today I learned...
 
 1.
+
 Defining a function = 
 
 def function_name(): 
@@ -12,12 +13,20 @@ Parameters (how to include parameters in a function)
 
 3 types of arguments (positional arguments, keyword arguments ,default arguments)
 
-2. built-in-functions and user-defined functions
+2. 
+
+built-in-functions and user-defined functions
 #we can use built in functions like print() , or max() 
 #or we can use user defined functions
 
-3.return
+3.
+
+return
 return allows us to save a variable in a function = we call this function a returned function value
+
+multiple assignments
+
+
 ---
 #Defining a function
 
@@ -85,5 +94,27 @@ def tradingbudget(a,b):
 #calling a tradingbudget funciton
 print(tradingbudget(budget,commission))                #495
 
+---example of multiple return
 
+stockprice_data = [10,15,20,21,30,28]
+
+def find_max_min_distance(a):
+    maxval = max(a)
+    minval = min(a)
+    distance = maxval - minval
+    return maxval, minval, distance
+
+print(find_max_min_distance(stockprice_data))                 #(30, 10, 20) 
+
+
+---example of multiple assignments
+
+"""
+multiple assignments
+
+a,b = 1,2
+print(a)                  #1
+print(b)                  #2
+
+"""
 
