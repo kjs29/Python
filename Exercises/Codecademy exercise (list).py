@@ -22,3 +22,13 @@ These are the steps we need:
 2. Count the number of occurrences of item (the second parameter) in lst (the first parameter)
 3. If the number of occurrences is greater than n (the third parameter), return True. Otherwise, return False
 """
+
+#1.
+def some_function(lst,number,n):
+  #2.
+  a = lst.count(number)
+  #3.
+  if a > n:
+    return True
+  else:
+    return False
