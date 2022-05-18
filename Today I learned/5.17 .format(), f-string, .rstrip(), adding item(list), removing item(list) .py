@@ -15,6 +15,22 @@ print("hello, my name is {}".format(name))                #hello, my name is JK
 #f-string
 print(f"hello my name is {name}")                         #hello my name is JK
 
+2.
+list comprehension again
+places = ["Seoul","San Francisco","New York","Toronto","Vancouver"]
+
+places = ["I will go to {}, and I will have a beautiful house in {}.".format(a,a) for a in places]
+print(places) #['I will go to Seoul, and I will have a beautiful house in Seoul.', 'I will go to San Francisco, and I will have a beautiful house in San Francisco.', 'I will go to New York, and I will have a beautiful house in New York.', 'I will go to Toronto, and I will have a beautiful house in Toronto.', 'I will go to Vancouver, and I will have a beautiful house in Vancouver.']
+
+3.
+#how to take numbers as input
+
+#input() function takes input as string
+#so we have to write like this to take it as integers or float
+
+initialcapital = int(input("Enter your initial capital : "))
+print(initialcapital)
+
 ---example of rstrip,lstrip, strip
 #to remove whitespaces in strings, we use this strips for user input and save their inputs in our database
 .rstrip()
@@ -123,3 +139,28 @@ second we delete activeusers[:3]
 
 print(activeusers)              #What I expected was ["E","L","C","B","U"], but result shows ['Q', 'G', 'A', 'E', 'L', 'C', 'B', 'U']
 print(inactiveusers)            #["Z","ZZ","ZI","Q","G","A"]
+
+---example of input()
+
+
+"""
+create a list that shows the return of %5 each year for 10 years 
+Let user decide their initial capital
+And their return percentage each year
+"""
+
+#how to take numbers as input
+
+#input() function takes input as string
+#so we have to write like this to take it as integers or float
+
+initialcapital = int(input("\nEnter your initial capital : "))
+returns = int(input("\nEnter your return percentage : "))
+print("Your initial capital is {}, and your percentage return is {}.".format(initialcapital,returns))
+
+#do it for 10 times
+for a in range(10):
+    
+    initialcapital = initialcapital*(1+(0.01*returns))
+    print(initialcapital)
+
