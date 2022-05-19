@@ -45,7 +45,7 @@ print(a)                  #AAPL used to be 102 Dollars  before split
 
 
 
-.repalce()
+.replace()
 
 
 
