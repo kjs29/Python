@@ -52,6 +52,41 @@ numbers_b = random.sample(range(1,1001), 12)
 draw.plot(numbers_a, numbers_b)
 draw.show(numbers_a, numbers_b)
 
+
+
+5.
+from datetime import datetime
+
+birthday = datetime(1992, 11, 14, 16, 0, 0)
+print(birthday.year)                                  #1992
+print(birthday.month)                                 #11
+print(birthday.day)                                   #14
+print(birthday.hour)                                  #15
+print(birthday.minute)                                #59
+print(birthday.second)                                #00
+
+print(birthday.weekday())                             #5
+#0 Monday
+#1 Tuesday
+#2 Wednesday
+#3 Thursday
+#4 Friday
+#5 Saturday
+#6 Sunday
+
+#we can use datetime.now to calculate the current time
+now = datetime.now()
+print(now)                                               #2022-05-19 21:27:50.839434
+
+#when I purchased first stock
+firststock = datetime(2016,10,21)
+
+#we can calculate between dates
+diff = datetime(2018,1,1) - datetime(2014,1,1)  
+print(diff)                                              #1461 days, 0:00:00
+
+print(now - firststock)                                  #2036 days, 21:47:47.531646
+
 ---example of how to calculate strings in list 
 
 """
