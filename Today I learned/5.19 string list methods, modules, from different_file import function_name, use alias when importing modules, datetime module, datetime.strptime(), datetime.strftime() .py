@@ -112,6 +112,7 @@ we can see that what format we can use.
 
 
 #we can put any string date as the first argument, and we can present the data as we like in the second argument.
+#in this case, I want it to show like, '%b' = month first in abbreviated form like May,  '%d' = day  , and ', %Y' = a comma and year in 4 digits.
 parsed_date = datetime.strptime("May 7, 2022", "%b %d, %Y")
 
 
