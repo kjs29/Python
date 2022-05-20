@@ -87,6 +87,46 @@ print(diff)                                              #1461 days, 0:00:00
 
 print(now - firststock)                                  #2036 days, 21:47:47.531646
 
+
+
+
+
+6.
+
+#How to use python docs for datetime.
+Google 'python3 datetime'
+Go to 'strftime() and strptime() Behavior' in the left menu bar
+
+In this chart
+
+https://docs.python.org/3/library/datetime.html#strftime-and-strptime-format-codes
+
+we can see that what format we can use.
+
+
+
+
+#How to use datetime.strptime()
+#string -> datetime format
+
+
+
+#we can put any string date as the first argument, and we can present the data as we like in the second argument.
+parsed_date = datetime.strptime("May 7, 2022", "%b %d, %Y")
+
+
+print(parsed_date.month)                                 #5
+
+
+
+
+#How to use datetime.strftime()
+#datetime format -> string
+
+date_string = datetime.strftime(now, "%b %d")
+print(date_string)                                       #May 19
+
+
 ---example of how to calculate strings in list 
 
 """
