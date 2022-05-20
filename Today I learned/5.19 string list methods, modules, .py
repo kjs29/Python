@@ -1,11 +1,42 @@
 5/19 Today I learned...
 
 1.
+
+How to convert strings into floats
+
+How to calculate string values in a list.
+ex. sales = ["$240","$55"] , what is the total sales?
+
+
+
+2.
+Functions < Modules < Packages < Library
+
+What is module?
+Module is a collection that has multiple pre-built functions.
+
+
+Module has many functions.
+Package has many modules.
+Library has many packages.
+
+
+How to use modules
+Basic syntax for modules is as below:
+
+from module_name import object_name
+
+
+---example of how to calculate strings in list 
+
+"""
 How to get total sales from strings
 
 Suppose we have a list
 
 And we want to get the average price of these stockprices
+"""
+
 
 stockprice = ["$704", "$9.42", "$22", "$0.25", "$512", "$104", "$80", "$2500", "$412", "$65", "$8", "$2", "$900", "$202", "$54"] 
 
@@ -25,3 +56,7 @@ print(total)                                            #5574.67
 
 average_price = total/len(stockprice)
 print(average_price)                                    #371.6446666666667
+
+
+
+---
