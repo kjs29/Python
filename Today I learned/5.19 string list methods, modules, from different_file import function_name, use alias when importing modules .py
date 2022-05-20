@@ -38,6 +38,20 @@ In this case, I can write like this in the head of file2.py
 from file1 import function_random
    (filename)       (function name) 
   
+
+
+4.
+#this means we can call some functions using 'draw' instead of pyplot
+from matplotlib import pyplot as draw
+
+import random
+
+numbers_a = range(1,13)
+numbers_b = random.sample(range(1,1001), 12)
+
+draw.plot(numbers_a, numbers_b)
+draw.show(numbers_a, numbers_b)
+
 ---example of how to calculate strings in list 
 
 """
