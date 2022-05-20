@@ -18,7 +18,7 @@ print(statistics_traders)
 
 
 for a,b in statistics_traders.items():
-    print("{} traders success rate in the long term is {} percent.".format(str(a.capitalize()), b))
+    print("{} traders success rate in the long term is {} percent.".format(a.capitalize(), b))
 print("We must be aware of trading, and we must trade only with statistical data.")
     
   
