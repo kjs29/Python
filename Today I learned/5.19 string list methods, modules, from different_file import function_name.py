@@ -27,6 +27,17 @@ Basic syntax for modules is as below:
 from module_name import object_name
 
 
+3.
+
+Suppose we have two different files file1.py  and file2.py
+
+And I defined a function 'function_random.py' in file1 and I want to be able to use this function in file2.py
+
+In this case, I can write like this in the head of file2.py
+
+from file1 import function_random
+   (filename)       (function name) 
+  
 ---example of how to calculate strings in list 
 
 """
