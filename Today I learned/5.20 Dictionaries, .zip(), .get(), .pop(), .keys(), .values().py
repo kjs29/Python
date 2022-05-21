@@ -4,6 +4,7 @@ Dictionaries
 - What is dictionaries?
 - When do we use it?
 - How to create dictionaries?
+- How to put two lists in a dictionary?
 - How to add key:value to a dictionary?
 - How to access value in a dictionary? 
 - How to check if a certain keyword exists in a dictionary?
@@ -16,7 +17,7 @@ Dictionaries
 ---
 
 Dictionaries
-Dictionaries is a key : value pair.
+Dictionaries is a 'key : value' pair.
   
 In many cases we have information like this
 
@@ -48,13 +49,20 @@ print(bank_accounts)                                #{'Jin': 25, 'Mary': 35000, 
 bank_accounts.update({"Hans":4000,"Aaron":220,"Bill":35000}
 print(bank_accounts)                                #{'Jin': 25, 'Mary': 35000, 'John': 240000, 'Jay': 6630000, 'Hans': 4000, 'Aaron': 220, 'Bill': 35000}
 
+#Creating a dictionary - FROM TWO LISTS - Syntax
 
+name_dictionary = {key:value for key,value in zip.(keylist, valuelist)}               #key:value NOT key,value
+                 
+                    
                      
                      
                    
 #overwriting key:value in a dictionary
 bank_accounts["Hans"] = 5000
 print(bank_accounts)                                #{'Jin': 25, 'Mary': 35000, 'John': 240000, 'Jay': 6630000, 'Hans': 5000, 'Aaron': 220, 'Bill': 35000}
+
+                     
+
                      
 
 #examples of dictionaries
