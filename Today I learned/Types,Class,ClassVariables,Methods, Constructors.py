@@ -1,0 +1,96 @@
+5/22 Today I learned... 
+1.
+Types
+Class
+Class Variables
+Methods with only 'self'
+Methods with multi arguments including 'self'
+Constructors
+
+---
+#to know what type of data some variables are... use type()
+a = 29
+type(a)
+
+
+#Class
+#use capital letter for the name of class
+class Cool_people:
+  pass                  #to avoid indent problem, we just wrote pass
+
+#instantiation, it's like calling function
+cool_people_object = Cool_people()
+
+#Class Variables
+class Class_name:
+  
+  #here goes class_variable_name and a data type
+  class_variable_name: anydata
+
+object_name = Class_name()
+
+#To access Class Variable the syntax is as below:
+print(object_name.class_variable_name)
+
+
+#Methods are the functions defined as part of a class
+class Stocks:
+  stockname = "AAPL"
+  
+  #hello() is a method
+  def hello(self):                        #notice that there is a 'self' as an argument
+    print "hello this stock's ticker is {}.".format(self.stockname))
+
+#instantiation
+first_stock = Stocks()
+
+first_stock.hello()                       #hello this stock's ticker is AAPL.
+
+
+#Creating methods that have multi aruments in some class
+class Circle:
+  pi = 3.14
+  
+  #we are taking two arguments 'self' , and 'radius'
+  def area(self, radius):
+    return self.pi * radius ** 2                    #pi*r^2 is area of a circle
+  
+circle = Circle()
+kitchen_table = circle.area(5)                      #78.5
+
+---
+#Constructors : Methods that are used to prepare an object being instantiated/ Constructors are used to initialized the data
+#usually in python constructors refer to __init__
+
+class Plane:
+  def __init__(self, company, model, seats):            #__init__ is a constructor or a method(that takes instances)
+    self.company = company
+    self.model = model
+    self.seats = seats
+  def wiki(self):
+    print("The {} {} has {} seats".format(self.company, self.model, self.seats))
+    
+p = Plane("Boeing", "737", 140)
+p.wiki()                            #The Boeing 737 has 140 seats
+
+
+---another example of class
+class Robot:
+  
+    def __init__(self, givenName, givenColor, givenWeight):
+        self.name = givenName
+        self.color = givenColor
+        self.weight = givenWeight
+        
+    def introduce_self(self):
+        print("My name is " + self.name)
+        
+        
+r1 = Robot("Tom", "red", 30)
+r2 = Robot("Jerry", "blue", 40)
+"""
+self.name = "Tom"
+self.color = "blue"
+self.weight = 30
+"""
+r1.introduce_self()                                 #My name is Tom
