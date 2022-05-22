@@ -125,11 +125,23 @@ except:
       
       
 #How to delete a key from a dictionary
-bank_accoutns = {'Jin': 25, 'Mary': 35000, 'John': 240000, 'Jay': 6630000, 'Hans': 5000, 'Aaron': 220, 'Bill': 35000}
+bank_accounts = {'Jin': 25, 'Mary': 35000, 'John': 240000, 'Jay': 6630000, 'Hans': 5000, 'Aaron': 220, 'Bill': 35000}
       
 #we want to delete 'Hans' from the dictionary
 bank_accounts.pop("Hans")
 print(bank_accounts)                                    #{'Jin': 25, 'Mary': 35000, 'John': 240000, 'Jay': 6630000, 'Aaron': 220, 'Bill': 35000}
+      
+#There is another way to delete key:value pair
+
+#adding the value again.
+bank_accounts["Hans"] = 5000
+print(bank_accounts)                                    #{'Jin': 25, 'Mary': 35000, 'John': 240000, 'Jay': 6630000, 'Aaron': 220, 'Bill': 35000, 'Hans': 5000}
+      
+#we can use del      
+del bank_accounts["Hans"]                               #delete Hans:5000
+print(bank_accounts)                                    #{'Jin': 25, 'Mary': 35000, 'John': 240000, 'Jay': 6630000, 'Aaron': 220, 'Bill': 35000}
+      
+      
       
 #We can also have a default value if the keyword we are trying to delete does NOT exist
 hong = bank_accounts.pop("Hong", "No value existing")
