@@ -21,6 +21,7 @@ def a_word_counter(sentence):
       
   return count
 
+print(a_word_counter("AbracabrA"))                  #4
 ---
 
 #2nd Answer
@@ -40,3 +41,4 @@ def a_word_counter(sentence):
       count += 1
   return count
 
+print(a_word_counter("AbracabrA"))              #4
