@@ -4,8 +4,15 @@ How to read/modify files
 .read()
 .readlines()
 iterate through object
+csv.DictReader()
+csv.DictWriter()
 .readline()
 .write()
+json.load()
+json.dump()
+
+#why we use 'with'?
+#because 'with' creates a context-manager, which performs cleanup after mixing the adjacent indented block.
 
 2.
 Reading csv file (Comma-Separted Values)
@@ -17,7 +24,9 @@ Pandas is a fast, poweful, and easy to use data analysis and manipulation tool
 Pandas is a module with extensive funcitonality for working with tabular data.
 Tabular data : spreadsheet, excel
 
-
+4.
+Reading  json file(Javascript Object Notation)
+Writing json file on python script
 
 ---
 
@@ -82,3 +91,41 @@ with open("csv_file_name.csv") as object_name:
   
   
   
+---
+#How to read json file
+#It is same as reading a txt file
+
+"""
+let's suppose there is a json file called 'json_file_name.json'
+
+{
+ "user": "Jin",
+ "occupation" : "software engineer",
+ "age" : "29"
+}
+
+"""
+
+
+#import json package
+import json
+
+with open("json_file_name.json") as object_name:
+    variable_for_json = json.load(object_name)
+print(variable_for_json['user'])                                #Jin
+
+
+
+
+#how to write json file in python script
+
+#let's say we have dictionary made in python script
+bank_accounts = {'Jin': 25, 'Mary': 35000, 'John': 240000, 'Jay': 6630000, 'Aaron': 220, 'Bill': 35000}
+
+#import json package
+import json
+
+with open("bank_accounts.json","w") as bank_accounts_object:            #notice that now ther is the second argument "w" 
+    
+    json.dump(bank_accounts, bank_accounts_object)                      #.dump() has two arguments, first being the name of the dictionary, and the file object
+    
