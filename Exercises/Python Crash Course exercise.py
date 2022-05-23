@@ -102,3 +102,33 @@ fivefoods = ("Kimchi","Soft tofu spicy soup", "Hamburger", "Chicken", "Soda")
 for food in fivefoods:
   print(food)
   
+#6.1 Use a dictionary to store information about a person you know. Store their first name, last name, age, and the city in which they live.
+#You should have ekys such as first_name, last_name, age, and city.
+#Print each piece of information stored in your dictionary.
+
+personal_info = {"first_name":"Robertson", "last_name":"Fox", "age": 70, "city":"Long Beach"}
+print(personal_info["first_name"])                            #Robertson
+print(personal_info["last_name"])                             #Fox
+print(personal_info["age"])                                   #70
+print(personal_info["city"])                                  #Long Beach
+
+#6.2 Use a dictionary to store people's favourite numbers. Think of five names, and use them as keys in your dictionary.
+#Think of a favourite number for each person, and sotre each as a value in your dictionary.
+#Print each person's name and their favourite number. For even more fun, poll a few friends and get some actual data for your program.
+
+favourite_number = {"Remy":23, "Jin":29, "Ricky": 77, "Alyssa":7,}
+favourite_number["Raveena"] = 50
+print(favourite_number)                                         #{'Remy': 23, 'Jin': 29, 'Ricky': 77, 'Alyssa': 7, 'Raveena': 50}
+
+
+#6.3 Think of five programming words you've learned about in the previous chapters.
+#Use these words as the keys in your glossary, and store their meanings as values.
+#Use the newline character(\n) to insert a blank line between each word-meaning pair in your output
+
+five_programming_languages = {
+    "dictionaries":"A collection of key-value pairs.",
+    "To make a numerical lists, What function is the best? : ":"range()\n",
+    "How to decide whether I should use pop() or del :":"If I want to use the removed item use pop(),\n if I don't want to use it anyway, use del.\n",
+    "How to copy the whole list using indexing? : ":"[:]\n",
+    "How to access value in a dictionary?(2 ways) : ":"1. dictionary_name[key]\n2. dictionary_name.get(key,\"No value exists\")",
+    }
