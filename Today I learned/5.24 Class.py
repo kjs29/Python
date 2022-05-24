@@ -133,3 +133,33 @@ class Fourcal():
     addresult = self.a + self.b                         ex) addresult = a + b : addresult = firstobject.a + secondobject.b
     return addresult
 """
+
+
+
+---example of Class
+class Dog:
+
+  
+  def __init__(self,name,age):
+    self.name = name
+    self.age = age
+
+
+  def introduce(self):
+    return "Hello, my name is {} and I am {} years old.".format(self.name, self.age)
+
+
+  def is_older(self, Dog):
+    if self.age >= Dog.age:
+      return True
+    else:
+      return False
+
+#Create objects
+mydog = Dog("Nabi",5)
+herdog = Dog("Babi",3)
+
+
+print(mydog.introduce())
+print(mydog.is_older(herdog))
+print(herdog.is_older(mydog))
