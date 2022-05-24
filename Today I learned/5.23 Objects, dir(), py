@@ -1,0 +1,32 @@
+5/23 Today I learned...
+1.
+Objects
+Attributes
+dir()
+
+2.
+__repr()__
+
+---
+#Objects, attributes, dir()
+"""
+what is the definition of an object?
+-
+
+What is an attribute?
+-
+
+What can be an object?
+- Literally everything can be an object.
+- We can check this by using dir() and print it
+ex. dir(function_name)
+    dir(5)
+    dir("Hello World")
+    
+"""
+
+---
+#__repr()__
+"""
+__repr()__ takes self as an argument
+
