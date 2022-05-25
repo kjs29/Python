@@ -42,3 +42,21 @@ def a_word_counter(sentence):
   return count
 
 print(a_word_counter("AbracabrA"))              #4
+
+
+---
+#third answer
+
+def a_count(yes):
+    count = 0
+    for a in yes:
+      
+       #we can use or to count either 'a' or 'A'
+       if a == "a" or a == "A":
+           count += 1
+    return count
+
+
+
+
+print(a_count("SALDNladasmalkdlamdk"))               #5
