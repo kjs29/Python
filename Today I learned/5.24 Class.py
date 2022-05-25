@@ -2,12 +2,19 @@
 1.
 Class
 
+Instance
+
+Attributes(arguments for the methods)
+
+
 What is Class?
+-Class is like a frame.
 
 
 """
 Let's say we want to create a calculator that has addition function only
 So we can write a code like this.
+
 """
 result = 0
 
