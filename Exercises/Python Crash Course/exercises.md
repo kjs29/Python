@@ -399,6 +399,21 @@ Exercise 6.1 dictionary
 ```
 personal_info = {"first_name":"Robertson", "last_name":"Fox", "age": 70, "city":"Long Beach"}
 ```
+-
+```
+First_Name : Robertson
+Last_Name : Fox
+Age : 70
+City : Long Beach
+First_Name : Jeffery
+Last_Name : Bezos
+Age : 55
+City : Hollywood
+First_Name : Stephen
+Last_Name : Covey
+Age : 98
+City : New York
+```
 <details>
   <summary>code</summary>
   
@@ -422,7 +437,12 @@ personal_info = {"first_name":"Robertson", "last_name":"Fox", "age": 70, "city":
           print(f"{key.title()}:{value}")
   ```
 </details>
-
+-
+```
+Robertson Fox 70 Long Beach
+Jeffery Bezos 55 Hollywood
+Stephen Covey 98 New York
+```
 <details>
   <summary>another code</summary>
   
