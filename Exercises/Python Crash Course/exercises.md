@@ -18,8 +18,13 @@ add a line at the end of your program outside the for loop.
 
 <details>
   <summary>code</summary>
-  
+ 
   ```
+  favorite_pizzas = ["Cheese pizza", "Sweet potato pizza", "Big pizza"]
+  for a in favorite_pizzas:
+      print(a)
+      print("I like {}.".format(a))
+  
   print("I love pizza!")
   ```
 </details>
