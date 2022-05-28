@@ -1,4 +1,4 @@
-# 4.1 
+# 4.1 Pizzas
 Think of at least three kinds of your favorite pizza. Store these pizzas name in a list, and use a for loop to print the name of each pizza
 
 
@@ -44,7 +44,7 @@ add a line at the end of your program outside the for loop.
   ```
 </details>
 
-# 4.2
+# 4.2 Animals
 
 Think of at least three animals that have a common characteristics. Store the names in a list, use a for loop to print out each animal's name
 
@@ -114,7 +114,7 @@ These animals live in Africa
   ```
 </details>
 
-# 4.3
+# 4.3 Counting to twenty
 
 Use a for loop to print the numbers from 1 to 20, inclusive
 ```
@@ -138,7 +138,7 @@ Use a for loop to print the numbers from 1 to 20, inclusive
   ```
 </details>
 
-# 4.4~4.5 
+# 4.4~4.5 One Million, summing a million
 
 Make a list of 1~1,000,000 using for loop and find max and min values, and sum all the numbers in the list
 ```
@@ -155,7 +155,7 @@ Make a list of 1~1,000,000 using for loop and find max and min values, and sum a
   ```
 </details>  
 
-# 4.6 
+# 4.6 Odd numbers
 
 Use the third argument of the range() function to make a list of the odd numbers from 1 to 20. Use a for loop to print each number
 <details>
@@ -166,7 +166,7 @@ Use the third argument of the range() function to make a list of the odd numbers
   ```
 </details>
 
-# 4.7 
+# 4.7 Threes
 
 Make a list of multiple of 3 from 3 to 30. use a for loop to print the numbers in your list
 <details>
@@ -181,7 +181,7 @@ Make a list of multiple of 3 from 3 to 30. use a for loop to print the numbers i
   ```
 </details>
 
-# 4.8 
+# 4.8 Cubes
 
 Make a list of first 10 cubes and use a for loop to print out the value of each cube
 ```
@@ -198,7 +198,7 @@ Make a list of first 10 cubes and use a for loop to print out the value of each 
   ```
 </details>
 
-# 4.9 
+# 4.9 Cube comprehensions
 
 Use a list comprehension to print the first cubes in a list
 <details>
@@ -210,7 +210,7 @@ Use a list comprehension to print the first cubes in a list
   ```
 </details>
 
-# 4.10 
+# 4.10 Slices
 
 #Use any list you created before
 
@@ -242,7 +242,7 @@ print the message "The last three items in the list are:" then use a slice to pr
   ```
 </details>
 
-# 4.11
+# 4.11 My Pizzas, your pizzas
 
 start with the program from exercise 4.1. Make a copy of the list of pizzas and call it friend_pizzas
 <details>
@@ -282,7 +282,7 @@ add a new pizza in the original list
   ```
 </details>
 
-# 4.12
+# 4.12 More Loops
 
 choose a list and write two for loops to print each list of foods.
 <details>
@@ -296,7 +296,7 @@ choose a list and write two for loops to print each list of foods.
   ```
 </details>
 
-# 4.13
+# 4.13 Buffet
 
 A buffet style restaurant offers only five basic foods. Think of five simple foods, and store them in a tuple.
 <details>
@@ -336,7 +336,7 @@ Add a line that rewrites the tuple, and then use a for loop to print each of the
   ```
 </details>
 
-# 6.1
+# 6.1 Person
 
 Use a dictionary to store information about a person you know. Store their first name, last name, age, and the city in which they live.
 You should have ekys such as first_name, last_name, age, and city.
@@ -353,7 +353,7 @@ Print each piece of information stored in your dictionary.
   ```
 </details>
 
-# 6.2 
+# 6.2 Favorite numbers
 
 Use a dictionary to store people's favourite numbers. Think of five names, and use them as keys in your dictionary.
 
@@ -369,7 +369,7 @@ Use a dictionary to store people's favourite numbers. Think of five names, and u
   ```
 </details>
 
-# 6.3 
+# 6.3 Glossary
 
 Think of five programming words you've learned about in the previous chapters.
 
@@ -389,7 +389,7 @@ Think of five programming words you've learned about in the previous chapters.
   ```
 </details>
 
-# 6.7
+# 6.7 People
 
 Start with the program you wrote in exercise 6.1. Make Two new dictionaries representing different people, and store all three dictionaries in a list called people.
 Loop through your list of people. As you loop through the list, print everything you know about each person.
@@ -469,7 +469,7 @@ Stephen Covey 98 New York
   ```
 </details>
 
-# 6.8
+# 6.8 Pets
 Make several dictionaries, where each dictionary represents a different pet. In each dictionary, include the kind of animal and the owner's name.
 
 Store these dictionaries in a list called pets. Next loop through your list and as you do, print everything you know about each pet.
