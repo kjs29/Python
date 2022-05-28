@@ -1,9 +1,12 @@
-"""
-Write a function called a_word_count that takes a string as an input
-and returns a count of the words in the string that start with the uppercase or lowercase letter, a
+Tried on 5/28(o)
 
-"""
+# Write a function called a_word_count
+that takes a string as an input and returns a count of the words in the string that start with the uppercase or lowercase letter, a
 
+# Below is an answer
+---
+
+```
 #1st Answer
 #define the function
 def a_word_counter(sentence):
@@ -22,10 +25,11 @@ def a_word_counter(sentence):
   return count
 
 print(a_word_counter("AbracabrA"))                  #4
----
+```
 
-#2nd Answer
 
+# 2nd Answer
+```
 #define the function
 def a_word_counter(sentence):
   
@@ -43,10 +47,10 @@ def a_word_counter(sentence):
 
 print(a_word_counter("AbracabrA"))              #4
 
+```
 
----
-#third answer
-
+# third answer
+```
 def a_count(yes):
     count = 0
     for a in yes:
@@ -60,3 +64,4 @@ def a_count(yes):
 
 
 print(a_count("SALDNladasmalkdlamdk"))               #5
+```
