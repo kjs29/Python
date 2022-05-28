@@ -1,17 +1,24 @@
 Tried 5/28(x)
 
 # Write a function named 'frequency_dictionary'
-# that takes a list of elements named words as a parameter.
-# The function should return a dictionary containing the frequency of each element in words.
+that takes a list of elements named words as a parameter.
+The function should return a dictionary containing the frequency of each element in words.
 
 ---
 
+
+For example, if we see this list,
 ```
-For example,
 ["milk", "apple", "milk", "apple juice"]
+```
 should return
+```
 {"milk":2,"apple":1,"apple juice":1}
 ```
+
+Below is answer
+---
+
 
 ```
 #defining a function named 'frequency_dictionary' that has a 'words' parameter
