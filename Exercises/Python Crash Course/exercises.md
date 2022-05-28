@@ -2,12 +2,15 @@
 Think of at least three kinds of your favorite pizza. Store these pizzas name in a list, and use a for loop to print the name of each pizza
 #modify your for loop to print a sentence using the name of the pizza instead of printing just the name of the pizza. 
 #For each pizza you should have one line of output containing a simple sentence like "I like pepperoni pizza."
-```
-favorite_pizzas = ["Cheese pizza", "Sweet potato pizza", "Big pizza"]
-for a in favorite_pizzas:
-  print(a)
-  print("I like {}.".format(a))
-```
+<details>
+  <summary>example</summary>
+  ```
+  favorite_pizzas = ["Cheese pizza", "Sweet potato pizza", "Big pizza"]
+  for a in favorite_pizzas:
+      print(a)
+      print("I like {}.".format(a))
+  ```
+</details>
 add a line at the end of your program outside the for loop.
 ```
 print("I love pizza!")
