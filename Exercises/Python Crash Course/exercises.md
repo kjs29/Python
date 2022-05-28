@@ -468,3 +468,58 @@ Stephen Covey 98 New York
   
   ```
 </details>
+
+# 6.8
+Make several dictionaries, where each dictionary represents a different pet. In each dictionary, include the kind of animal and the owner's name.
+
+Store these dictionaries in a list called pets. Next loop through your list and as you do, print everything you know about each pet.
+
+You want the result to look like this.
+```
+Jin has a cat named Nabi
+Ricky has a dog named Haru
+Amber has a snake named Mochi
+```
+-
+
+<details>
+  <summary>code</summary>
+  
+  ```
+  #This is similar to the 6.7 exercise
+
+  #first make dictionaries
+  pet1 = {"name":"nabi","kind":"cat","owner's name":"jin",}
+  pet2 = {"name":"haru","kind":"dog","owner's name": "ricky",}
+  pet3 = {"name":"mochi","kind":"snake","owner's name":"amber"}
+
+  #create empty list
+  pets = []
+
+  #add each dictionary into pets list
+  pets.append(pet1)
+  pets.append(pet2)
+  pets.append(pet3)
+
+  print(pets)
+
+  #Loop through the list
+  for eachpet in pets:
+      name = eachpet["name"]
+      kind = eachpet["kind"]
+      owner = eachpet["owner's name"]
+      print(owner.title()+ " has a " + kind + " named " + name.title())
+    
+  ```
+</details>
+
+Another answer using the indexing,
+
+<details>
+  <summary>code</summary>
+  
+  ```
+  
+  ```
+  
+</details>
