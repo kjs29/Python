@@ -519,7 +519,13 @@ Another answer using the indexing,
   <summary>code</summary>
   
   ```
-  
+  for eachpet_dict in pets:
+    
+    owner = list(eachpet_dict.values())[2]
+    kind = list(eachpet_dict.values())[1]
+    name = list(eachpet_dict.values())[0]
+    
+    print(f"{owner.title()} has a {kind} named {name.title()}")
   ```
   
 </details>
