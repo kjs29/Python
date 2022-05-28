@@ -1,6 +1,10 @@
 # 4.1 
 Think of at least three kinds of your favorite pizza. Store these pizzas name in a list, and use a for loop to print the name of each pizza
+
+
 #modify your for loop to print a sentence using the name of the pizza instead of printing just the name of the pizza. 
+
+
 #For each pizza you should have one line of output containing a simple sentence like "I like pepperoni pizza."
 
 <details>
@@ -11,6 +15,17 @@ Think of at least three kinds of your favorite pizza. Store these pizzas name in
   for a in favorite_pizzas:
       print(a)
       print("I like {}.".format(a))
+  ```
+</details>
+<details>
+  <summary>another code</summary>
+  
+  ```
+  favorite_pizzas = ["Cheese pizza", "Sweet potato pizza", "Big pizza"]
+  for pizza in favorite_pizzas:
+      
+      #f-string
+      print(f"I love {pizza}")
   ```
 </details>
 
@@ -32,6 +47,13 @@ add a line at the end of your program outside the for loop.
 # 4.2
 
 Think of at least three animals that have a common characteristics. Store the names in a list, use a for loop to print out each animal's name
+
+```
+lion
+zebra
+cheetah
+```
+
 <details>
   <summary>code</summary>
   
@@ -39,21 +61,55 @@ Think of at least three animals that have a common characteristics. Store the na
   animals = ["lion", "zebra", "cheetah"]
   for animal in animals:
     print(animal)
-
-  #modify your program to print a statement about each animal, such as a dog would make a great pet.
-    print(f"{animal} is strong")
   ```
 </details>
 
-add a line at the end of your program stating what these animals have in common.
+modify your program to print a statement about each animal, 
+
+such as 
+```
+lion is strong
+zebra has stripes
+cheetah is fast
+```
+
 <details>
   <summary>code</summary>
   
   ```
   animals = ["lion", "zebra", "cheetah"]
   for animal in animals:
-    print(animal)
+      print(animal)
+  
+  #this should not be inside the for loop
+  print(f"{animals[0]} is strong")
+  print(f"{animals[1]} has stripes")
+  print(f"{animals[2]} is fast")
+  ```
 
+</details>
+
+Add a line at the end of your program stating what these animals have in common.
+```
+lion
+zebra
+cheetah
+lion is strong
+zebra has stripes
+cheetah is fast
+These animals live in Africa
+```
+<details>
+  <summary>code</summary>
+  
+  ```
+  animals = ["lion", "zebra", "cheetah"]
+  for animal in animals:
+      print(animal)
+  print(f"{animals[0]} is strong")
+  print(f"{animals[1]} has stripes")
+  print(f"{animals[2]} is fast")
+  
   print("These animals are in Africa")
   ```
 </details>
@@ -61,6 +117,18 @@ add a line at the end of your program stating what these animals have in common.
 # 4.3
 
 Use a for loop to print the numbers from 1 to 20, inclusive
+```
+1
+2
+3
+4
+5
+...
+17
+18
+19
+20
+```
 <details>
   <summary>code</summary>
   
@@ -73,6 +141,9 @@ Use a for loop to print the numbers from 1 to 20, inclusive
 # 4.4~4.5 
 
 Make a list of 1~1,000,000 using for loop and find max and min values, and sum all the numbers in the list
+```
+[1,2,3,4,5...999998,999999,1000000] 1 1000000 500000500000
+```
 <details>
   <summary>code</summary>
   
@@ -113,6 +184,9 @@ Make a list of multiple of 3 from 3 to 30. use a for loop to print the numbers i
 # 4.8 
 
 Make a list of first 10 cubes and use a for loop to print out the value of each cube
+```
+[1, 8, 27, 64, 125, 216, 343, 512, 729, 1000]
+```
 <details>
   <summary>code</summary>
   
@@ -179,7 +253,8 @@ start with the program from exercise 4.1. Make a copy of the list of pizzas and 
   friend_pizzas = favorite_pizzas[:]
   ```
 </details>
-#add a new pizza in the original list 
+
+add a new pizza in the original list 
 <details>
   <summary>code</summary>
   
