@@ -1,0 +1,25 @@
+5/28 Today I learned...
+
+1.
+
+Accessing values in dictionaries
+
+We have dictionaries.
+```
+favourite_languages = {
+    "sarah":"c",
+    "jin":"python",
+    "scott":"c++",
+    "jules":"ruby"
+    } 
+```
+If we want to print out each values in this dictionary
+```
+for key in favourite_languages:
+    print(favourite_languages[key])
+```
+or
+```
+for key,value in favourite_languages.items():
+    print(value)
+```
