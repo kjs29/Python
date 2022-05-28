@@ -7,6 +7,21 @@ Create two different functions which figures out
 1. that returns keys
 2. that returns values
 
+For example, 
+```
+commodities = {"gold":1400, "silver":130, "iron":5}  
+```
+Should return
+```
+gold
+silver
+iron
+```
+```
+1400
+130
+5
+```
 
 # Below is answer
 ---
@@ -25,22 +40,7 @@ def values_dictionary(dic):
   for b in dic:
     print(dic[b])
   return dic[b]
-    
-    
-commodities = {"gold":1400, "silver":130, "iron":5}    
-    
-keys_dictionary(commodities)
-"""
-gold
-silver
-iron
-"""
-values_dictionary(commodities)
-"""
-1400
-130
-5
-"""
+      
 ```
 
 # Here is another answer I came up on 5/28
