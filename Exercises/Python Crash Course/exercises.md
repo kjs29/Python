@@ -603,7 +603,9 @@ Print the name of each city and all of the information you have stored about it.
                         },
     "New York" : {"country":"USA",
                   "population":8000000,
-                  "fact":"The New York Public Library has over 50 million books and other items and is the second largest library system in the nation after the                          Library of Congress. It is also the 3rd largest library in the world."}
+                  "fact":"The New York Public Library has over 50 million books 
+                          and other items and is the second largest library system in the nation after the Library of Congress. 
+    It is also the 3rd largest library in the world."}
                   }       
   for cityname,details_of_each_city in cities.items():
       print(f"{cityname} : ")
