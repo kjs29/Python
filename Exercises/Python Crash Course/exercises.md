@@ -555,7 +555,7 @@ To make this exercise a bit more interesting, ask some friends to name a few of 
 # 6.10 Favorite numbers
 Modify your program from exercise 6.2 so each person can have more than one favorite number.
 
-Then print each persno's nmame along with their favorite numbers.
+Then print each person's name along with their favorite numbers.
 
 ```
 
@@ -578,5 +578,36 @@ favourite_number = {'Remy': 23, 'Jin': 29, 'Ricky': 77, 'Alyssa': 7, 'Raveena': 
   Alyssa's favourite number is : 7
   Raveena's favourite number is : 50
   """
+  ```
+</details>
+
+# 6.11 Cities
+Make a dictionary called ```cities```. Use the names of three cities as keys in your dictionary. Create a dictionary of information about each city and include the country that the city is in, its approximate population, and one fact about that city.
+
+The keys for each city's dictionary should be something like country, population, and fact. 
+
+Print the name of each city and all of the information you have stored about it.
+
+<details>
+  <summary>code</summary>
+  
+  ```
+  cities = {
+    "Seoul" : {"country": "Korea",
+               "population": 9700000,
+               "fact":"The world's busiest air route is over Seoul"
+               },
+    "Mountain View" : {"country": "USA",
+                       "population":81000,
+                       "fact": "Google's HQ is in Mountain View"
+                        },
+    "New York" : {"country":"USA",
+                  "population":8000000,
+                  "fact":"The New York Public Library has over 50 million books and other items and is the second largest library system in the nation after the                          Library of Congress. It is also the 3rd largest library in the world."}
+                  }       
+  for cityname,details_of_each_city in cities.items():
+      print(f"{cityname} : ")
+      for eachvalue in details_of_each_city:    
+          print(f"\t{eachvalue} : {details_of_each_city[eachvalue]}")
   ```
 </details>
