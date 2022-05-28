@@ -8,10 +8,13 @@ favourite_languages = {
     }
 ```
 
-But we want to print 3rd key:value pair like this,
+But we actually don't know what the third key and value in the dictionary.
+We want to print 3rd key:value pair like this using indexing.
+
 ```
 Third key:value is Scott : ['c++', 'C']
 ```
+
 How would we get it?
 
 # Below is an answer
