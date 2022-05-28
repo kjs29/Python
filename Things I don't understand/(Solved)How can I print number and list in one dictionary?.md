@@ -1,4 +1,4 @@
-Let's say there is a dictionary
+Let's say there is a dictionary that holds many different types of values
 ```
 favourite_number = {
   "Do":1,
