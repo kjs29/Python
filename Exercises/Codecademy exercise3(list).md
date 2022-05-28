@@ -24,7 +24,7 @@ def double_index(lst,index):
   if index < len(lst):
     a = lst[index] * 2
     lst.remove(lst[index])
-    lst.insert(2,a)
+    lst.insert(index,a)
     return lst
   else:
     return lst
