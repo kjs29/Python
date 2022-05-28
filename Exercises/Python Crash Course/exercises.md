@@ -54,6 +54,7 @@ add a line at the end of your program stating what these animals have in common.
 </details>
 
 # 4.3
+
 Use a for loop to print the numbers from 1 to 20, inclusive
 <details>
   <summary>code</summary>
@@ -62,7 +63,9 @@ Use a for loop to print the numbers from 1 to 20, inclusive
     print(number)
   ```
 </details>
+
 # 4.4~4.5 
+
 Make a list of 1~1,000,000 using for loop and find max and min values, and sum all the numbers in the list
 <details>
   <summary>code</summary>
@@ -73,7 +76,9 @@ Make a list of 1~1,000,000 using for loop and find max and min values, and sum a
   print(n,min(n),max(n),sum(n))
   ```
 </details>  
+
 # 4.6 
+
 Use the third argument of the range() function to make a list of the odd numbers from 1 to 20. Use a for loop to print each number
 <details>
   <summary>code</summary>
@@ -81,7 +86,9 @@ Use the third argument of the range() function to make a list of the odd numbers
   print(list(range(1,21,2)))
   ```
 </details>
+
 # 4.7 
+
 Make a list of multiple of 3 from 3 to 30. use a for loop to print the numbers in your list
 <details>
   <summary>code</summary>
@@ -93,7 +100,9 @@ Make a list of multiple of 3 from 3 to 30. use a for loop to print the numbers i
   print(threes)
   ```
 </details>
+
 # 4.8 
+
 Make a list of first 10 cubes and use a for loop to print out the value of each cube
 <details>
   <summary>code</summary>
@@ -104,7 +113,9 @@ Make a list of first 10 cubes and use a for loop to print out the value of each 
   print(cubes)
   ```
 </details>
+
 # 4.9 
+
 Use a list comprehension to print the first cubes in a list
 <details>
   <summary>code</summary>
@@ -114,6 +125,7 @@ Use a list comprehension to print the first cubes in a list
   ```
 </details>
 # 4.10 
+
 #Use any list you created before
 
 Print the message "The first three items in the list are:" then use a slice to print the first three items from that program's list
@@ -140,7 +152,9 @@ print the message "The last three items in the list are:" then use a slice to pr
   print(cubes_list_comprehension[-3:])
   ```
 </details>
+
 # 4.11
+
 start with the program from exercise 4.1. Make a copy of the list of pizzas and call it friend_pizzas
 <details>
   <summary>code</summary>
@@ -173,7 +187,9 @@ start with the program from exercise 4.1. Make a copy of the list of pizzas and 
   print("This is a new list : " + str(friend_pizzas))
   ```
 </details>
+
 # 4.12
+
 choose a list and write two for loops to print each list of foods.
 <details>
   <summary>code</summary>
@@ -184,7 +200,9 @@ choose a list and write two for loops to print each list of foods.
     print(pizza)
   ```
 </details>
+
 # 4.13
+
 A buffet style restaurant offers only five basic foods. Think of five simple foods, and store them in a tuple.
 <details>
   <summary>code</summary>
@@ -218,7 +236,9 @@ Add a line that rewrites the tuple, and then use a for loop to print each of the
     print(food)
   ```
 </details>
+
 # 6.1
+
 Use a dictionary to store information about a person you know. Store their first name, last name, age, and the city in which they live.
 You should have ekys such as first_name, last_name, age, and city.
 Print each piece of information stored in your dictionary.
@@ -232,7 +252,9 @@ Print each piece of information stored in your dictionary.
   print(personal_info["city"])                                  #Long Beach
   ```
 </details>
+
 # 6.2 
+
 Use a dictionary to store people's favourite numbers. Think of five names, and use them as keys in your dictionary.
 
 #Think of a favourite number for each person, and sotre each as a value in your dictionary.
@@ -245,7 +267,9 @@ Use a dictionary to store people's favourite numbers. Think of five names, and u
   print(favourite_number)                                         #{'Remy': 23, 'Jin': 29, 'Ricky': 77, 'Alyssa': 7, 'Raveena': 50}
   ```
 </details>
+
 # 6.3 
+
 Think of five programming words you've learned about in the previous chapters.
 
 #Use these words as the keys in your glossary, and store their meanings as values.
