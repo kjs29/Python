@@ -414,6 +414,16 @@ Last_Name : Covey
 Age : 98
 City : New York
 ```
+
+
+We want the result to look like this
+-
+```
+Robertson Fox 70 Long Beach
+Jeffery Bezos 55 Hollywood
+Stephen Covey 98 New York
+```
+
 <details>
   <summary>code</summary>
   
@@ -437,12 +447,7 @@ City : New York
           print(f"{key.title()}:{value}")
   ```
 </details>
--
-```
-Robertson Fox 70 Long Beach
-Jeffery Bezos 55 Hollywood
-Stephen Covey 98 New York
-```
+
 <details>
   <summary>another code</summary>
   
@@ -461,3 +466,4 @@ Stephen Covey 98 New York
       print(name,age,city)
   
   ```
+</details>
