@@ -401,13 +401,6 @@ personal_info = {"first_name":"Robertson", "last_name":"Fox", "age": 70, "city":
 ```
 We want the result to look like this
 -
-```
-Robertson Fox 70 Long Beach
-Jeffery Bezos 55 Hollywood
-Stephen Covey 98 New York
-```
-
-or 
 
 ```
 First_Name : Robertson
@@ -422,6 +415,14 @@ First_Name : Stephen
 Last_Name : Covey
 Age : 98
 City : New York
+```
+
+or
+
+```
+Robertson Fox 70 Long Beach
+Jeffery Bezos 55 Hollywood
+Stephen Covey 98 New York
 ```
 
 <details>
