@@ -29,7 +29,7 @@ Phil's favourite languages are:
 
 How would you write the code?
 
-answer
+# answer
 -
 ```
 for a,x in favourite_languages.items():
@@ -41,3 +41,14 @@ for a,x in favourite_languages.items():
         print(f"\t{each.title()}")
 ```
 
+# another answer
+```
+for a in favourite_languages:
+    
+    if len(favourite_languages[a]) != 1:
+        print(f"\n{a.title()}'s favourite languages are : ")
+    else:
+        print(f"\n{a.title()}'s favourite language is : ")
+    for each_value in favourite_languages[a]:
+        print(f"\t{each_value.title()}")
+```
