@@ -551,3 +551,22 @@ To make this exercise a bit more interesting, ask some friends to name a few of 
       print(each_key, favorite_places[each_key])
   ```
 </details>
+
+# 6.10 Favorite numbers
+Modify your program from exercise 6.2 so each person can have more than one favorite number.
+
+Then print each persno's nmame along with their favorite numbers.
+
+```
+
+favourite_number = {'Remy': 23, 'Jin': 29, 'Ricky': 77, 'Alyssa': 7, 'Raveena': 50}
+```
+
+<details>
+  <summary>code</summary>
+  
+  ```
+  favourite_number["Remy"] = [23,520]
+  favourite_number["Jin"] = [29,30]
+  ```
+</details>
