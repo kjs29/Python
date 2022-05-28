@@ -39,3 +39,11 @@ for x,y in users.items():
     print(f"\t{'fullname'.title()}: {firstname.title()} {lastname.title()}")
     print(f"\t{thirdkey.title()}: {list(users[x].values())[2].title()}")
 ```
+# Here is another answer
+```
+
+for x,y in users.items():
+    print(f"Username : {x}")
+    print(f"\tFullname : {y['first'].title()} {y['last'].title()}")
+    print(f"\tLocation : {y['location'].title()}")
+```
