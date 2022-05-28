@@ -1,6 +1,8 @@
-#4.1 think of at least three kinds of your favorite pizza. Store these pizzas name in a list, and use a for loop to print the name of each pizza
+# 4.1 
+Think of at least three kinds of your favorite pizza. Store these pizzas name in a list, and use a for loop to print the name of each pizza
 #modify your for loop to print a sentence using the name of the pizza instead of printing just the name of the pizza. 
 #For each pizza you should have one line of output containing a simple sentence like "I like pepperoni pizza."
+```
 favorite_pizzas = ["Cheese pizza", "Sweet potato pizza", "Big pizza"]
 for a in favorite_pizzas:
   print(a)
@@ -8,8 +10,10 @@ for a in favorite_pizzas:
 
 #add a line at the end of your program outside the for loop.
 print("I love pizza!")
-
-#4.2 think of at least three animals that have a common characteristics. Store the names in a list, use a for loop to print out each animal's name
+```
+# 4.2
+Think of at least three animals that have a common characteristics. Store the names in a list, use a for loop to print out each animal's name
+```
 animals = ["lion", "zebra", "cheetah"]
 for animal in animals:
   print(animal)
@@ -20,48 +24,62 @@ for animal in animals:
 #add a line at the end of your program stating what these animals have in common.
 print("These animals are in Africa")
       
-      
-#4.3 use a for loop to print the numbers from 1 to 20, inclusive
+```      
+# 4.3
+Use a for loop to print the numbers from 1 to 20, inclusive
+```
 for number in range(1,21):
   print(number)
-
-#4.4~4.5 Make a list of 1~1,000,000 using for loop and find max and min values, and sum all the numbers in the list
+```
+# 4.4~4.5 
+Make a list of 1~1,000,000 using for loop and find max and min values, and sum all the numbers in the list
+```
 n = []
 for number in range(1,1000001):
   n.append(number)
 print(n,min(n),max(n),sum(n))
-
-#4.6 use the third argument of the range() function to make a list of the odd numbers from 1 to 20. Use a for loop to print each number
+```
+# 4.6 
+Use the third argument of the range() function to make a list of the odd numbers from 1 to 20. Use a for loop to print each number
+```
 print(list(range(1,21,2)))
-
-#4.7 make a list of multiple of 3 from 3 to 30. use a for loop to print the numbers in your list
+```
+# 4.7 
+Make a list of multiple of 3 from 3 to 30. use a for loop to print the numbers in your list
+```
 threes = []
 for a in range(3,31):
   if (a % 3 == 0):
     threes.append(a)
 print(threes)
-
-#4.8 make a list of first 10 cubes and use a for loop to print out the value of each cube
+```
+# 4.8 
+Make a list of first 10 cubes and use a for loop to print out the value of each cube
+```
 cubes = []
 for cube in range(1,11):
   cubes.append(cube**3)
 print(cubes)
-
-#4.9 use a list comprehension to print the first cubes in a list
+```
+# 4.9 
+Use a list comprehension to print the first cubes in a list
+```
 cubes_list_comprehension = [cube**3 for cube in range(1,11)]
 print(cubes_list_comprehension)
-
-#4.10 
+```
+# 4.10 
 #Use any list you created before
 
-#print the message "The first three items in the list are:" then use a slice to print the first three items from that program's list
+Print the message "The first three items in the list are:" then use a slice to print the first three items from that program's list
+```
 print("The first three items in the list are:")
 print(cubes_list_comprehension[:3])
-
-#print the message "The three items from the middle of the list are:" then use a slice to print the three items from the middle of the list
+```
+Print the message "The three items from the middle of the list are:" then use a slice to print the three items from the middle of the list
+```
 print("The three items from the middle of the list are:")
 print(cubes_list_comprehension[2:5])
-
+```
 #print the message "The last three items in the list are:" then use a slice to print the last three items in the list
 print("The last three items in the list are:")
 print(cubes_list_comprehension[-3:])
