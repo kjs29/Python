@@ -7,8 +7,9 @@ favorite_pizzas = ["Cheese pizza", "Sweet potato pizza", "Big pizza"]
 for a in favorite_pizzas:
   print(a)
   print("I like {}.".format(a))
-
-#add a line at the end of your program outside the for loop.
+```
+add a line at the end of your program outside the for loop.
+```
 print("I love pizza!")
 ```
 # 4.2
@@ -84,7 +85,9 @@ print(cubes_list_comprehension[2:5])
 print("The last three items in the list are:")
 print(cubes_list_comprehension[-3:])
 
-#4.11  start with the program from exercise 4.1. Make a copy of the list of pizzas and call it friend_pizzas
+# 4.11
+start with the program from exercise 4.1. Make a copy of the list of pizzas and call it friend_pizzas
+```
 print(favorite_pizzas)
 friend_pizzas = favorite_pizzas[:]
 
@@ -97,14 +100,18 @@ friend_pizzas.append("Pepperoni pizza")
 #use a for loop to print out elements of the two lists. Make sure that they are different lists.
 print("This is original pizza list : "+ str(favorite_pizzas))
 print("This is a new list : " + str(friend_pizzas))
-
-#4.12 choose a list and write two for loops to print each list of foods.
+```
+# 4.12
+choose a list and write two for loops to print each list of foods.
+```
 for pizza in favorite_pizzas:
   print(pizza)
 for pizza in friend_pizzas:
   print(pizza)
-
-#4.13 A buffet style restaurant offers only five basic foods. Think of five simple foods, and store them in a tuple.
+```
+# 4.13
+A buffet style restaurant offers only five basic foods. Think of five simple foods, and store them in a tuple.
+```
 fivefoods = ("Kimchi", "Soft tofu spicy soup", "Spagehtti", "Chicken", "Pizza")
 
 #use a for loop to print each food the restaurant offers
@@ -119,30 +126,35 @@ fivefoods[0] = "Dumpling"
 fivefoods = ("Kimchi","Soft tofu spicy soup", "Hamburger", "Chicken", "Soda")
 for food in fivefoods:
   print(food)
-  
-#6.1 Use a dictionary to store information about a person you know. Store their first name, last name, age, and the city in which they live.
-#You should have ekys such as first_name, last_name, age, and city.
-#Print each piece of information stored in your dictionary.
-
+```  
+# 6.1
+Use a dictionary to store information about a person you know. Store their first name, last name, age, and the city in which they live.
+You should have ekys such as first_name, last_name, age, and city.
+Print each piece of information stored in your dictionary.
+```
 personal_info = {"first_name":"Robertson", "last_name":"Fox", "age": 70, "city":"Long Beach"}
 print(personal_info["first_name"])                            #Robertson
 print(personal_info["last_name"])                             #Fox
 print(personal_info["age"])                                   #70
 print(personal_info["city"])                                  #Long Beach
+```
+# 6.2 
+Use a dictionary to store people's favourite numbers. Think of five names, and use them as keys in your dictionary.
 
-#6.2 Use a dictionary to store people's favourite numbers. Think of five names, and use them as keys in your dictionary.
 #Think of a favourite number for each person, and sotre each as a value in your dictionary.
 #Print each person's name and their favourite number. For even more fun, poll a few friends and get some actual data for your program.
-
+```
 favourite_number = {"Remy":23, "Jin":29, "Ricky": 77, "Alyssa":7,}
 favourite_number["Raveena"] = 50
 print(favourite_number)                                         #{'Remy': 23, 'Jin': 29, 'Ricky': 77, 'Alyssa': 7, 'Raveena': 50}
+```
 
+# 6.3 
+Think of five programming words you've learned about in the previous chapters.
 
-#6.3 Think of five programming words you've learned about in the previous chapters.
 #Use these words as the keys in your glossary, and store their meanings as values.
 #Use the newline character(\n) to insert a blank line between each word-meaning pair in your output
-
+```
 five_programming_languages = {
     "dictionaries":"A collection of key-value pairs.",
     "To make a numerical lists, What function is the best? : ":"range()\n",
@@ -150,3 +162,4 @@ five_programming_languages = {
     "How to copy the whole list using indexing? : ":"[:]\n",
     "How to access value in a dictionary?(2 ways) : ":"1. dictionary_name[key]\n2. dictionary_name.get(key,\"No value exists\")",
     }
+```
