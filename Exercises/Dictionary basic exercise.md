@@ -1,13 +1,17 @@
-"""
-we have a basic dictionary
+
+We have a basic dictionary
 Create two different functions which figures out 
 1. that returns keys
 2. that returns values
 
-"""
+---
+---
 
+# Below is answer
+---
+---
 
-
+```
 #Create a function to print out keys
 def keys_dictionary(dic):
   
@@ -26,4 +30,27 @@ def values_dictionary(dic):
 commodities = {"gold":1400, "silver":130, "iron":5}    
     
 keys_dictionary(commodities)
+"""
+gold
+silver
+iron
+"""
 values_dictionary(commodities)
+"""
+1400
+130
+5
+"""
+```
+
+# Here is another answer I came up on 5/28
+- I think the knowing the original answer is more important, because it is fundamental to know how to access keys, and values when we deal with dictionaries.
+```
+def basic_key(dic):
+    for a in dic.keys():
+        print(a)
+
+def basic_value(dic):
+    for a in dic.values():
+        print(a)
+```
