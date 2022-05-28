@@ -399,7 +399,16 @@ Exercise 6.1 dictionary
 ```
 personal_info = {"first_name":"Robertson", "last_name":"Fox", "age": 70, "city":"Long Beach"}
 ```
+We want the result to look like this
 -
+```
+Robertson Fox 70 Long Beach
+Jeffery Bezos 55 Hollywood
+Stephen Covey 98 New York
+```
+
+or 
+
 ```
 First_Name : Robertson
 Last_Name : Fox
@@ -413,15 +422,6 @@ First_Name : Stephen
 Last_Name : Covey
 Age : 98
 City : New York
-```
-
-
-We want the result to look like this
--
-```
-Robertson Fox 70 Long Beach
-Jeffery Bezos 55 Hollywood
-Stephen Covey 98 New York
 ```
 
 <details>
