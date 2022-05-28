@@ -568,5 +568,15 @@ favourite_number = {'Remy': 23, 'Jin': 29, 'Ricky': 77, 'Alyssa': 7, 'Raveena': 
   ```
   favourite_number["Remy"] = [23,520]
   favourite_number["Jin"] = [29,30]
+  
+  for key,value in favourite_number.items():
+      print(f"{key.title()}'s favourite number is : {value}")
+  """
+  Remy's favourite number is : [23, 520]
+  Jin's favourite number is : [29, 30]
+  Ricky's favourite number is : 77
+  Alyssa's favourite number is : 7
+  Raveena's favourite number is : 50
+  """
   ```
 </details>
