@@ -58,6 +58,7 @@ add a line at the end of your program stating what these animals have in common.
 Use a for loop to print the numbers from 1 to 20, inclusive
 <details>
   <summary>code</summary>
+  
   ```
   for number in range(1,21):
     print(number)
@@ -69,6 +70,7 @@ Use a for loop to print the numbers from 1 to 20, inclusive
 Make a list of 1~1,000,000 using for loop and find max and min values, and sum all the numbers in the list
 <details>
   <summary>code</summary>
+  
   ```
   n = []
   for number in range(1,1000001):
@@ -82,6 +84,7 @@ Make a list of 1~1,000,000 using for loop and find max and min values, and sum a
 Use the third argument of the range() function to make a list of the odd numbers from 1 to 20. Use a for loop to print each number
 <details>
   <summary>code</summary>
+  
   ```
   print(list(range(1,21,2)))
   ```
@@ -92,6 +95,7 @@ Use the third argument of the range() function to make a list of the odd numbers
 Make a list of multiple of 3 from 3 to 30. use a for loop to print the numbers in your list
 <details>
   <summary>code</summary>
+  
   ```
   threes = []
   for a in range(3,31):
@@ -106,6 +110,7 @@ Make a list of multiple of 3 from 3 to 30. use a for loop to print the numbers i
 Make a list of first 10 cubes and use a for loop to print out the value of each cube
 <details>
   <summary>code</summary>
+  
   ```
   cubes = []
   for cube in range(1,11):
@@ -119,6 +124,7 @@ Make a list of first 10 cubes and use a for loop to print out the value of each 
 Use a list comprehension to print the first cubes in a list
 <details>
   <summary>code</summary>
+  
   ```
   cubes_list_comprehension = [cube**3 for cube in range(1,11)]
   print(cubes_list_comprehension)
@@ -131,6 +137,7 @@ Use a list comprehension to print the first cubes in a list
 Print the message "The first three items in the list are:" then use a slice to print the first three items from that program's list
 <details>
   <summary>code</summary>
+  
   ```
   print("The first three items in the list are:")
   print(cubes_list_comprehension[:3])
@@ -139,6 +146,7 @@ Print the message "The first three items in the list are:" then use a slice to p
 Print the message "The three items from the middle of the list are:" then use a slice to print the three items from the middle of the list
 <details>
   <summary>code</summary>
+  
   ```
   print("The three items from the middle of the list are:")
   print(cubes_list_comprehension[2:5])
@@ -147,6 +155,7 @@ Print the message "The three items from the middle of the list are:" then use a 
 print the message "The last three items in the list are:" then use a slice to print the last three items in the list
 <details>
   <summary>code</summary>
+  
   ```
   print("The last three items in the list are:")
   print(cubes_list_comprehension[-3:])
@@ -158,6 +167,7 @@ print the message "The last three items in the list are:" then use a slice to pr
 start with the program from exercise 4.1. Make a copy of the list of pizzas and call it friend_pizzas
 <details>
   <summary>code</summary>
+  
   ```
   print(favorite_pizzas)
   friend_pizzas = favorite_pizzas[:]
@@ -166,6 +176,7 @@ start with the program from exercise 4.1. Make a copy of the list of pizzas and 
 #add a new pizza in the original list 
 <details>
   <summary>code</summary>
+  
   ```
   favorite_pizzas.append("Spinach pizza")
   ```
@@ -174,6 +185,7 @@ start with the program from exercise 4.1. Make a copy of the list of pizzas and 
 #add a different pizza to the list friend_pizzas
 <details>
   <summary>code</summary>
+  
   ```
   friend_pizzas.append("Pepperoni pizza")
   ```
@@ -182,6 +194,7 @@ start with the program from exercise 4.1. Make a copy of the list of pizzas and 
 #use a for loop to print out elements of the two lists. Make sure that they are different lists.
 <details>
   <summary>code</summary>
+  
   ```
   print("This is original pizza list : "+ str(favorite_pizzas))
   print("This is a new list : " + str(friend_pizzas))
@@ -193,6 +206,7 @@ start with the program from exercise 4.1. Make a copy of the list of pizzas and 
 choose a list and write two for loops to print each list of foods.
 <details>
   <summary>code</summary>
+  
   ```
   for pizza in favorite_pizzas:
     print(pizza)
@@ -206,6 +220,7 @@ choose a list and write two for loops to print each list of foods.
 A buffet style restaurant offers only five basic foods. Think of five simple foods, and store them in a tuple.
 <details>
   <summary>code</summary>
+  
   ```
   fivefoods = ("Kimchi", "Soft tofu spicy soup", "Spagehtti", "Chicken", "Pizza")
   ```
@@ -213,6 +228,7 @@ A buffet style restaurant offers only five basic foods. Think of five simple foo
 use a for loop to print each food the restaurant offers
 <details>
   <summary>code</summary>
+  
   ```
   for food in fivefoods:
     print(food)
@@ -222,6 +238,7 @@ use a for loop to print each food the restaurant offers
 try to modify one of the items, and make sure that python rejects the change
 <details>
   <summary>code</summary>
+  
   ```
   fivefoods[0] = "Dumpling"
   ```
@@ -230,6 +247,7 @@ The restaurant changes its menu, replacing two of the items with different foods
 Add a line that rewrites the tuple, and then use a for loop to print each of the items on the revised menu.
 <details>
   <summary>code</summary>
+  
   ```
   fivefoods = ("Kimchi","Soft tofu spicy soup", "Hamburger", "Chicken", "Soda")
   for food in fivefoods:
@@ -244,6 +262,7 @@ You should have ekys such as first_name, last_name, age, and city.
 Print each piece of information stored in your dictionary.
 <details>
   <summary>code</summary>
+  
   ```
   personal_info = {"first_name":"Robertson", "last_name":"Fox", "age": 70, "city":"Long Beach"}
   print(personal_info["first_name"])                            #Robertson
@@ -261,6 +280,7 @@ Use a dictionary to store people's favourite numbers. Think of five names, and u
 #Print each person's name and their favourite number. For even more fun, poll a few friends and get some actual data for your program.
 <details>
   <summary>code</summary>
+  
   ```
   favourite_number = {"Remy":23, "Jin":29, "Ricky": 77, "Alyssa":7,}
   favourite_number["Raveena"] = 50
@@ -276,6 +296,7 @@ Think of five programming words you've learned about in the previous chapters.
 #Use the newline character(\n) to insert a blank line between each word-meaning pair in your output
 <details>
   <summary>code</summary>
+  
   ```
   five_programming_languages = {
     "dictionaries":"A collection of key-value pairs.",
