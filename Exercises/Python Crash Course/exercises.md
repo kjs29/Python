@@ -388,3 +388,56 @@ Think of five programming words you've learned about in the previous chapters.
     }
   ```
 </details>
+
+# 6.7
+
+Start with the program you wrote in exercise 6.1. Make Two new dictionaries representing different people, and store all three dictionaries in a list called people.
+Loop through your list of people. As you loop through the list, print everything you know about each person.
+
+Exercise 6.1 dictionary
+-
+```
+personal_info = {"first_name":"Robertson", "last_name":"Fox", "age": 70, "city":"Long Beach"}
+```
+<details>
+  <summary>code</summary>
+  
+  ```
+  personal_info = {"first_name":"Robertson", "last_name":"Fox", "age": 70, "city":"Long Beach"}
+  personal_info2 = {"first_name":"Jeffery","last_name":"Bezos","age":55,"city":"Hollywood"}
+  personal_info3 = {"first_name":"Stephen","last_name":"Covey","age":98,"city":"New York"}
+  
+  people = []
+  people.append(personal_info)
+  people.append(personal_info2)
+  people.append(personal_info3)
+
+  print(people)
+
+  #loop through the whole list's profile
+  for eachinfo in people:
+    
+      #loop through each person's profile
+      for key,value in eachinfo.items():
+          print(f"{key.title()}:{value}")
+  ```
+</details>
+
+<details>
+  <summary>another code</summary>
+  
+  ```
+  people = []
+  people.append(personal_info)
+  people.append(personal_info2)
+  people.append(personal_info3)
+
+  print(people)
+  for a in people:
+      name = a["first_name"] + a["last_name"]
+      age = str(a["age"])
+      city = a["city"]
+    
+      print(name,age,city)
+  
+  ```
