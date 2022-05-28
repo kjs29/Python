@@ -1,14 +1,14 @@
+Tried on 5/28(x, didn't read the question correctly) 
 
+Question
+-
 We have a basic dictionary
 Create two different functions which figures out 
 1. that returns keys
 2. that returns values
 
----
----
 
 # Below is answer
----
 ---
 
 ```
