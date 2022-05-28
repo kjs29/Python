@@ -33,6 +33,6 @@ def increase_by_three(starting_number):
         starting_number += 3
     return lst
 
-print(increase_by_three(88))
+print(increase_by_three(88))        #[88, 91, 94, 97, 100]
 
 ```
