@@ -15,13 +15,13 @@ Think of at least three kinds of your favorite pizza. Store these pizzas name in
 </details>
 
 add a line at the end of your program outside the for loop.
+
 <details>
   <summary>code</example>
   
   ```
   print("I love pizza!")
   ```
-  
 </details>
 
 # 4.2
