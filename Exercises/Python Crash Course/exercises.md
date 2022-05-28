@@ -529,3 +529,25 @@ Another answer using the indexing,
   ```
   
 </details>
+
+# 6.9 Favourite Places
+Make a dictionary called favorite_places. Think of three names to use as keys in the dictionary, and store one to three favorite places for each person.
+
+To make this exercise a bit more interesting, ask some friends to name a few of their favorite places. Loop through the dictionary, and print each person's name and their favorite places.
+<details>
+  <summary>code</summary>
+  
+  ```
+  
+  favorite_places = {}
+  favorite_places["Jin"] = "California"
+  favorite_places["Charlotte"] = "Finland"
+  favorite_places["Han"] = "Vancouver"
+
+  print(favorite_places)
+
+
+  for each_key in favorite_places:
+      print(each_key, favorite_places[each_key])
+  ```
+</details>
