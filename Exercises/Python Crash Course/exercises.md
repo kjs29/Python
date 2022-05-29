@@ -446,6 +446,8 @@ Stephen Covey 98 New York
    {'first_name': 'Stephen', 'last_name': 'Covey', 'age': 98, 'city': 'New York'}]
   """
   
+  #Or this can be done like this
+  people1 = [personal_info,personal_info2,personal_info3]
 
   #loop through the whole list's profile
   for eachinfo in people:
