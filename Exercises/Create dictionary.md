@@ -30,6 +30,7 @@ If the number is 30
   sqr = {}
   for a in range(1,n+1):
       sqr[a] = a**2
+  print(sqr)
   ```
 </details>
 
@@ -41,5 +42,6 @@ If the number is 30
   sqr = {}
   for a in range(1,n+1):
       sqr.update({a:a**2})
+  print(sqr)
   ```
 </details>
