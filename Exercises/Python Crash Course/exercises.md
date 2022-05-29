@@ -439,6 +439,13 @@ Stephen Covey 98 New York
   people.append(personal_info3)
 
   print(people)
+  
+  """
+  [{'first_name': 'Robertson', 'last_name': 'Fox', 'age': 70, 'city': 'Long Beach'},
+   {'first_name': 'Jeffery', 'last_name': 'Bezos', 'age': 55, 'city': 'Hollywood'}, 
+   {'first_name': 'Stephen', 'last_name': 'Covey', 'age': 98, 'city': 'New York'}]
+  """
+  
 
   #loop through the whole list's profile
   for eachinfo in people:
@@ -604,12 +611,48 @@ Print the name of each city and all of the information you have stored about it.
     "New York" : {"country":"USA",
                   "population":8000000,
                   "fact":"The New York Public Library has over 50 million books 
-                          and other items and is the second largest library system in the nation after the Library of Congress. 
-    It is also the 3rd largest library in the world."}
-                  }       
+                          and other items and is the second largest library system
+                          in the nation after the Library of Congress. 
+                          It is also the 3rd largest library in the world."}
+    }       
   for cityname,details_of_each_city in cities.items():
       print(f"{cityname} : ")
-      for eachvalue in details_of_each_city:    
-          print(f"\t{eachvalue} : {details_of_each_city[eachvalue]}")
+      for eachkey in details_of_each_city:    
+          print(f"\t{eachkey} : {details_of_each_city[eachkey]}")
   ```
+</details>
+
+# 6.12 Extensions
+We're now working with examples that are complex enough that they can be extended in any number of ways.
+
+Use one of the example programs from this chapter, and
+
+extend it by adding new keys and values, changing the context of the program or improving the formatting fo the output.
+
+<details>
+  <summary>code</summary>
+  
+  ```
+  people = [{'first_name': 'Robertson', 'last_name': 'Fox', 'age': 70, 'city': 'Long Beach'},
+            {'first_name': 'Jeffery', 'last_name': 'Bezos', 'age': 55, 'city': 'Hollywood'},
+            {'first_name': 'Stephen', 'last_name': 'Covey', 'age': 98, 'city': 'New York'},
+            {'first_name': 'Jin', 'last_name': 'Kim', 'age': 29, 'city': 'Toronto'}]
+
+  for eachdict in people:
+    
+      name = eachdict["first_name"] +" "+ eachdict["last_name"]
+      age = eachdict["age"]
+      city = eachdict["city"]
+    
+      print(f"Hey I am {name.title()}, and I am {str(age).title()} years old, and I live in a beautiful city called {city}")
+  
+  """
+  Hey I am Robertson Fox, and I am 70 years old, and I live in a beautiful city called Long Beach
+  Hey I am Jeffery Bezos, and I am 55 years old, and I live in a beautiful city called Hollywood
+  Hey I am Stephen Covey, and I am 98 years old, and I live in a beautiful city called New York
+  """
+  
+  
+  ```
+  
 </details>
