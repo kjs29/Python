@@ -650,6 +650,7 @@ extend it by adding new keys and values, changing the context of the program or 
   Hey I am Robertson Fox, and I am 70 years old, and I live in a beautiful city called Long Beach
   Hey I am Jeffery Bezos, and I am 55 years old, and I live in a beautiful city called Hollywood
   Hey I am Stephen Covey, and I am 98 years old, and I live in a beautiful city called New York
+  Hey I am Jin Kim, and I am 29 years old, and I live in a beautiful city called Toronto
   """
   
   
