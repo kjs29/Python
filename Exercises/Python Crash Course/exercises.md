@@ -693,3 +693,18 @@ Otherwise, report that their table is ready.
       print("The table is ready")
   ```
 </details>
+
+# 7.3 Multiples of Ten
+Ask a user for a number, and then report whether the number is a multiple of ten or not.
+
+<details>
+  <summary>code</summary>
+  
+  ```
+  multiples_ten = int(input("What number? : "))
+  if multiples_ten % 10 == 0:
+      print(True)
+  else:
+      print(False)
+  ```
+</details>
