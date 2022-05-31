@@ -674,3 +674,22 @@ Print a message about that car, such as "Let me see if I can find you a Subaru."
   print(rental)
   ```
 </details>
+
+# 7.2 Restaurant Seating
+Write a program that asks the user how many people are in their dinner group.
+
+If the answer is more than 8, print a message saying they will have to wait for a table.
+
+Otherwise, report that their table is ready.
+<details>
+  <summary>code</summary>
+  
+  ```
+  restaurant = int(input("How many people are in your dinner group? : "))
+  
+  if restaurant > 8:
+      print("Sorry, there might be a wait to find a table for you")
+  else:
+      print("The table is ready")
+  ```
+</details>
