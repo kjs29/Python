@@ -659,3 +659,18 @@ extend it by adding new keys and values, changing the context of the program or 
   ```
   
 </details>
+
+# 7.1 Rental car
+Write a program that asks the user what kind of rental car they would like. 
+
+Print a message about that car, such as "Let me see if I can find you a Subaru."
+
+<details>
+  <summary>code</summary>
+  
+  ```
+  
+  rental = input("Let me see if I can find you a Subaru : ")
+  print(rental)
+  ```
+</details>
