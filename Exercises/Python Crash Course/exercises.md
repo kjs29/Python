@@ -739,23 +739,48 @@ and if they are over age 12, the ticket is $15. Write a loop in which you ask us
   <summary>code</summary>
   
   ```
-  prompt = "Welcome to AMC movie theater."
-  promt += "What is your age? : "
-  age = input(prompt)
+  msg = "\nWelcome to the best movie theater!\n(Type \"pay\" to end the program)\nWhat is your age? : "
+
   price = 0
-  endpeople = "yes"
-  
-  
-  while endpeople == "yes" :
-      print(age)
-      if age < 3:
-          pass
-      elif age >= 3 and age <= 12:
-          price += 10
-      elif age > 12:
-          price += 15
-      print(input(endpeople))
-          if endpeople == "yes"   
+
+  numberoftoddler = 0
+  numberofkids = 0
+  numberofregular = 0
+
+  while True:
+    
+      age = input(msg)
+    
+      if age.lower() != "pay":
+          age = int(age)
+        
+          print(f"{'Toddlers ($0)': <15}{'Kids ($10)':^15}{'Regular ($15)':^15}{'|'}{'# of people':^15}{'Total $':>7}")
+
+        
+          if age < 3:
+              price += 0
+              numberoftoddler += 1
+              numberofpeople = numberoftoddler + numberofkids + numberofregular
+              print(f"{numberoftoddler:<15}{numberofkids:^15}{numberofregular:^15}{'|'}{numberofpeople:^15}{price:>7}")
+        
+          elif age >= 3 and age <= 12:
+              price += 10
+              numberofkids += 1
+              numberofpeople = numberoftoddler + numberofkids + numberofregular
+              print(f"{numberoftoddler:<15}{numberofkids:^15}{numberofregular:^15}{'|'}{numberofpeople:^15}{price:>7}")
+        
+          elif age > 12:
+              price += 15
+              numberofregular += 1
+              numberofpeople = numberoftoddler + numberofkids + numberofregular
+              print(f"{numberoftoddler:<15}{numberofkids:^15}{numberofregular:^15}{'|'}{numberofpeople:^15}{price:>7}")
+
+      elif age.lower() == "pay":
+          numberofpeople = numberoftoddler + numberofkids + numberofregular
+          print(f"\n\nTotal : ${price}")
+          print(f"Total # of people : {numberofpeople}")
+          break
+     
   ```
   
 </details>
