@@ -782,5 +782,73 @@ and if they are over age 12, the ticket is $15. Write a loop in which you ask us
           break
      
   ```
+</details>
+
+
+# 7.6 Three Exits
+Write different versions of either Exercise 7.4 or Exercise 7.5 that do each of the following at least once:
+
+```
+prompt = "\nTell me what pizza topping you want : "
+message = ""
+
+while message.lower() != "quit":
+    message = input(prompt)
+    print(message)
+```
   
+- Use a conditional test in the while statement to stop the loop
+- Use an active variable to control how long the loop runs
+- Use a break statement to exit the loop when the user enters a 'quit' value
+
+<details>
+  <summary>Code for conditional test</summary>
+  
+  ```
+  prompt = "\nTell me what pizza topping you want : "
+  message = ""
+  
+  #use conditional test : while message is NOT "hawaiian", keep it going.
+  while message != "hawaiian".lower():
+      message = input(prompt)
+      print(message)
+      if "hawaiian" in message.lower():
+          print("I don't think we can be friends anymore.")
+  ```
+</details>
+  
+<details>
+  <summary>Code for active variable</summary>
+  
+  ```
+  prompt = "\nTell me what pizza topping you want : "
+  message = ""
+  active = True
+
+  while active:
+      message = input(prompt)
+    
+      if message == "quit":
+          active = False
+      else:
+          print(message)
+  ```
+</details>
+  
+<details>
+  <summary>code for break statement</summary>
+  
+  ```
+  prompt = "\nTell me what pizza topping you want"
+  prompt += "\nType 'quit' to quit : "
+  message = ""
+
+  while message != "quit".lower():
+      message = input(prompt)
+    
+      if message != "quit".lower():
+          print(message)
+          if "hawaiian" in message.lower():
+              print("Seriously?")
+  ```
 </details>
