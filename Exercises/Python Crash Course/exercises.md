@@ -852,3 +852,96 @@ while message.lower() != "quit":
               print("Seriously?")
   ```
 </details>
+
+  
+# 7.8 Deli
+Make a list called ```sandwich_orders``` and fill it with the names of various sandwiches.
+  
+Then make an empty list called ```finished_sandwiches```. Loop through the list of sandwich orders and print a message for each order,
+  
+such as ```I made your tuna sandwich``` As each sanwich is made, move it to the list of finished sandwiches.
+  
+After all the sandwiches have been made, print a message listing each sandwich that was made.
+  
+<details>
+  <summary>code</summary>
+  
+  ```
+  sandwich_orders = ["tuna","cheese","ham"]
+  finished_sandwiches = []
+  
+  #as long as sandwich_orders is not empty
+  while sandwich_orders:
+      item = sandwich_orders.pop()
+      print(f"I made your {item} sandwich")
+      
+      finished_sandwiches.append(item)
+
+  for new_item in finished_sandwiches:
+      print(new_item)
+  ```
+</details>
+
+# 7.9 No Pastrami
+  
+Using the list ```sandwich_orders``` from exercise 7.8, make sure the sandwich ```'pastrami'``` appears in the list at least three times.
+  
+Add code near the beginning of your program to print a message saying the deli has run out of pastrami, and then 
+  
+use a while loop to remove all occurrences of ```'pastrami'``` from ```sandwich_orders```.
+  
+Make sure no pastrami sandwiches end up in ```finished_sandwiches```.
+
+```
+sandwich_orders = ["tuna", "cheese", "ham"]
+```
+<details>
+  <summary>code</summary>
+  
+  ```
+  sandwich_order = ["tuna", "pastrami", "cheese", "pastrami", "ham", "pastrami"]
+  finished_sandwiches = []
+  print("Sorry, pastrami has run out.")
+
+  while "pastrami" in sandwich_order:
+      sandwich_order.remove("pastrami")
+
+  while sandwich_order:
+      each = sandwich_order.pop()
+      finished_sandwiches.append(each)
+    
+  print(finished_sandwiches)
+
+  ```
+</details>
+  
+# 7.10 Dream vacation
+  
+Write a program that polls users about their dream vacation. Write a prompt similar to
+  
+```If you could visit one place in the world, where would you go?```
+
+Include a block of code that prints the results of the poll.
+  
+<details>
+  <summary>code</summary>
+  
+  ```
+  vacation = {}
+
+  random = True
+
+  while random:
+      response = input("If you could visit one place in the world, where would you go?")
+      name = input("Enter your name")
+    
+      vacation[name] = response
+
+      repeat = input("Would you like to continue? (y/n) : ")
+      if repeat.lower() == "n":
+          random = False
+  print(f"\n{'Name': ^10} {'Dream Place': ^25}\n")
+  for key,value in vacation.items():
+      print(f"{key: ^10} {value: ^25}")
+  ```
+</details>
