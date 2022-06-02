@@ -1022,7 +1022,7 @@ Make a large shirt with the default message, and a medium shirt with a default m
   #call medium shirt, default message
   make_shirt(size = "medium")
   #any size, any message
-  make_shirt(size = "extra small", message = "Python will domiate!")
+  make_shirt(size = "extra small", message = "Python will dominate!")
   ```
   
 </details>
@@ -1048,3 +1048,83 @@ Give the parameter for the country a default value. Call your function for three
   ```
 </details>
   
+# 8.6 City Names
+Write a function called ```city_country()``` that takes in the name of a city and its country. The function should return a string formatted like this:
+  
+```
+"Santiago, Chile"  
+```
+Call your function with at least three city-country pairs, and print the values that are returned.
+<details>
+  <summary>code</summary>
+  
+  ```
+  def city_country(cityname,country):
+      a = f"{cityname}, {country}"
+      return a.title()
+
+  print(city_country("anyang","korea"))
+  print(city_country("Washington","USA"))
+  print(city_country("rome","italy"))
+  ```
+</details>
+
+# 8. 7 Album
+  
+<details>
+  <summary>code</summary>
+  
+  ```
+  def make_album(song, album, number = None):
+      dic = {"song": song ,"album": album}
+      if number:
+          dic["# of songs"] = number
+      return dic
+
+  print(make_album("IDOL","Love yourself", 25))
+  print(make_album("Someone like you", "21", 11))
+  print(make_album("Some Nights", "Some Nights", 10))
+  ```
+</details>
+  
+# 8.8 User Albums
+  
+<details>
+  <summary>code</summary>
+  
+  ```
+  def make_album(song, album, number = None):
+      dic = {"song": song ,"album": album}
+      if number:
+          dic["# of songs"] = number
+      return dic
+  while True:
+
+      print("Tell me your favorite song, and the album that has the song, and hopefully the number of the songs.")
+      print("If you want to quit any time, type \'q\'")
+
+      songs = input("\nWhat is your favourite song?")
+
+      if songs.lower() == 'q':
+          break
+
+      albums = input("\nWhat is the name of the album that has the song?")
+
+      if albums.lower() == 'q':
+          break
+
+      numbers = int(input("\nHow many songs are in the album? : "))
+
+      if numbers == 'q':
+          break
+
+      elif type(numbers) == str:
+          print("Enter a number\n")
+
+
+      final = make_album(songs, albums, numbers)
+      print(final)
+  ```
+</details>
+  
+# 8
