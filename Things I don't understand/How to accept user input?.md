@@ -1,20 +1,29 @@
-I want to take user inputs stored in the dictionary
+I want to take user's favorite number as long as they want,
 
-where user types 'q' to quit the program.
+until user types 'q' to quit the program.
 
+If they type q, the program should end, instead of having error message.
 
 # this is what I came up with.
 
 ```
 while True:
-    print("Tell me your favorite number : ")
     
-    fav_num = int(input("\n"))
+    fav_num = input("\nWhat is your favourite number?")
     
-    if type(fav_num) != int:
-        break
-      
+    try:
+        if type(fav_num) == str:
+        
+            fav_num = int(fav_num)
+    
+    except ValueError:
+        pass
+    
+    dic = {"n" : fav_num}
+    
+    print(f"\n{dic}")
 ```
 
-But this appears error that says 
-```ValueError: invalid literal for int() with base 10: 'q'```
+edit 6/2
+I realized that this has to do with error handling.
+
