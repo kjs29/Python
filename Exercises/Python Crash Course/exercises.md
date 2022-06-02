@@ -945,3 +945,106 @@ Include a block of code that prints the results of the poll.
       print(f"{key: ^10} {value: ^25}")
   ```
 </details>
+
+# 8.1 Message
+Write a function called ```display_message()``` that prints oe sentence telling everyone what you are learning about in this chapter.
+  
+Call the function, and make sure the message displays correctly.
+  
+<details>
+  <summary>code</summary>
+  
+  ```
+  def display_message(msg):
+      print(msg)
+  
+  display_message("I am learning programming to be the best programmer steadily and systematically")
+  ```
+  
+</details>
+  
+# 8.2 Favorite Book
+Write a function called ```favorite_book()``` that accepts one parameter, ```title```.
+  
+The function should print a message, such as ```One of my favorite books is Alice in Wonderland```.
+  
+Call the function, making sure to include a book title as an argument in the function call.
+  
+<details>
+  <summary>code</summary>
+  
+  ```
+  def favorite_book(title):
+      print(f"This book, entitled {title}, has changed my life.")
+  
+  favorite_book("7 Habits of Highly Effective People")
+  ```
+  
+</details>
+  
+# 8. 3 T-shirt
+Write a function called ```make_shirt()``` that accepts a size and the text of a message that should be printed on the shirt.
+  
+The function should print a sentence summarizing the size of the shirt and the message printed on it.
+  
+Call the function once using posiitonal arguments to make a shirt. Call the function a second time using keyword arguments.
+  
+<details>
+  <summary>code</summary>
+  
+  ```
+  def make_shirt(size, message):
+      print(f"\'{message}\'\nsize : {size}")
+    
+  #positional arguments
+  make_shirt("large", "I love python")
+
+  #keyword arguments 
+  make_shirt(message = "I love python3", size = "big")
+  ```
+  
+</details>
+  
+# 8. 4 Large Shirts
+  
+Modify the ```make_shirt()``` function so that shirts are large by default with a message that reads ```I love python```.
+Make a large shirt with the default message, and a medium shirt with a default message, and a shirt of any size with a different message.
+
+<details>
+  <summary>code</summary>
+  
+  ```
+  def make_shirt(size = "large", message = "I love python"):
+      print(f"\'{message}\'\nsize = {size}")
+
+  #call large shirt , default message
+  make_shirt()
+  #call medium shirt, default message
+  make_shirt(size = "medium")
+  #any size, any message
+  make_shirt(size = "extra small", message = "Python will domiate!")
+  ```
+  
+</details>
+  
+# 8.5 Cities
+  
+Write a function called ```describe_city()``` that accepts the name of a city and its country.
+  
+The function should print a simple sentence, such as  ```Reykjavik is in Iceland```.
+  
+Give the parameter for the country a default value. Call your function for three different cities, at least one of which is not in the default country.
+  
+<details>
+  <summary>code</summary>
+  
+  ```
+  def describe_city(city, country = "korea"):
+      print(f"{city} is in {country}")
+
+  describe_city("Seoul")
+  describe_city("Anyang")
+  describe_city(country = "Australia", city = "Sidney")
+  ```
+</details>
+  
