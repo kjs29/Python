@@ -1127,4 +1127,58 @@ Call your function with at least three city-country pairs, and print the values 
   ```
 </details>
   
-# 8
+# 8 .9
+  
+<details>
+  <summary>code</summary>
+  
+  ```
+  def show_messages(lst):
+      for each in lst:
+          print(each)
+  
+  hello = ["Hello!", "Did you eat yet?", "Good morning", "Good luck"]
+  show_messages(hello)
+  ```
+</details>
+
+# 8. 10
+<details>
+  <summary>code</summary>
+  
+  ```
+  hello = ["Hello!", "Did you eat yet?", "Good morning", "Good luck"]
+  sent_messages = []
+  def send_messages(lst1,lst2):
+      while lst1:
+          msg = lst1.pop(0)
+          lst2.append(msg)
+  
+  send_messages(hello,sent_messages)
+  print(hello)
+  print(f"\n{sent_messages}")
+  ```
+  
+</details>
+  
+# 8. 11
+<details>
+  <summary>code</summary>
+  
+  ```
+  hello = ["Hello!", "Did you eat yet?", "Good morning", "Good luck"]
+  sent_messages = []
+  def send_messages(lst1,lst2):
+      while lst1:
+          msg = lst1.pop(0)
+          lst2.append(msg)
+  
+  #copy of the original list 'hello'
+  send_messages(hello[:],sent_messages)
+  print(hello)
+  print(f"\n{sent_messages}")
+  
+  
+  ```
+  
+</details>
