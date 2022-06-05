@@ -1182,3 +1182,37 @@ Call your function with at least three city-country pairs, and print the values 
   ```
   
 </details>
+
+# 8.12 
+<details>
+  <summary>code</summary>
+  
+  ```
+  def prepare_sandwich(*a):
+      print("What Kind Of Sandwich")
+      for each in a:
+          print(f"- {each}")
+
+  prepare_sandwich("pizza", "homemade", 15)
+  prepare_sandwich("ham","sobeys",10)
+  prepare_sandwich("vegetables","walmart",18)
+
+  ```
+
+</details>
+  
+# 8.13
+
+<details>
+  <summary>code</summary>
+  
+  ```
+  def build_profile(first,last,**random):
+      random["first name"] = first
+      random["last name"] = last
+      return random
+  
+  build_profile("Jin","Kim",age = 29, passion = 100, Sincerity = True)
+  ```
+</details>
+  
