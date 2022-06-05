@@ -17,9 +17,13 @@ Third key:value is Scott : ['c++', 'C']
 
 How would we get it?
 
-# Below is an answer
----
+### Below is an answer
 
-```
-print(f"Third key:value is {list(favourite_languages)[2].title()} : {list(favourite_languages.values())[2]}")
-```
+
+<details>
+    <summary>Answer</summary>
+    
+    ```
+    print(f"Third key:value is {list(favourite_languages)[2].title()} : {list(favourite_languages.values())[2]}")
+    ```
+</details>
