@@ -6,7 +6,7 @@ and we want to double the index,
 and replace the original indexed element with the doubled indexed number.
 if index number is too big in the list, it would just return the original list.
 
-Create a function that does this.
+Create a function `double_index` that does this.
 
 For example,
 ```
