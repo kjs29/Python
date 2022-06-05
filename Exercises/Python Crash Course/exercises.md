@@ -1127,7 +1127,7 @@ Call your function with at least three city-country pairs, and print the values 
   ```
 </details>
   
-# 8 .9
+# 8 .9 Messages
   
 <details>
   <summary>code</summary>
@@ -1142,7 +1142,7 @@ Call your function with at least three city-country pairs, and print the values 
   ```
 </details>
 
-# 8. 10
+# 8. 10 Sending Messages
 <details>
   <summary>code</summary>
   
@@ -1161,7 +1161,7 @@ Call your function with at least three city-country pairs, and print the values 
   
 </details>
   
-# 8. 11
+# 8. 11 Archived Messages
 <details>
   <summary>code</summary>
   
@@ -1183,7 +1183,7 @@ Call your function with at least three city-country pairs, and print the values 
   
 </details>
 
-# 8.12 
+# 8.12 Sandwiches
 <details>
   <summary>code</summary>
   
@@ -1201,7 +1201,7 @@ Call your function with at least three city-country pairs, and print the values 
 
 </details>
   
-# 8.13
+# 8.13 User Profile
 
 <details>
   <summary>code</summary>
@@ -1216,3 +1216,17 @@ Call your function with at least three city-country pairs, and print the values 
   ```
 </details>
   
+# 8.14 Cars
+
+<details>
+  <summary>code</summary>
+  
+  ```
+  def make_car(a,b,**c):
+      c["Manufacturer"] = a.title()
+      c["Model"] = b.title()
+      return c
+  
+  car = make_car("subaru", "outback", color="blue", tow_package=True)
+  ```
+</details>
