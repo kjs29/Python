@@ -1414,3 +1414,50 @@ Call your function with at least three city-country pairs, and print the values 
 
   ```
 </details>
+
+  
+# 9.6 Ice Cream Stand
+
+<details>
+  <summary>code</sumamry>
+  
+  ```
+  class Restaurant:
+      def __init__(self, restaurant_name, cuisine_type):
+          self.restaurant_name = restaurant_name
+          self.cuisine_type = cuisine_type
+          self.number_served = 0
+
+      def describe_restaurant(self):
+          print(f"Name : {self.restaurant_name}\nCuisine Type : {self.cuisine_type}")
+
+      def open_restaurant(self):
+          print(f"{self.restaurant_name} is open")
+
+      def set_number_served(self, customers):
+          self.number_served = customers
+
+      def increment_number_served(self, customers):
+          self.number_served += customers
+
+
+  #subclass
+  class IceCreamStand(Restaurant):
+
+      def __init__(self, restaurant_name, cuisine_type):
+          super().__init__(restaurant_name, cuisine_type)
+
+          self.flavors = []
+
+      def display_flavors(self):
+          print("we have amazing flavors : \n")
+          for a in self.flavors:
+              print(f"- {a}")
+
+
+
+  icecream1 = IceCreamStand("Sunday", "Icecream")
+  icecream1.flavors = ["chocolate","vanila","cookie and cream","coffee"]
+  icecream1.display_flavors()
+  ```
+</details>
