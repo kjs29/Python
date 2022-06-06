@@ -1230,3 +1230,187 @@ Call your function with at least three city-country pairs, and print the values 
   car = make_car("subaru", "outback", color="blue", tow_package=True)
   ```
 </details>
+
+# 9.1 Restaurant
+<details>
+  <summary>code</summary>
+  
+  ```
+  class Restaurant:
+      def __init__(self, restaurant_name, cuisine_type):
+          self.restaurant_name = restaurant_name
+          self.cuisine_type = cuisine_type
+
+      def describe_restaurant(self):
+          print(f"Name : {self.restaurant_name}\nCuisine Type : {self.cuisine_type}")
+
+      def open_restaurant(self):
+          print(f"{self.restaurant_name} is open")
+
+  restaurant = Restaurant("THE KING & QUEEN", "Asian")
+
+  #Calling both attributes
+  print(restaurant.restaurant_name)
+  print(restaurant.cuisine_type)
+
+  #Calling both methods
+  restaurant.describe_restaurant()
+  restaurant.open_restaurant()
+  ```
+</details>
+
+# 9.2 Three Restaurants
+<details>
+  <summary>code</summary>
+  
+  ```
+  #Calling three different instances
+  restaurant2 = Restaurant("Gangnam Style", "Korean")
+  restaurant3 = Restaurant("Fish & Chips", "British")
+  restaurant4 = Restaurant("Catching the wave", "Japanese")
+
+  #Calling describe_restaurant() method for each instance
+  restaurant2.describe_restaurant()
+  restaurant3.describe_restaurant()
+  restaurant4.describe_restaurant()
+  ```
+</details>
+  
+# 9.3 Users
+
+<details>
+  <summary>code</summary>
+  
+  ```
+  class User:
+      def __init__(self, first_name, last_name, **random_info):
+          self.first_name = first_name
+          self.last_name = last_name
+          self.random_info = random_info
+
+
+      def describe_user(self):
+          print(f"Name : {self.first_name} {self.last_name}")
+          for key,value in self.random_info.items():
+              print(f"{key} : {value}")
+      def greet_user(self):
+          print(f"Welcome, {self.first_name} {self.last_name}!")
+        
+  person1 = User("Haru", "Jackson", MBTI = "ESTP", age = 35)
+  person2 = User("Josh", "Groban", Hobbies = ["Break Dancing", "Painting"])
+  
+  #print all attributes
+  attrs1 = vars(person1)
+  attrs2 = vars(person2)
+  
+  #print attrs
+  print(attrs1)
+  print(attrs2)
+
+  #print each item in attrs
+  print(", ".join("%s : %s" % item for item in attrs1.items()))
+  print(", ".join("%s : %s" % item for item in attrs2.items()))
+
+  person1.describe_user()
+  person1.greet_user()
+
+  person2.describe_user()
+  person2.greet_user()
+
+  ```
+</details>
+  
+# 9.4 Number Served
+<details>
+  <summary>code</summary>
+  
+  ```
+  class Restaurant:
+      def __init__(self, restaurant_name, cuisine_type):
+          self.restaurant_name = restaurant_name
+          self.cuisine_type = cuisine_type
+          self.number_served = 0
+
+      def describe_restaurant(self):
+          print(f"Name : {self.restaurant_name}\nCuisine Type : {self.cuisine_type}")
+
+      def open_restaurant(self):
+          print(f"{self.restaurant_name} is open")
+
+      def set_number_served(self, customers):
+          self.number_served = customers
+
+      def increment_number_served(self, customers):
+          self.number_served += customers
+
+
+
+
+  restaurant = Restaurant("THE KING & QUEEN", "Asian")
+
+  #print the number_served
+  print(restaurant.number_served)
+
+  #changing value of number_served directly
+  restaurant.number_served = 15
+
+  #print it again
+  print(restaurant.number_served)
+
+  #calling method set_number_served
+  restaurant.set_number_served(20)
+  print(restaurant.number_served)
+
+  #calling method increment_number_served
+  restaurant.increment_number_served(22)
+  print(restaurant.number_served)
+
+  ```
+</details>
+  
+# 9. 5 Login Attempts
+<details>
+  <summary>code</summary>
+  
+  ```
+  class User:
+      def __init__(self, first_name, last_name, **random_info):
+          self.first_name = first_name
+          self.last_name = last_name
+          self.random_info = random_info
+          self.login_attempts = 0
+
+      def describe_user(self):
+          print(f"Name : {self.first_name} {self.last_name}")
+          for key,value in self.random_info.items():
+              print(f"{key} : {value}")
+      def greet_user(self):
+          print(f"Welcome, {self.first_name} {self.last_name}!")
+
+      def increment_login(self):
+          self.login_attempts += 1
+
+      def reset_login_attempts(self):
+          self.login_attempts = 0
+
+  # Make instance        
+  user1 = User("K","J")
+
+  # Calling increment_login()
+  user1.increment_login()
+
+  user1.increment_login()
+
+  user1.increment_login()
+
+  # Check
+  print(user1.login_attempts)
+
+  #calling reset_login_attempts
+  user1.reset_login_attempts()
+
+  #check
+  print(user1.login_attempts)
+
+  ```
+</details>
