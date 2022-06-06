@@ -1419,7 +1419,7 @@ Call your function with at least three city-country pairs, and print the values 
 # 9.6 Ice Cream Stand
 
 <details>
-  <summary>code</sumamry>
+  <summary>code</summary>
   
   ```
   class Restaurant:
@@ -1460,4 +1460,55 @@ Call your function with at least three city-country pairs, and print the values 
   icecream1.flavors = ["chocolate","vanila","cookie and cream","coffee"]
   icecream1.display_flavors()
   ```
+  
 </details>
+
+# 9.7 Admin
+  
+<details>
+  <summary>code</summary>
+  
+  ```
+  
+  class User:
+      def __init__(self, first_name, last_name, **random_info):
+          self.first_name = first_name
+          self.last_name = last_name
+          self.random_info = random_info
+          self.login_attempts = 0
+
+      def describe_user(self):
+          print(f"Name : {self.first_name} {self.last_name}")
+          for key,value in self.random_info.items():
+              print(f"{key} : {value}")
+      def greet_user(self):
+          print(f"Welcome, {self.first_name} {self.last_name}!")
+
+      def increment_login(self):
+          self.login_attempts += 1
+
+      def reset_login_attempts(self):
+          self.login_attempts = 0
+
+  class Admin(User):
+      def __init__(self, first_name, last_name, **random_info):
+          super().__init__(first_name, last_name, **random_info)
+          self.privileges = []
+
+      #creating a method for displaying privileges
+      def show_privileges(self):
+          print("Admins have these privileges : \n")
+          print(self.privileges)
+          for a in self.privileges:   
+              print(f"- {a}")
+
+  user1 = Admin("JG","K")
+
+  #define user1.privileges directly
+  user1.privileges = ["Can promote new memebers", "Can view log history of other people"]
+
+  user1.show_privileges()
+  ```
+</details>
+  
+  
