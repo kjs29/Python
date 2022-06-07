@@ -1468,7 +1468,7 @@ Call your function with at least three city-country pairs, and print the values 
 <details>
   <summary>code</summary>
   
-  ```
+  ```py
   
   class User:
       def __init__(self, first_name, last_name, **random_info):
