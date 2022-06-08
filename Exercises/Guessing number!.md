@@ -6,7 +6,7 @@ If the random number is higher than user's guess, it says 'up'
 
 if the random number is lower than user's guess, it says 'down'
 
-Mkae sure to mention how many tries user has also.
+Make sure to mention how many tries user has also.
 
 <details>
   <summary>answer</summary>
