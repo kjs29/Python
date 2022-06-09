@@ -1512,3 +1512,295 @@ Call your function with at least three city-country pairs, and print the values 
 </details>
   
   
+# 9. 8 Privileges
+  
+<details>
+  <summary>code</summary>
+  
+  ```
+  class User:
+      def __init__(self, first_name, last_name, **random_info):
+          self.first_name = first_name
+          self.last_name = last_name
+          self.random_info = random_info
+          self.login_attempts = 0
+
+      def describe_user(self):
+          print(f"Name : {self.first_name} {self.last_name}")
+          for key,value in self.random_info.items():
+              print(f"{key} : {value}")
+      def greet_user(self):
+          print(f"Welcome, {self.first_name} {self.last_name}!")
+
+      def increment_login(self):
+          self.login_attempts += 1
+
+      def reset_login_attempts(self):
+          self.login_attempts = 0
+
+  class Privileges:
+
+      def __init__(self, privileges = []):
+          self.privileges = privileges
+
+      def show_privileges(self):
+          print("Admins have these privileges : \n")
+
+          for a in self.privileges:   
+              print(f"- {a}")
+
+
+
+  class Admin(User):
+      def __init__(self, first_name, last_name, **random_info):
+          super().__init__(first_name, last_name, **random_info)
+          self.privileges = Privileges()
+
+
+  user1 = Admin("Jin","Kim", hobby = "hiking")
+  user1.privileges.show_privileges()
+
+
+  a= ["resetting passwords", "can moderate discussion"]
+  user1.privileges.privileges = a
+  user1.privileges.show_privileges()
+  ```
+</details>
+  
+# 9.9 Battery Upgrade
+  
+<details>
+  <summary>code</summary>
+  
+  ```
+  class Car:
+      def __init__(self, make, model, year):
+          self.make = make
+          self.model = model
+          self.year = year
+          self.odometer = 0
+
+      def get_descriptive(self):
+          long_name = f"{self.make} {self.model} {self.year}"
+          return long_name.title()
+
+      def read_odometer(self):
+          print(f"This car has {self.odometer} miles on it.")
+
+      def update_odometer(self, mileage):
+          if mileage >= self.odometer:
+              self.odometer = mileage
+          else:
+              print("You can't roll back an odometer!")
+
+      def increment_odometer(self, miles):
+          self.odometer += miles
+
+
+  class Battery:
+      def __init__(self, battery_size = 75):
+          self.battery_size = battery_size
+
+      def describe_battery(self):
+          print(f"This car has a {self.battery_size} -kWh battery")
+
+      def get_range(self):
+          if self.battery_size == 75:
+              range = 260
+          elif self.battery_size == 100:
+              range = 315
+          print(f"This car can go about {range} miles on a full charge.")
+
+      def upgrade_battery(self):
+          if self.battery_size < 100:
+              self.battery_size = 100
+
+
+  class ElectricCar(Car):
+      def __init__(self, make, model, year):
+          super().__init__(make, model, year)
+          self.battery = Battery()
+
+
+  #create an instance ofelectric car with a default battery size
+  electric1 = ElectricCar("TSLA", "Y", 2022)
+
+  electric1.battery.get_range()
+
+  electric1.battery.upgrade_battery()
+  electric1.battery.get_range()
+  ```
+</details>
+  
+  
+# 9.10 Imported Restaurant
+<details>
+  <summary>code</summary>
+  
+  
+  
+  <em>restaurant.py</em>
+  
+  ```py
+  class Restaurant:
+      def __init__(self, name, cuisine, since):
+          self.name = name
+          self.cuisine = cuisine
+          self.since = since
+
+      def introduce(self):
+          print(f"Hello! We are {self.name}, we have {self.cuisine} food, and we have been open since {self.since}")
+
+
+
+
+  rest1 = Restaurant("THE BEST", "asian", 2002)
+
+
+  rest1.introduce()
+  ```
+  
+  
+  <em>new_file.py</em>
+  
+  ```py
+  
+  from restaurant import Restaurant   #import restaurant.py module
+
+  #create an instance and call one of the restaurant's methods
+  rest1 = Restaurant("The GReat", "Thai", 2008)
+  rest1.introduce()
+  ```
+</details>
+  
+# 9.11 Imported Admin
+<details>
+  <summary>code</summary>
+  
+  <em>user.py</em>
+  
+  ```py
+  class User:
+      def __init__(self, first_name, last_name, **random_info):
+          self.first_name = first_name
+          self.last_name = last_name
+          self.random_info = random_info
+          self.login_attempts = 0
+
+      def describe_user(self):
+          print(f"Name : {self.first_name} {self.last_name}")
+          for key,value in self.random_info.items():
+              print(f"{key} : {value}")
+      def greet_user(self):
+          print(f"Welcome, {self.first_name} {self.last_name}!")
+
+      def increment_login(self):
+          self.login_attempts += 1
+
+      def reset_login_attempts(self):
+          self.login_attempts = 0
+
+  class Privileges:
+
+      def __init__(self, privileges = []):
+          self.privileges = privileges
+
+      def show_privileges(self):
+          print("Admins have these privileges : \n")
+
+          for a in self.privileges:   
+              print(f"- {a}")
+
+
+
+  class Admin(User):
+      def __init__(self, first_name, last_name, **random_info):
+          super().__init__(first_name, last_name, **random_info)
+          self.privileges = Privileges()
+
+
+  user1 = Admin("Jin","Kim", hobby = "hiking")
+  user1.privileges.show_privileges()
+
+
+  a= ["resetting passwords", "can moderate discussion"]
+  user1.privileges.privileges = a
+  user1.privileges.show_privileges()
+  ```
+  
+  <em>new_file.py</em>
+  ```py
+  from user import Admin
+
+  #make an Admin instance
+  user1= Admin("DoRe","Mi",hobby= "reading")
+
+  #setting privileges
+  user1.privileges.privileges = ["banning users", "viewing log history"]
+
+  #check if it works well
+  user1.privileges.show_privileges()
+  ```
+</details>
+  
+# Multiple Modules
+<details>
+  <summary>code</summary>
+  
+  userclass.py
+  ```py
+  class User:
+      def __init__(self, first_name, last_name, **random_info):
+          self.first_name = first_name
+          self.last_name = last_name
+          self.random_info = random_info
+          self.login_attempts = 0
+
+      def describe_user(self):
+          print(f"Name : {self.first_name} {self.last_name}")
+          for key,value in self.random_info.items():
+              print(f"{key} : {value}")
+      def greet_user(self):
+          print(f"Welcome, {self.first_name} {self.last_name}!")
+
+      def increment_login(self):
+          self.login_attempts += 1
+
+      def reset_login_attempts(self):
+          self.login_attempts = 0
+  ```
+  
+  userclass2.py
+  ```py
+  from userclass import User      #since there is Admin class which is a subclass of User class from another module, we must import User module from userclass.py
+
+
+  class Privileges:
+
+      def __init__(self, privileges = []):
+          self.privileges = privileges
+
+      def show_privileges(self):
+          print("Admins have these privileges : \n")
+
+          for a in self.privileges:   
+              print(f"- {a}")
+
+
+  class Admin(User):
+      def __init__(self, first_name, last_name, **random_info):
+          super().__init__(first_name, last_name, **random_info)
+          self.privileges = Privileges()
+  ```
+  
+  new_file.py
+  ```py
+  from userclass import User
+  from userclass2 import Admin, Privileges
+
+  person = Admin("JB","Park", hobby = "singing")
+
+  person.privileges.privileges = ["viewing social media account", "banning users"]
+
+  person.privileges.show_privileges()
+  ```
