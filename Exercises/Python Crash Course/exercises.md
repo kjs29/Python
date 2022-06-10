@@ -1874,3 +1874,20 @@ Call your function with at least three city-country pairs, and print the values 
   ```
   
 </details>
+
+# 9. 14 Lottery
+  
+<details>
+  <summary>code</summary>
+  
+  ```py
+  from random import choice, randint
+  lst_num = [1,2,3,4,5,6,7,8,9,10,"a","b","c","d","e"]
+  lottery = []
+  for a in range(4):
+      b = choice(lst_num)
+      print(b)
+      lottery.append(b)
+  print(lottery)
+  ```
+</details>
