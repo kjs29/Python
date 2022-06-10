@@ -1743,11 +1743,11 @@ Call your function with at least three city-country pairs, and print the values 
   ```
 </details>
   
-# Multiple Modules
+# 9.12 Multiple Modules
 <details>
   <summary>code</summary>
   
-  userclass.py
+  <em>userclass.py</em>
   ```py
   class User:
       def __init__(self, first_name, last_name, **random_info):
@@ -1770,7 +1770,7 @@ Call your function with at least three city-country pairs, and print the values 
           self.login_attempts = 0
   ```
   
-  userclass2.py
+  <em>userclass2.py</em>
   ```py
   from userclass import User      #since there is Admin class which is a subclass of User class from another module, we must import User module from userclass.py
 
@@ -1793,7 +1793,7 @@ Call your function with at least three city-country pairs, and print the values 
           self.privileges = Privileges()
   ```
   
-  new_file.py
+  <em>new_file.py</em>
   ```py
   from userclass import User
   from userclass2 import Admin, Privileges
