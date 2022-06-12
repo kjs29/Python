@@ -84,3 +84,42 @@
   print(lottery)
   ```
 </details>
+
+# 10.1 Learning python
+<details>
+  <summary>code</summary>
+  
+  <em>python_so_far_6.12txt</em>
+  ```
+  Python is amazing!
+  I love you python!
+  ```
+  
+  ```py
+  with open("C:/Users/daily/Desktop/Coding/Python/git_practice/python_so_far_6.12.txt") as file:
+      first = file.read()
+  print(first)
+
+  with open("C:/Users/daily/Desktop/Coding/Python/git_practice/python_so_far_6.12.txt") as file:
+      for a in file:
+          print(a.strip())
+
+  with open("C:/Users/daily/Desktop/Coding/Python/git_practice/python_so_far_6.12.txt") as file:
+      third = file.readlines()
+  for a in third:
+      print(a.strip())
+  ```
+</details>
+  
+# 10.2 Learning C
+<details>
+  <summary>code</summary>
+  
+  ```py
+  with open(filename) as h:
+      a = h.readlines()
+  for bb in a:
+      print(bb.strip().replace("python","c")
+  
+  ```
+</details>
