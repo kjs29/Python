@@ -123,3 +123,49 @@
   
   ```
 </details>
+# 10.3 guest
+<details>
+  <summary>code</summary>
+  
+  ```py
+  name = input("What is your name? \n")
+
+  with open("C:/Users/daily/Desktop/Coding/Python/git_practice/guest.txt", "w") as a:
+      a.write(name)
+
+  with open("C:/Users/daily/Desktop/Coding/Python/git_practice/guest.txt", "r") as a:
+      guest = a.read()
+  print(guest.strip())
+  ```
+</details>
+  
+# 10.4 Guest Book
+<details>
+  <summary>code</summary>
+  
+  ```py
+  with open("C:/Users/daily/Desktop/Coding/Python/git_practice/guest_book.txt", "a") as file:
+    while True:
+        name = input("What is your name?\n")
+        name += "\n"
+        file.write(name)
+        print(f"hello, {name}\n")
+  ```
+  
+</details>
+  
+# 10.5 Programming Poll
+<details>
+  <summary>code</summary>
+  
+  ```py
+  with open("C:/Users/daily/Desktop/Coding/Python/git_practice/reason to program.txt","a") as file:
+      reason = input("Why do you like programming?\n")
+      file.write(f"reason : {reason}\n")
+
+
+  with open("C:/Users/daily/Desktop/Coding/Python/git_practice/reason to program.txt") as file:
+      reason_to_program = file.read()
+      print(reason_to_program.strip())
+  ```
+</details>
