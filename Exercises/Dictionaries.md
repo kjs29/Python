@@ -30,26 +30,34 @@ Phil's favourite languages are:
 
 How would you write the code?
 
-# answer
--
-```
-for a,x in favourite_languages.items():
-    if len(x) != 1:
-        print(f"\n{a.title()}'s favourite languages are: ")
-    else:
-        print(f"\n{a.title()}'s favourite language is: ")
-    for each in x:
-        print(f"\t{each.title()}")
-```
+### Below is answer
+<details>
+  <summary>answer</summary>
 
-# another answer
-```
-for a in favourite_languages:
+  ```py
+  for a,x in favourite_languages.items():
+      if len(x) != 1:
+          print(f"\n{a.title()}'s favourite languages are: ")
+      else:
+          print(f"\n{a.title()}'s favourite language is: ")
+      for each in x:
+          print(f"\t{each.title()}")
+  ```
+</details>
+
+#### another answer
+
+<details>
+  <summary>answer2</summary>
+	
+  ```py
+  for a in favourite_languages:
     
-    if len(favourite_languages[a]) != 1:
-        print(f"\n{a.title()}'s favourite languages are : ")
-    else:
-        print(f"\n{a.title()}'s favourite language is : ")
-    for each_value in favourite_languages[a]:
-        print(f"\t{each_value.title()}")
-```
+      if len(favourite_languages[a]) != 1:
+          print(f"\n{a.title()}'s favourite languages are : ")
+      else:
+          print(f"\n{a.title()}'s favourite language is : ")
+      for each_value in favourite_languages[a]:
+          print(f"\t{each_value.title()}")
+  ```
+</details>
