@@ -1,4 +1,4 @@
-Tried 5/28(x)
+Tried 5/28(x), 6/12(o)
 
 # Write a function named 'frequency_dictionary'
 that takes a list of elements named words as a parameter.
@@ -21,7 +21,7 @@ should return
 <details>
   <summary>answer</summary>
   
-  ```
+  ```py
   #defining a function named 'frequency_dictionary' that has a 'words' parameter
   def frequency_dictionary(words):
 
