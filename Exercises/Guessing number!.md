@@ -46,3 +46,31 @@ Make sure to mention how many tries user has also.
           break
   ```
 </details>
+<details>
+  <summary>answer2</summary>
+  
+  ```py
+  from random import randint
+  real = randint(1,100)
+  count = 0
+
+  a =int(input("What is your guess? Enter a number\n"))
+  count += 1
+  if a > real:
+      print(f"\ndown, count : {count}")
+  elif a < real:
+      print(f"\nup, count : {count}")
+  else:
+      print(f"\nwow correct!, count : {count}")
+
+  while real != a:
+      a = int(input("\nWhat is your guess? Enter a number\n"))
+      count += 1
+      if a > real:
+          print(f"\ndown, count : {count}")
+      elif a < real:
+          print(f"\nup, count : {count}")
+      else:
+          print(f"\nwow correct!, count : {count}")
+  ```
+</details>               
