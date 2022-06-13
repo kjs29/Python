@@ -1,4 +1,5 @@
 Tried 5/28(x), 6/12(o)
+---
 
 # Write a function named 'frequency_dictionary'
 that takes a list of elements named words as a parameter.
