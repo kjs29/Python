@@ -1,3 +1,6 @@
+Tried on 6/12 (o)
+---
+
 We let the program to generate the random number between 1~100
 
 Let the user guess the number between 1~100
