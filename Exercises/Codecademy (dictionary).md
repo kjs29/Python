@@ -1,3 +1,6 @@
+Tried on 6/12(x)
+---
+
 This function accepts a dictionary where the keys are last names and the values are lists of first names of people who have that last name. 
 
 We need to calculate the number of people who have the same first letter in their last name. Here are the steps we need:
