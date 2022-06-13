@@ -18,7 +18,7 @@ class Die:
             self.result.append(randint(1, self.sides))
         print(self.result)
     
-    #show 
+    #show results in the dictionary with frequencies
     def analyze(self):
         for key in self.result:
             if key not in self.dic:
