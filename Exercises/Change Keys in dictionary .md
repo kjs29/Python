@@ -16,7 +16,7 @@ And for the ```personal3```, ```name3```, ```address3```
 <details>
   <summary>answer</summary>
   
-  ```
+  ```py
   personal2 = {k + str(2):v for k,v in personal2.items()}
   personal3 = {k + str(3):v for k,v in personal3.items()}
   
