@@ -26,32 +26,41 @@ These are the steps we need:
 3. If the number of occurrences is greater than n (the third parameter), return True. Otherwise, return False
 ```
 # below is answer
-```
+<details>
+  <summary>code</summary>
+  
+  ```py
 
-def some_function(lst,number,n):
-  #2.
-  a = lst.count(number)
-  #3.
-  if a > n:
-    return True
-  else:
-    return False
-```
-# another answer I came up with on 5/28
-```
-hello = [15,23,1,12,4,12,12,3,4,1,7463,3463,63,53,4]        
-
-def factory(lst, number_to_find, instances):
-    count = 0
-    for number in lst:
-        if number == number_to_find:
-            count += 1
-    print(count)
-    if count > instances:
-        return True
+  def some_function(lst,number,n):
+    #2.
+    a = lst.count(number)
+    #3.
+    if a > n:
+      return True
     else:
-        return False
+      return False
+  ```
+</details>
+
+# another answer I came up with on 5/28
+<details>
+  <summary>code</summary>
+  
+  ```py
+  hello = [15,23,1,12,4,12,12,3,4,1,7463,3463,63,53,4]        
+
+  def factory(lst, number_to_find, instances):
+      count = 0
+      for number in lst:
+          if number == number_to_find:
+              count += 1
+      print(count)
+      if count > instances:
+          return True
+      else:
+          return False
 
 
-factory(hello,4,3)      #False
-```
+  factory(hello,4,3)      #False
+  ```
+</details>
