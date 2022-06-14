@@ -1,8 +1,6 @@
 ### You want the desired output
 ```py
 """
-Desired output : 
-    
 Enter the first number : w
 
 Invalid first number, try again: e
@@ -22,7 +20,21 @@ Second number : 5
 Division result : 0.2
 """
 ```
+or
 
+```py
+"""
+Enter the first number : 1
+
+First number : 1
+
+Enter the second number : 0
+
+Second number : 0
+
+Division result : It is infinity, you tried to divide any number by 0
+"""
+```
 ### Make sure that no Traceback messages (ex. ZeroDivisionError, ValueError) are printed
 
 <details>
