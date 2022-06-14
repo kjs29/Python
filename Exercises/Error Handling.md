@@ -30,29 +30,24 @@ Division result : 0.2
   
   ```py
   a_input = "Enter the first number: "
-
   a = input(a_input)
 
   while type(a) != int:
-
       try:
           a = int(a)
-
       except ValueError:
           a = input("\nInvalid first number, try again: ")
-
+    
   print(f"\nFirst number : {a}")
 
   b = input("\nEnter the second number: ")
 
   while type(b) != int:
-
       try:
           b = int(b)
-
       except ValueError:
           b = input("\nInvalid second number, try again: ")
-
+            
   print(f"\nSecond number : {b}")
 
   try:    
@@ -60,7 +55,7 @@ Division result : 0.2
 
   except ZeroDivisionError:
       print("It is infinity, you tried to divide any number by 0")
-
+    
   else:
       print(f"\nDivision result : {result}")
   ```
