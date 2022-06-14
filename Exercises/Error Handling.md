@@ -66,7 +66,7 @@ Division result : It is infinity, you tried to divide any number by 0
       result = a/b
 
   except ZeroDivisionError:
-      print("It is infinity, you tried to divide any number by 0")
+      print("\nIt is infinity, you tried to divide any number by 0")
     
   else:
       print(f"\nDivision result : {result}")
