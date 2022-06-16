@@ -255,3 +255,18 @@
           print(content)
   ```
   </details>
+
+# 10.10 Common words
+<details>
+  <summary>code</summary>
+  
+  ```py
+  try:
+      with open("C:/Users/daily/Desktop/science of getting rich.txt") as f:
+          content = f.read()
+  except FileNotFoundError:
+      print("File Not Found")
+  else:
+      print(content.lower().count("the "))
+  ```
+</details>
