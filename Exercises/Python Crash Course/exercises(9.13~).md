@@ -169,3 +169,24 @@
       print(reason_to_program.strip())
   ```
 </details>
+
+# 10.6 Addition
+<details>
+  <summary>code</summary>
+  
+  ```py
+  try:    
+      a = input("Enter the first number : ")
+      a = int(a)
+      b = input("Enter the second number : ")
+      b = int(b)
+
+  except ValueError:
+      if type(a) != int:
+          print("The first input was not a number, try again!")
+      elif type(b) != int:
+          print("The second input was not a number, try again!")
+  else:
+      print(f"the sum of {a} and {b} : {a+b}")
+  ```
+</details>
