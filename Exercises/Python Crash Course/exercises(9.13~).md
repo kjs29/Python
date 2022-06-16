@@ -190,3 +190,68 @@
       print(f"the sum of {a} and {b} : {a+b}")
   ```
 </details>
+
+# 10.7 Addition Calculator
+<details>
+  <summary>code</summary>
+  
+  ```py
+  while True:
+      try:    
+          a = input("Enter the first number : ")
+          a = int(a)
+          b = input("Enter the second number : ")
+          b = int(b)
+
+
+      except ValueError:
+          if type(a) != int:
+              print("The first input was not a number, try again!")
+          elif type(b) != int:
+              print("The second input was not a number, try again!")
+      else:
+          print(f"the sum of {a} and {b} : {a+b}")
+          break
+  ```
+</details>
+  
+# 10.8 Cats and Dogs
+
+<details>
+  <summary>code1</summary>
+  
+  ```py
+  try:
+      with open("cats.txt") as f:
+          cats = f.read()
+  except FileNotFoundError:
+      print("the cats file has not been found")
+  else:
+      print(cats)
+
+  try:
+      with open("dogs.txt") as f:
+          dogs = f.read()
+  except FileNotFoundError:
+      print("the dogs file has not been found")
+  else:
+      print(dogs)
+  ```
+</details>
+  
+<details>
+  <summary>code2</summary>
+  
+  ```py
+  filename = ["cats.txt","dogs.txt"]
+  for each in filename:
+      print(f"opening file {each}")
+      try:
+          with open(each) as f:
+              content = f.read()
+      except FileNotFoundError:
+          print("{each} hasn't been found")
+      else:
+          print(content)
+  ```
+  </details>
