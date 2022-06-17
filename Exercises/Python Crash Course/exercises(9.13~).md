@@ -270,3 +270,49 @@
       print(content.lower().count("the "))
   ```
 </details>
+# 10.11 Favorite number
+<details>
+  <summary>code</summary>
+  
+  ```py
+  
+  import json
+  
+  #write the file
+  a = int(input("\nWhat is your favourite number? : "))
+  filename = "favorite_number.json"
+  with open(filename,"w") as f:
+      json.dump(a,f)
+
+  #read the file
+  with open(filename) as f:
+      file = json.load(f)
+      print(f"I know your favorite number! It is {file}")
+  ```
+</details>
+
+# 10.12 Favorite Number Remembered
+  
+<details>
+  <summary>code</summary>
+  
+  ```py
+  
+  import json
+
+
+  filename = "favorite_nussmberr.json"
+
+  try:
+      with open(filename) as f:
+          file = json.load(f)
+  except FileNotFoundError:
+      a = int(input("\nWhat is your favourite number? : "))
+      with open(filename,"w") as f:
+          json.dump(a,f)
+      print(a)
+  else:
+      print(file)
+  ```
+</details>
+  
