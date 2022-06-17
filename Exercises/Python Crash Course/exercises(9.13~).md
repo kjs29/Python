@@ -123,6 +123,7 @@
   
   ```
 </details>
+  
 # 10.3 guest
 <details>
   <summary>code</summary>
@@ -257,6 +258,7 @@
   </details>
 
 # 10.10 Common words
+  
 <details>
   <summary>code</summary>
   
@@ -270,8 +272,11 @@
       print(content.lower().count("the "))
   ```
 </details>
+  
 # 10.11 Favorite number
+  
 <details>
+  
   <summary>code</summary>
   
   ```py
