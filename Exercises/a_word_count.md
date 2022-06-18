@@ -1,4 +1,4 @@
-Tried on 5/28(o)
+Tried on 5/28(o),6/18(x)
 
 # Write a function called a_word_count
 that takes a string as an input and returns a count of the words in the string that start with the uppercase or lowercase letter, a
