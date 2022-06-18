@@ -53,6 +53,8 @@ that takes a string as an input and returns a count of the words in the string t
   print(a_word_counter("AbracabrA"))              #4
 
   ```
+</details>
+
 <details>
   <summary>third answer</summary>
   
