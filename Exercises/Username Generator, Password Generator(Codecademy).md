@@ -1,3 +1,4 @@
+# Tried on 6/18(o)
 
 You want to make a program that determines your username based on your first and last name.
 You want to make a program that generates your password based on  your username.
@@ -48,4 +49,19 @@ For example, if my username is `GeoKim` this password generator will turn it int
     return password
     ```
     
+</details>
+
+<details>
+    <summary>answer2</summary>
+    
+    ```py
+    def username(first, last):
+        if len(first) < 3 or len(last) < 4:
+            return first+last
+        else:
+            return first[:3]+last[:4]
+    
+    def password(user):
+        return user[-1:] + user[:-1]
+    ```
 </details>
