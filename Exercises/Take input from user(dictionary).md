@@ -1,3 +1,5 @@
+# Tried on 6/17(o)
+
 # Create a dictionary
 Get a random number from a user
 
