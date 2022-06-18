@@ -1,4 +1,4 @@
-Tried on 5/28(x, didn't read the question correctly) 
+Tried on 5/28(x, didn't read the question correctly), 6/18(o)
 
 Question
 -
@@ -25,32 +25,39 @@ iron
 
 # Below is answer
 ---
-
-```
-#Create a function to print out keys
-def keys_dictionary(dic):
+<details>
+  <summary>answer</summary>
   
-  #this prints out keys in a dictionary
-  for a in dic:
-    print(a)
-  return a
-    
-#Create a function to print out values
-def values_dictionary(dic):
-  for b in dic:
-    print(dic[b])
-  return dic[b]
-      
-```
+  ```py
+  #Create a function to print out keys
+  def keys_dictionary(dic):
+
+    #this prints out keys in a dictionary
+    for a in dic:
+      print(a)
+    return a
+
+  #Create a function to print out values
+  def values_dictionary(dic):
+    for b in dic:
+      print(dic[b])
+    return dic[b]
+
+  ```
+</details>
 
 # Here is another answer I came up on 5/28
 - I think the knowing the original answer is more important, because it is fundamental to know how to access keys, and values when we deal with dictionaries.
-```
-def basic_key(dic):
-    for a in dic.keys():
-        print(a)
+<details>
+  <summary>answer2</summary>
+  
+  ```py
+  def basic_key(dic):
+      for a in dic.keys():
+          print(a)
 
-def basic_value(dic):
-    for a in dic.values():
-        print(a)
-```
+  def basic_value(dic):
+      for a in dic.values():
+          print(a)
+  ```
+</details>
