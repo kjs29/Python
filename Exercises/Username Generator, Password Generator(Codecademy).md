@@ -1,21 +1,22 @@
 
 You want to make a program that determines your username based on your first and last name.
 You want to make a program that generates your password based on  your username.
-If their first name is less than three letters or their last name is less than four letters it should use their entire names.
+If their first name is less than three letters and their last name is less than four letters it should use their entire names.
 
 
-the username generator takes two input firstname, and lastname 
-it takes first three letter in the first name, and first four letters in the lastname
-and puts it together
+the username generator takes two input `firstname`, and `lastname`.
 
-the password generator takes the username and shift all letters to the right by one index position.
-For example, if my username is "GeoKim" this password generator will turn it into "mGeoKi"
+It takes first three letter in the first name, and first four letters in the lastname and puts it together.
+
+The password generator takes the username and shift all letters to the right by one index position.
+
+For example, if my username is `GeoKim` this password generator will turn it into `mGeoKi`
 
 
 <details>
     <summary>answer</summary>
     
-    ```
+    ```py
     #make username generator
 
     def username_generator(firstname,lastname):
@@ -46,4 +47,5 @@ For example, if my username is "GeoKim" this password generator will turn it int
 
     return password
     ```
+    
 </details>
