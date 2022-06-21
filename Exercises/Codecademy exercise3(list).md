@@ -1,4 +1,4 @@
-Tried on 5/28(o)
+Tried on 5/28(o), Tried on 6/20(x)
 
 
 Let's say there are a list,
