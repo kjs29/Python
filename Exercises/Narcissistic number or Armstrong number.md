@@ -1,6 +1,6 @@
-# Armstrong number
+# Narcissistic Number or Armstrong number
 
-Armstrong numbers is a number that is the sum of each digits raised to its number of digits 
+Narcissitic number or Armstrong numbers is a number that is the sum of each digits raised to its number of digits 
 
 For example
 
@@ -32,7 +32,14 @@ Create a function that figures out if a number is an armstrong number or not
       total = 0
       for a in str(n):
           total += int(a) ** digits
-      print(total)
+      print(f"original number : {n}\ntotal sum : {total}")
       return total == n 
+
+  lst_of_armstrong_numbers = []
+  random_int = int(input("\nEnter number and up to that number, we will find you some armstrong numbers : "))
+  for each_number in range(1, random_int + 1):
+      if armstrong(each_number):
+          lst_of_armstrong_numbers.append(each_number)
+  print(lst_of_armstrong_numbers)
   ```
 </details>
