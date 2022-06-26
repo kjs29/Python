@@ -21,8 +21,11 @@ For example
 
 154 != 1<sup>3</sup> + 5<sup>3</sup> + 4<sup>4</sup> = 190
 
-Create a function that figures out if a number is an armstrong number or not
+```
+1. Create a function that figures out if a number is an armstrong number or not
 
+2. And ask user to enter some random number and this will print a list of some armstrong numbers up to that user input
+```
 <details>
   <summary>answer</summary>
   
