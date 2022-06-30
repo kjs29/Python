@@ -1,4 +1,4 @@
-Tried on 5/28(o),6/18(x)
+Tried on 5/28(o),6/18(x),6/30(o)
 
 # Write a function called a_word_count
 that takes a string as an input and returns a count of the words in the string that start with the uppercase or lowercase letter, a
@@ -72,5 +72,18 @@ that takes a string as an input and returns a count of the words in the string t
 
 
   print(a_count("SALDNladasmalkdlamdk"))               #5
+  ```
+</details>
+
+<details>
+  <summary>forth answer</summary>
+  
+  ```py
+  def a_word_count(word):
+      count = 0
+      for a_word in word.lower():
+          if a_word == "a":
+              count += 1
+      return count
   ```
 </details>
