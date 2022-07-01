@@ -1,14 +1,15 @@
-There are two questions.
-
 We have two strings
 
 ```
 s1 = "abc"
 s2 = "bs0ck02poa"
 ```
-1. Create a function if all each letters in s1 are present in s2, return True, otherwise return False
 
-2. If all each letters in s1 are present in s2, Create a function that returns a dictionary
+## Two questions
+
+### 1. Create a function if all each letters in s1 are present in s2, return True, otherwise return False
+
+### 2. If all each letters in s1 are present in s2, Create a function that returns a dictionary
 
     where individual letter is a key, and the position of that key in s2 is a value
 
