@@ -2,6 +2,13 @@ We have a string `ab(c)De$H21@!:<>`
 
 Create a function to print out what are characters, symbols, and digits in the string.
 
+
+```
+['a', 'b', 'c', 'D', 'e', 'H']
+['2', '1']
+['(', ')', '$', '@', '!', ':', '<', '>']
+```
+
 <details>
   <summary>answer</summary>
   
@@ -24,9 +31,5 @@ Create a function to print out what are characters, symbols, and digits in the s
       print(symbols_lst)
   ```
   
-  ```
-  ['a', 'b', 'c', 'D', 'e', 'H']
-  ['2', '1']
-  ['(', ')', '$', '@', '!', ':', '<', '>']
-  ```
+  
 </details>
