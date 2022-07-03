@@ -23,3 +23,22 @@ Vowel count : 8
  'i': 1,
  'd': 1}
 ```
+
+<details>
+  <summary>answer</summary>
+ 
+  ```py
+  def every_word_count(string:str) -> dict:
+      dic = {}
+      for each in string.replace(" ",""):
+          if each not in dic.keys():
+              dic[each] = 0
+          dic[each] += 1
+      vowel_count = 0
+      for key,value in dic.items():
+          if key in "aeiou":
+              vowel_count += value
+      print(f"Vowel count : {vowel_count}")
+      return dic
+   ```
+ </details>
