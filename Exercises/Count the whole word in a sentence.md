@@ -7,17 +7,23 @@ Expected output
 ```
 6
 ```
+Create a function that takes two arguments, sentence, and a word.
 
+Return the number of times a word is used in the sentence.
 
 <details>
   <summary>answer</summary>
   
   ```py
   s = "love love love, lovely lover love each other."
-  count = 0
-  for i in range(len(s)):
-      if s[i:i+4] == "love":
+  
+  def pleasefind(sentence, word):
+      count = 0
+      for i in range(len(sentence)):
+        if sentence[i:i+len(sentence)] == word:
           count += 1
-  print(count)
+      return count
+  
+  print(pleasefind(s,"love"))
   ```
 </details>
