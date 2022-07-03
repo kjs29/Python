@@ -20,7 +20,7 @@ Return the number of times a word is used in the sentence.
   def pleasefind(sentence, word):
       count = 0
       for i in range(len(sentence)):
-        if sentence[i:i+len(sentence)] == word:
+        if sentence[i:i+len(word)] == word:
           count += 1
       return count
   
