@@ -9,9 +9,9 @@ Create a function that returns a list of strings of all possible combinations wi
 ['USA','UAS','SAU','SUA', 'AUS', 'ASU']
 ```
 <details>
-  <summary>Answer but not complete</summary>
+  <summary>answer</summary>
   
-  ```
+  ```py
   from itertools import permutations
 
   def cases(word):
