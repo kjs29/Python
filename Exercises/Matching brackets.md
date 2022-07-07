@@ -37,3 +37,74 @@ if strings are like `{(}` , `{]` or `{(}{)}`, the function returns False.
   print(is_paired("{[] }"))
   ```
 </details>
+
+<details>
+  <summary>answer2</summary>
+  
+  ```py
+  
+
+  def is_paired(text):
+      opening = ["(","{","["]
+      closing = [")","}","]"]
+      dic = dict(zip(opening,closing))
+      stack = []
+
+      """
+      basically every text has either opening bracket and closing bracket
+      we will make the dictionary that has a key of opening bracket , and a value for the corresponding closing bracket.
+      dic = {"(":")","{":"}","[":"]"}
+
+      RULE: in each letter in the text, if closing bracket comes first before opening bracket it is false
+        False : }{, {)(}, ()]
+        True : {([]())}, ()[{}]
+
+
+      Following the RULE, 
+      1. We will put each opening bracket into an empty list called stack.
+      2. We will remove the last item in the stack, only if the item removed is corresponded to the closing bracket.
+
+      every opening bracket can always be put into stack, 
+      but if any closing bracket is in stack at the end of all iterations, 
+      or even unmatched opening bracket, it returns false
+      if stack is empty, it returns true.
+      """
+
+      #since we are testing the text we iterate through each letter in text
+      for a in text:
+
+          #if each letter is in the opening
+          if a in opening:
+
+              #copy it in stack
+              stack.append(a)
+
+          #if each letter is in the closing
+          elif a in closing:
+
+              #if stack is empty
+              if not stack:
+
+                  #that means it has closing bracket without opening bracket, so it is false
+                  return False
+
+              #if stack is not empty
+              elif stack:
+
+                  #we will assign a variable stack.pop() to popped_item
+                  popped_item = stack.pop()
+
+                  #check if current bracket we are iterating is matched with its pair in the dictionary
+                  if dic[popped_item] != a:
+
+                      #if it is not matched, then it is false
+                      return False
+
+          print(f"stack : {stack}")
+
+      #if stack is empty, it returns true otherwise false
+      return True if not stack else False
+
+  print(is_paired("()["))
+  ```
+</details>
