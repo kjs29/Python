@@ -12,19 +12,16 @@ Create a function that returns a list of strings of all possible combinations wi
   <summary>Answer but not complete</summary>
   
   ```
-  s1 = "USA"
+  from itertools import permutations
 
-  empty_lst = []
-  l = int(len(s1)/2)
-  print(s1[0])
-  print(s1[l])
-  print(s1[len(s1)-1])
-    
-  #get each position's letter
-  first = s1[0]
-  second = s1[l]
-  last = s1[len(s1)-1]
-  
-  #maybe add them all?
+  def cases(word):
+      lst = [y for y in word]
+      answer = []
+      for a in permutations(lst):
+          b = "".join(a)
+          answer.append(b)
+      return answer
+
+  print(cases("USA"))
   ```
 </details>
