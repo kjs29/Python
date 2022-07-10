@@ -1,4 +1,4 @@
-Tried on 5/28(o), Tried on 6/20(x)
+Tried on 5/28(o), 6/20(x), 7/10(o)
 
 
 Let's say there are a list,
@@ -22,7 +22,7 @@ should return
 <details>
   <summary>answer</summary>
 
-  ```
+  ```py
   #.Create function with two parameters lst, and index
   def double_index(lst,index):
     if index < len(lst):
@@ -35,7 +35,7 @@ should return
   ```
 
   # Here is another answer I came up with on 5/28
-  ```
+  ```py
   def double_index(lst, index):
       if index < len(lst):
           lst[index] = 2 * lst[index]
