@@ -1,4 +1,4 @@
-Tried on 6/12(x) 7/10(o)
+Tried on 6/12(x), 7/10(o)
 ---
 
 We have a dictionary below,
