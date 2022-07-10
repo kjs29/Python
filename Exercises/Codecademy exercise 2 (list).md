@@ -15,24 +15,38 @@ Here is what we need to do:
 ```
 
 # Below is answer
----
-```
-def some_function(start):
-  #2.3.4
-  return list(range(start,101,3)) 
-```
+<details>
+  <summary>answer</summary>
+  ```py
+  def some_function(start):
+      #2.3.4
+      return list(range(start,101,3)) 
+  ```
+</details>
 
-# Another answer I came up with on 5/28
-```
+<details>
+  <summary>Another answer I came up with on 5/28</summary>
 
-def increase_by_three(starting_number):
-    lst = []
-    
-    while starting_number<=100:
-        lst.append(starting_number)
-        starting_number += 3
-    return lst
+  ```py
 
-print(increase_by_three(88))        #[88, 91, 94, 97, 100]
+  def increase_by_three(starting_number):
+      lst = []
 
-```
+      while starting_number<=100:
+          lst.append(starting_number)
+          starting_number += 3
+      return lst
+  
+  print(increase_by_three(88))        #[88, 91, 94, 97, 100]
+  
+  ```
+</details>
+
+<details>
+  <summary>answer 7.10</summary>
+  
+  ```py
+  def every_three_numbers(starting_number:int) -> list:
+      return list(range(starting_number, 101, 3))
+  ```
+</details>
