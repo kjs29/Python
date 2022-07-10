@@ -21,7 +21,7 @@ into
 <details>
   <summary>answer</summary>
   
-  ```
+  ```py
   def count(dic):
       
       #we need to create an empty dictionary
