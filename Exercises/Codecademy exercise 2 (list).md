@@ -17,6 +17,7 @@ Here is what we need to do:
 # Below is answer
 <details>
   <summary>answer</summary>
+  
   ```py
   def some_function(start):
       #2.3.4
