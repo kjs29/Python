@@ -1,4 +1,4 @@
-Tried on 6/12(x)
+Tried on 6/12(x) 7/10(o)
 ---
 
 We have a dictionary below,
@@ -28,5 +28,17 @@ How would we get it?
     
     ```
     print(f"Third key:value is {list(favourite_languages)[2].title()} : {list(favourite_languages.values())[2]}")
+    ```
+</details>
+
+<details>
+    <summary>Answer on 7/10</summary>
+    
+    ```py
+    count = 0
+    for k,v in favourite_languages.items():
+        if count == 2:
+            print(f"Third key:value is {k.title()}:{v}")
+        count += 1
     ```
 </details>
