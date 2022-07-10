@@ -33,8 +33,11 @@ should return
     else:
       return lst
   ```
-
-  # Here is another answer I came up with on 5/28
+</details>        
+  
+<details>
+  <summary>Another answer I came up with on 5/28</summary>
+  
   ```py
   def double_index(lst, index):
       if index < len(lst):
