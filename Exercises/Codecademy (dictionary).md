@@ -1,4 +1,4 @@
-Tried on 6/12(x), 7/2(x)
+Tried on 6/12(x), 7/2(x), 7/10(o)
 ---
 
 This function accepts a dictionary where the keys are last names and the values are lists of first names of people who have that last name. 
@@ -33,5 +33,20 @@ into
           emp[key[0]] += len(dic[key])
       return emp
   
+  ```
+</details>
+
+<details>
+  <summary>answer I came up with on 7/10</summary>
+  
+  ```py
+  def count(s):
+      dic = {}
+      for key,value in s.items():
+          dic.setdefault(key[0],0)
+          if key[0] in dic:
+              dic[key[0]] += len(value)
+
+      return dic
   ```
 </details>
