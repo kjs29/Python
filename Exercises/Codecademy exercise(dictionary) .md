@@ -2,7 +2,7 @@
 
 Let's say you are given a dictionary like this.
 
-```
+```py
 statistics_traders = {"futures":0.4, "options":0.2, "stocks":8}
 ```
 
