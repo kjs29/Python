@@ -50,3 +50,18 @@ into
       return dic
   ```
 </details>
+
+<details>
+  <summary>another answer I came up with on 7/10</summary>
+  
+  ```py
+  def count(s):
+      dic = {}
+      for key,value in s.items():
+          if key[0] not in dic:
+              dic.setdefault(key[0],len(value))
+          else:
+              dic[key[0]] += len(value)
+      return dic
+  ```
+</details>
