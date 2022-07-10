@@ -1,3 +1,6 @@
+Tried on 7/10(o)
+
+---
 We want to find out how many times 'love' is mentioned in the given text.
 
 s = "love love love, lovely lover love each other."
@@ -25,5 +28,14 @@ Return the number of times a word is used in the sentence.
       return count
   
   print(pleasefind(s,"love"))
+  ```
+</details>
+
+<details>
+  <summary>answer I came up with on 7/10</summary>
+  
+  ```py
+  def word_counter(sentence, word):
+      return sentence.count(word)
   ```
 </details>
