@@ -1,4 +1,4 @@
-Tried on 5/28(o)
+Tried on 5/28(o),7/10(o)
 
 
 I was working on Codecademy question
@@ -25,6 +25,12 @@ These are the steps we need:
 2. Count the number of occurrences of item (the second parameter) in lst (the first parameter)
 3. If the number of occurrences is greater than n (the third parameter), return True. Otherwise, return False
 ```
+<em>test</em>
+```
+print(factory([1,2,3,4,5,2,3,4,2,1,3,2],4,2))     #False
+print(factory([1,2,3,4,5,2,3,4,2,1,3,2],4,1))     #True
+```
+
 # below is answer
 <details>
   <summary>code</summary>
@@ -42,9 +48,8 @@ These are the steps we need:
   ```
 </details>
 
-# another answer I came up with on 5/28
 <details>
-  <summary>code</summary>
+  <summary>answer I came up with on 5/28</summary>
   
   ```py
   hello = [15,23,1,12,4,12,12,3,4,1,7463,3463,63,53,4]        
@@ -62,5 +67,14 @@ These are the steps we need:
 
 
   factory(hello,4,3)      #False
+  ```
+</details>
+
+<details>
+  <summary>answer 7/10</summary>
+  
+  ```py
+  def a(b:list,c:int,d:int) -> bool:
+      return b.count(c) > d
   ```
 </details>
