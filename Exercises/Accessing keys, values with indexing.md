@@ -24,21 +24,21 @@ How would we get it?
 
 
 <details>
-    <summary>Answer</summary>
+  <summary>Answer</summary>
     
-    ```
-    print(f"Third key:value is {list(favourite_languages)[2].title()} : {list(favourite_languages.values())[2]}")
-    ```
+  ```py
+  print(f"Third key:value is {list(favourite_languages)[2].title()} : {list(favourite_languages.values())[2]}")
+  ```
 </details>
 
 <details>
-    <summary>Answer on 7/10</summary>
+  <summary>Answer on 7/10</summary>
     
-    ```py
-    count = 0
-    for k,v in favourite_languages.items():
-        if count == 2:
-            print(f"Third key:value is {k.title()}:{v}")
-        count += 1
-    ```
+  ```py
+  count = 0
+  for k,v in favourite_languages.items():
+      if count == 2:
+          print(f"Third key:value is {k.title()}:{v}")
+      count += 1
+  ```
 </details>
