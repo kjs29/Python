@@ -1,4 +1,4 @@
-Tried 5/28(x), 6/12(o)
+Tried 5/28(x), 6/12(o),7/10(o)
 ---
 
 # Write a function named 'frequency_dictionary'
@@ -44,5 +44,14 @@ should return
 
 
   print(frequency_dictionary(["milk", "apple", "milk", "apple juice"]))                   #{'milk': 2, 'apple': 1, 'apple juice': 1}
+  ```
+</details>
+
+<details>
+  <summary>answer 7.10</summary>
+  
+  ```py
+  def frequency_dictionary(lst):
+      return {a:lst.count(a) for a in lst}
   ```
 </details>
