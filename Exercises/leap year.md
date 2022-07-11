@@ -1,3 +1,5 @@
+# Tried on 7/11(x)
+
 Create a function that returns True if it is a leap year ,if it is not a leap year, returns False.
 
 Leap Year rule
