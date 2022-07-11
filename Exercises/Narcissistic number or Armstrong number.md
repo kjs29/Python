@@ -19,7 +19,7 @@ For example
 
 154 is not an armstrong number
 
-154 != 1<sup>3</sup> + 5<sup>3</sup> + 4<sup>4</sup> = 190
+154 != 1<sup>3</sup> + 5<sup>3</sup> + 4<sup>3</sup> = 190
 
 ```
 1. Create a function that figures out if a number is an armstrong number or not
@@ -44,5 +44,25 @@ For example
       if armstrong(each_number):
           lst_of_armstrong_numbers.append(each_number)
   print(lst_of_armstrong_numbers)
+  ```
+</details>
+
+<details>
+  <summary>answer on 7/10</summary>
+  
+  ```py
+  def is_armstrong(num):
+
+      num1 = str(num)
+      how_many_digit = len(num1)
+      sum = 0
+      for a in num1:
+          sum += int(a) ** how_many_digit
+      return sum == num
+
+  def how_many_armstrong(num):
+      num = int(input())
+      return [n for n in range(1,num+1) if is_armstrong(n)]
+
   ```
 </details>
