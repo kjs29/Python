@@ -1,4 +1,4 @@
-# Tried on 6/17(o)
+# Tried on 6/17(o),7/11(o)
 
 # Create a dictionary
 Get a random number from a user
