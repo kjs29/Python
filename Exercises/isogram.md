@@ -4,7 +4,7 @@ For example of isograms
 - lumberjacks
 - background
 - downstream
-- six-years-old
+- six-year-old
 
 create a function if a word is isogram or not
 
@@ -34,4 +34,19 @@ create a function if a word is isogram or not
   
   ```
   
+</details>
+
+<details>
+  <summary>answer 7/11</summary>
+  
+  ```py
+  def is_isogram(word):
+      dic = {each:word.count(each) for each in word.replace("-","")}
+      return False if 2 in list(dic.values()) else True
+  
+  print(is_isogram("lumberjacks"))      #True
+  print(is_isogram("background"))       #True
+  print(is_isogram("downstream"))       #True
+  print(is_isogram("six-year-old"))     #True
+  ```
 </details>
