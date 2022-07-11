@@ -1,4 +1,4 @@
-Tried on 6/12 (o)
+Tried on 6/12 (o), 7/10(o)
 ---
 
 We let the program to generate the random number between 1~100
@@ -77,3 +77,33 @@ Make sure to mention how many tries user has also.
           print(f"\nwow correct!, count : {count}")
   ```
 </details>               
+
+<details>
+  <summary>answer 7.10</summary>
+  
+  ```py
+  import random
+
+  real = random.randint(1,100)
+
+  guess = int(input("Enter the number between 1 ~ 100! count(1) : "))
+  count = 1
+  while real != guess:
+      if guess > real :
+          print("down")
+          count += 1
+          guess = int(input(f"Enter number again! count({count}) : "))
+
+          print(count)
+      elif guess < real :
+          print("up")
+          count += 1
+          guess = int(input(f"Enter number again! count({count}) : "))
+
+          print(count)
+      else:
+          print(count)
+
+  print("correct!")
+  ```
+</details>
