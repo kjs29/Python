@@ -1,3 +1,5 @@
+# Tried on 7/11(o)
+
 Create a function that counts every letter and stores in a dictionary with {"word":"count"}
 
 For example, 
@@ -25,4 +27,14 @@ will return
       return empty_dic
   ```
   
+</details>
+
+
+<details>
+  <summary>answer 7/11</summary>
+  
+  ```py
+  def count_every_letter(a):
+      return {each:a.count(each) for each in a}
+  ```
 </details>
