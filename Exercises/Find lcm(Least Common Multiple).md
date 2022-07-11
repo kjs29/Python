@@ -1,3 +1,6 @@
+Tried on 7/10(o)
+---
+
 Let users have two arbitrary numbers
 
 Find the Least Common Multiple
