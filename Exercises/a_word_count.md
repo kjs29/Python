@@ -96,6 +96,16 @@ that takes a string as an input and returns a count of the words in the string t
       string = string.replace("A","a")
       return string.count("a")
 
-  print(a_counter("SALDNladasmalkdlamdk"))
+  print(a_counter("SALDNladasmalkdlamdk"))              #5
+  ```
+</details>
+
+<details>
+  <summary>sixth answer I came up with on 7/11</summary>
+  
+  ```py
+  def a_counter(word):
+    
+      return word.count("a") + word.count("A")
   ```
 </details>
