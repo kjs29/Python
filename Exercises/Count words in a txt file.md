@@ -1,3 +1,6 @@
+Tried on 7/10(o)
+---
+
 ### Let's say we have a text file called `science of getting rich.txt`.
 
 in a directory `C:/Users/daily/Desktop`
