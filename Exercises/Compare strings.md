@@ -1,3 +1,6 @@
+Tried on 7/10(o)
+----
+
 We have two strings
 
 ```
@@ -17,7 +20,8 @@ for exameple,
 ```
 {'a': 9, 'b': 0, 'c': 3}
 ```
-
+Answer # 1
+---
 <details>
   <summary>answer #1</summary>
   
@@ -29,6 +33,10 @@ for exameple,
       return True
   ```
 </details>
+
+
+Answer #2
+---
 
 <details>
   <summary>answer #2</summary>
@@ -49,3 +57,15 @@ for exameple,
   
 </details>
   
+<details>
+  <summary>another answer for #2 I came up with on 7.10</summary>
+  
+  ```py
+  def second(a,b):
+      dic = {}
+      for each in a:
+          if each in b:
+              dic.setdefault(each,b.index(each))
+      return dic
+  ```
+</details>
