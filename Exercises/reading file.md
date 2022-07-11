@@ -1,3 +1,5 @@
+# Tried on 7/11(o)
+
 #### Suppose we have a file named `pi_million.txt` in the directory `C:/Users/daily/Desktop/Coding/Python/git_practice`
 Inside the file the file, there are million decimals of pi
 ```
