@@ -1,3 +1,6 @@
+Tried on 7/10(o)
+---
+
 # Create a function
 that multiply arbitrary number of numbers and return the answer.
 
@@ -22,3 +25,4 @@ should return `120`
   ```
   
 </details>
+
