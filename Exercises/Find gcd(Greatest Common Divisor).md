@@ -1,3 +1,6 @@
+Tried on 7/10(o)
+---
+
 We have two random numbers
 
 Create a function that returns the greatest common multiple
@@ -13,6 +16,32 @@ Create a function that returns the greatest common multiple
           a+=1
       return max(empty_list)
 
-  find_gcd(123132, 12312)
+  print(find_gcd(123132, 12312))   #12
   ```
+</details>
+
+
+<details>
+  <summary>answer 7/10</summary>
+  
+  ```py
+  def gcd(n1,n2):
+      if n1<n2:
+          small = n1
+          if n2%small == 0:
+              return small
+          for each in range(small,0,-1):
+              if n1%each == 0 and n2%each == 0:
+                  return each
+      elif n1>n2:
+          small = n2
+          if n1%small == 0:
+              return small
+          for each in range(small,0,-1):
+              if n1%each == 0 and n2%each == 0:
+                  return each
+      else:
+          return n1
+  ```
+  
 </details>
