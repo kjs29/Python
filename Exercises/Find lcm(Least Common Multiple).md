@@ -32,3 +32,20 @@ Find the Least Common Multiple
   
   ```
 </details>
+
+
+<details>
+  <summary>answer 7/10</summary>
+  
+  ```py
+  def lcm(n1,n2):
+      if max(n1,n2) % min(n1,n2) == 0:
+          return max(n1,n2)
+      else:
+          for a in range(min(n1,n2), 0, -1):
+              if n1 % a == 0 and n2 % a == 0:
+                  first = n1//a
+                  second = n2//a
+                  return first * second * a
+  ```
+</details>
