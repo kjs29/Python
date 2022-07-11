@@ -1,3 +1,6 @@
+Tried on 7/10(o)
+---
+
 We have a string
 
 ```
@@ -39,4 +42,16 @@ str1 = "#Jin #is #a #very #skillful #developer#communicator"
   print(str1)
   ```
   
+</details>
+
+<details>
+  <summary>answer 7.10</summary>
+  
+  ```py
+  def convert(sentence):
+      for a in sentence:
+          if a in string.punctuation:
+              sentence = sentence.replace(a,"#")
+      return sentence
+  ```
 </details>
