@@ -1,3 +1,5 @@
+# Tried on 7.11(o)
+
 We have a string `ab(c)De$H21@!:<>`
 
 Create a function to print out what are characters, symbols, and digits in the string.
@@ -31,5 +33,22 @@ Create a function to print out what are characters, symbols, and digits in the s
       print(symbols_lst)
   ```
   
+  
+</details>
+
+<details>
+  <summary>answer 7.11</summary>
+  
+  ```py
+  import string
+
+  def organizer(str1):
+      alphabet = [a for a in str1 if a.isalpha()]
+      print(alphabet)
+      digit = [a for a in str1 if a.isdigit()]
+      print(digit)
+      symbols = [a for a in str1 if a in string.punctuation]
+      print(symbols)
+  ```
   
 </details>
