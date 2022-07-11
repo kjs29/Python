@@ -1,5 +1,8 @@
+Tried on 7/10(o)
+---
+
 # we have a dictionary
-```
+```py
 users = {
     "aeinstein": {
         "first":"albert",
@@ -52,5 +55,19 @@ for x,y in users.items():
       print(f"Username : {x}")
       print(f"\tFullname : {y['first'].title()} {y['last'].title()}")
       print(f"\tLocation : {y['location'].title()}")
+  ```
+</details>
+
+<details>
+  <summary>answer I came up with on 7/10</summary>
+  
+  ```py
+  for key in users:
+      print(f"Username: {key}")
+      #print(users[key])
+      fullname = users[key]["first"].title() + " " + users[key]["last"].title()
+      location = users[key]["location"].title()
+      print(f"\tFullname: {fullname}")
+      print(f"\tLocation : {location}")
   ```
 </details>
