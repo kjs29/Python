@@ -1,3 +1,6 @@
+Tried on 7/10(o)
+---
+
 Create a function that takes one parameter that is string, and prints the 'vowel count' and returns dictionary of every word as key, and its count as value.
 But space is not counted.
 
@@ -42,3 +45,21 @@ Vowel count : 8
       return dic
    ```
  </details>
+
+
+<details>
+  <summary>answer I came up with on 7/10</summary>
+ 
+  ```py
+  def every_word_count(string:str):
+     count = 0
+     dic = {}
+     for each in string.replace(" ",""):
+         if each in "aeiou":
+             count += 1
+         dic.setdefault(each,string.count(each))
+
+     print(f"Vowel count : {count}")
+     return dic
+  ```
+</details>
