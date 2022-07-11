@@ -1,4 +1,4 @@
-# Tried on 6/18(o)
+# Tried on 6/18(o), 7/11(o)
 
 You want to make a program that determines your username based on your first and last name.
 You want to make a program that generates your password based on  your username.
