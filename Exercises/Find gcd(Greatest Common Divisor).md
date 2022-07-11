@@ -45,3 +45,14 @@ Create a function that returns the greatest common multiple
   ```
   
 </details>
+  
+<details>
+  <summary>answer 7/10</summary>
+  
+  ```py
+  def gcd(n1,n2):
+      for each in range(min(n1,n2),0,-1):
+          if n1%each == 0 and n2%each == 0:
+              return each
+  ```
+</details>
