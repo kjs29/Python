@@ -1,3 +1,7 @@
+
+Tried on 7/11(o)
+---
+
 Create a function that returns True if brackets are matched.
 
 If strings are like `{[()]}`, `{}[()]` or `{()}`,
@@ -5,6 +9,15 @@ If strings are like `{[()]}`, `{}[()]` or `{()}`,
 They are matched, which returns True
 
 if strings are like `{(}` , `{]` or `{(}{)}`, the function returns False.
+
+
+<em>test example</em>
+```
+print(matchingbrackets("([{]})"))       #False
+print(matchingbrackets("([]){]}"))      #False 
+print(matchingbrackets("   {}{}}}{{"))  #False
+print(matchingbrackets("{[] }"))        #True
+```
 
 <details>
   <summary>answer</summary>
@@ -106,5 +119,42 @@ if strings are like `{(}` , `{]` or `{(}{)}`, the function returns False.
       return True if not stack else False
 
   print(is_paired("()["))
+  ```
+</details>
+
+<details>
+  <summary>answer 7.11</summary>
+  
+  ```py
+  def matchingbrackets(b):
+      opening = "({["
+      closing = ")}]"
+      dic = {"[": "]","(":")","{":"}"}
+      #print(dic)
+      stack = []
+      for each in b:
+
+          if each in opening:
+              stack.append(each)
+
+          elif each in closing:
+              if len(stack) == 0:
+                  print(f"False reason <closing bracket without opening bracket: {each}>")
+                  return False
+              else:
+
+                  if (dic[stack[-1]] == each):
+
+                      stack.pop()
+
+                  else:
+                      print(f"False reason : <different match : iteration of {each}'s matching part is {list(dic.keys())[list(dic.values()).index(each)]} which is different than {stack[-1]} >")
+                      return False
+          print(f"stack after iteration of {each} : {stack}")
+
+      if len(stack) == 0:
+          return True
+      else:
+          return False
   ```
 </details>
