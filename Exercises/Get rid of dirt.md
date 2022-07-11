@@ -1,4 +1,4 @@
-Tried on 6/12(o)
+Tried on 6/12(o),7/10(o)
 ---
 
 You have a list
