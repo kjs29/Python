@@ -19,9 +19,20 @@ while playing:
             turn += 1
             spots[int(choice)] = check_turn(turn)
             draw_board(spots)
-            revert(spots, choice, turn)
+            if revert():
+                spots[int(choice)] = str(int(choice))
+                print("reverted completed !")
+                draw_board(spots)
+                revert_choice = input("Pick a new number : ")
+                if int(revert_choice) in spots and spots[int(revert_choice)].isdigit():
+                    spots[int(revert_choice)] = check_turn(turn)
+                else:
+                    print("Invalid input, please try again :)")
+                    turn -= 1
         else:
             print("Invalid input, please try again :)")
+    else:
+        print("Invalid input, please try again :)")
     if check_for_win(spots):
         print(f"\t      Player {(turn%2)} win")
         draw_board(spots)
