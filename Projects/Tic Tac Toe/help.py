@@ -21,14 +21,9 @@ def check_for_win(spot):
     else:
         return False
 
-def revert(spots, choice, turn):
+def revert():
     revert_choice = input("Do you want to revert? (Y/N) : ").lower()
     if revert_choice == "y":
-        spots[int(choice)] = str(int(choice))
-        print("reverted completed !")
-        draw_board(spots)
-        revert_choice = int(input("Pick a new number : "))
-        spots[revert_choice] = check_turn(turn)
-        draw_board(spots)
-    elif revert_choice == "n":
-        pass
+        return True
+    else:
+        return False
