@@ -19,7 +19,7 @@ while playing:
             turn += 1
             spots[int(choice)] = check_turn(turn)
             draw_board(spots)
-            reert(spots, choice, turn)
+            revert(spots, choice, turn)
         else:
             print("Invalid input, please try again :)")
     if check_for_win(spots):
