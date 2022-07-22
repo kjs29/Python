@@ -1,4 +1,4 @@
-from help import check_for_win, check_turn, draw_board
+from help import check_for_win, check_turn, draw_board, revert
 import os
 
 spots = {1:"1", 2:"2", 3:"3", 4:"4", 5:"5", 6:"6", 7:"7", 8:"8", 9:"9",}
@@ -18,6 +18,8 @@ while playing:
         if spots[int(choice)] not in "XO":
             turn += 1
             spots[int(choice)] = check_turn(turn)
+            draw_board(spots)
+            reert(spots, choice, turn)
         else:
             print("Invalid input, please try again :)")
     if check_for_win(spots):
