@@ -15,10 +15,15 @@ black = (0, 0, 0)
 run = True
 
 # Main Menu control - to exit the main menu
-main = False
+main = True
+
+# How to play menu control - to exit the how to play menu
+howtoplay = False
 
 # Credit menu control - to exit the credit menu
 credit = False
+
+
 
 
 class Button:
@@ -82,18 +87,26 @@ class Button:
 
 
 # Main Menu buttons
-startmenu = Button("8bitwonder.ttf",32,250, 220,white,"Start")
-howtoplaymenu = Button("8bitwonder.ttf",32,250,320,white,"How to play")
-creditmenu = Button("8bitwonder.ttf",32,250,420,white,"Credit")
-exitmenu = Button("8bitwonder.ttf",32,250,520,white,"Exit")
+main_start = Button("8bitwonder.ttf",32,250, 220,white,"Start")
+main_howtoplay = Button("8bitwonder.ttf",32,250,320,white,"How to play")
+main_credit = Button("8bitwonder.ttf",32,250,420,white,"Credit")
+main_exit = Button("8bitwonder.ttf",32,250,520,white,"Exit")
+
+# How to play buttons
+howtoplay_title = Button("8bitwonder.ttf",32,250,220,white,"How to play")
+#howtoplay_description = Button("8bitwonder.ttf",25,250,220,white,"description")
+howtoplay_back = Button("8bitwonder.ttf",42,250,520,white,"Back")
+
+howtoplay_title.rect.center = screenwidth/2, screenheight/2 - 300
+howtoplay_back.rect.center = screenwidth/2, screenheight/2 + 200
 
 # Credit Menu buttons
 credit_title = Button("8bitwonder.ttf", 42,250,220,white, "Credit")
-credit_made_by_whom = Button("8bitwonder.ttf",64,250,320,white,"Jinsung Kim")
+credit_made_by = Button("8bitwonder.ttf",64,250,320,white,"Jinsung Kim")
 credit_back_button = Button("8bitwonder.ttf",42,250,520,white,"Back")
 
 credit_title.rect.center = screenwidth/2, screenheight/2 - 200
-credit_made_by_whom.rect.center = screenwidth/2, screenheight/2 - 100
+credit_made_by.rect.center = screenwidth/2, screenheight/2 - 100
 credit_back_button.rect.center = screenwidth/2, screenheight/2 + 200
 
 while run:
@@ -101,63 +114,81 @@ while run:
     screen.fill(black)
     
     
-    
-    if credit == True:
-        
-        credit_title.draw_text(screen)
-        credit_made_by_whom.draw_text(screen)
-        credit_back_button.draw_text(screen)
-        
-        credit_title.hovered()
-        credit_made_by_whom.hovered()
-        credit_back_button.hovered()
+    if main == True:
 
-
-        if credit_back_button.check_click():
-            print("back button clicked")
-
-            credit = False
+        if howtoplay == True:
             
-    else:
-        startmenu.draw_text(screen)
-        howtoplaymenu.draw_text(screen)
-        creditmenu.draw_text(screen)
-        exitmenu.draw_text(screen)
-        
-        if startmenu.hovered():
-            startmenu.size = 42
-            startmenu.font_kind = pygame.font.Font(startmenu.font_name,startmenu.size)
-            startmenu.content = startmenu.font_kind.render(startmenu.text,True, startmenu.color)
-            startmenu.rect = startmenu.content.get_rect()
-            startmenu.rect.x = 250
-            startmenu.rect.y = 220
+            howtoplay_title.draw_text(screen)
+            howtoplay_back.draw_text(screen)
+
+            if howtoplay_title.hovered():
+                pygame.mouse.set_cursor(pygame.SYSTEM_CURSOR_ARROW)
+            howtoplay_back.hovered()
+
+            if howtoplay_back.check_click():
+                
+                # game control - howtoplay menu exit
+                howtoplay = False
+
+        elif credit == True:
+
+            credit_title.draw_text(screen)
+            credit_made_by.draw_text(screen)
+            credit_back_button.draw_text(screen)
+            
+            if credit_title.hovered() or credit_made_by.hovered():
+                pygame.mouse.set_cursor(pygame.SYSTEM_CURSOR_ARROW)
+
+            credit_back_button.hovered()
+
+
+            if credit_back_button.check_click():
+                print("back button clicked")
+
+                # game control - credit menu exit
+                credit = False
+            
         else:
-            startmenu.size = 32
-            startmenu.font_kind = pygame.font.Font(startmenu.font_name,startmenu.size)
-        howtoplaymenu.hovered()
-        if creditmenu.hovered():
-            creditmenu.color = (0,50,105)
-            creditmenu.content = creditmenu.font_kind.render(creditmenu.text, True, creditmenu.color)
-        if exitmenu.hovered():
-            exitmenu.color = (130,130,130)
-            exitmenu.size = 22
-            exitmenu.font_kind = pygame.font.Font(exitmenu.font_name,exitmenu.size)
-            exitmenu.content = exitmenu.font_kind.render(exitmenu.text,True, exitmenu.color)
-        else:
-            exitmenu.size = 32
-            exitmenu.font_kind = pygame.font.Font(exitmenu.font_name,exitmenu.size)
+            main_start.draw_text(screen)
+            main_howtoplay.draw_text(screen)
+            main_credit.draw_text(screen)
+            main_exit.draw_text(screen)
+            
+            if main_start.hovered():
+                main_start.size = 42
+                main_start.font_kind = pygame.font.Font(main_start.font_name,main_start.size)
+                main_start.content = main_start.font_kind.render(main_start.text,True, main_start.color)
+                main_start.rect = main_start.content.get_rect()
+                main_start.rect.x = 250
+                main_start.rect.y = 220
+            else:
+                main_start.size = 32
+                main_start.font_kind = pygame.font.Font(main_start.font_name,main_start.size)
+            main_howtoplay.hovered()
+            if main_credit.hovered():
+                main_credit.color = (0,50,105)
+                main_credit.content = main_credit.font_kind.render(main_credit.text, True, main_credit.color)
+            if main_exit.hovered():
+                main_exit.color = (130,130,130)
+                main_exit.size = 22
+                main_exit.font_kind = pygame.font.Font(main_exit.font_name,main_exit.size)
+                main_exit.content = main_exit.font_kind.render(main_exit.text,True, main_exit.color)
+            else:
+                main_exit.size = 32
+                main_exit.font_kind = pygame.font.Font(main_exit.font_name,main_exit.size)
 
 
 
-        if startmenu.check_click():
-            print("start menu clicked")
-        if creditmenu.check_click():
-            print("credit menu clicked")
-            credit = True
-        if howtoplaymenu.check_click():
-            print("how to play menu clicked")
-        if exitmenu.check_click():
-            run = False
+            if main_start.check_click():
+                print("start menu clicked")
+            if main_credit.check_click():
+                print("credit menu clicked")
+                credit = True
+            if main_howtoplay.check_click():
+                print("how to play menu clicked")
+                howtoplay = True
+            if main_exit.check_click():
+                run = False
   
 
     for event in pygame.event.get():
