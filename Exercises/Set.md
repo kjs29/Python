@@ -26,3 +26,13 @@ How would you write the code?
   ```
   
 </details>
+
+<details>
+  <summary>answer2</summary>
+  
+  ```py
+  a = [{1,2,3},{4,5}]
+  new_set = {each_element for each_subset in a for each_element in each_subset}
+  print(new_set)
+  ```
+</details>
