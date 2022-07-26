@@ -1,3 +1,5 @@
+# Tried on 7/26(o)
+
 Create a function that returns only element, if there is a nested list as an element.
 
 Make sure that there is no None value in the list.
