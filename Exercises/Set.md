@@ -1,0 +1,28 @@
+Let's say there is a list of sets
+
+```py
+a = [{1,2,3},{4,5}]
+```
+
+Now you want to create a new set that has each element in each subset in `a`
+
+just like
+
+```py
+new_set = {1,2,3,4,5}
+```
+
+How would you write the code?
+
+<details>
+  <summary>answer</summary>
+  
+  ```py
+  a = [{1,2,3},{4,5}]
+  new_set = set()
+  for each in a:
+      new_set |= each
+  print(new_set)
+  ```
+  
+</details>
