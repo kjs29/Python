@@ -291,7 +291,7 @@ car_image_rect.y = 110
 lst = []
 lst_rendered_contents = []
 lst_rect = []
-number_of_questions = 3
+number_of_questions = 5
 for i in range(number_of_questions):
     lst.append(randint(1, 9))
 print(lst)
@@ -343,7 +343,12 @@ for i in range(len(lst)):
             answer_lst.append("O")
         else:
             answer_lst.append("X")
-print(answer_lst)
+print(f"answer_lst : {answer_lst}")
+
+# user answer list
+user_answer_lst = [" " for _ in range(len(answer_lst))]
+print(user_answer_lst)
+
 
 
 while run:
@@ -716,7 +721,7 @@ while run:
             rem = int(countdown_before_start) % 5
             
 
-            
+            #print(round(countdown_before_start,2)%5)
             if countdown_before_start < 0:
                 pygame.mouse.set_cursor(pygame.SYSTEM_CURSOR_ARROW)
                 countdown_before_start_content = countdown_before_start_font.render(str(int(-countdown_before_start)), True, color["white"])
@@ -757,14 +762,20 @@ while run:
 
             elif round(countdown_before_start,2) >= number_of_questions * 5:
                 counter_for_next_number_content = counter_for_next_number_font.render(" ",True,color["white"])
+                
         
         if 10.0 <= round(countdown_before_start, 2) <= 5 * number_of_questions:
             o_button.draw_text(screen)
             x_button.draw_text(screen)
             o_button.hovered(None, 12)
             x_button.hovered(None, 12)
+            answer_submitted = False
+            
+
             if o_button.check_click():
-                
+                print(f"quotient - 2 : {quotient-2}")
+                user_answer_lst[quotient-2] = "O"
+                print(user_answer_lst)
                 print("o clicked")
                 print(f"current number:{lst[quotient]}")
                 print(f"2-back number:{lst[quotient - 2]}")
@@ -773,8 +784,10 @@ while run:
                     print("correct choice!")
                 else:
                     print("wrong choice!")
+
             if x_button.check_click():
-                
+                user_answer_lst[quotient-2] = "X"
+                print(user_answer_lst)
                 print("x clicked")
                 print(f"current number:{lst[quotient]}")
                 print(f"2-back number:{lst[quotient - 2]}")
@@ -783,6 +796,7 @@ while run:
                     print("correct choice!")
                 else:
                     print("wrong choice!")
+        
 
 
         screen.blit(counter_for_next_number_content,(counter_for_next_number_content_rect.x, counter_for_next_number_content_rect.y))
