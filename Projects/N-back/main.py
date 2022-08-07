@@ -7,14 +7,24 @@ pygame.init()
 
 pygame.display.set_caption("N-Back")
 
+
+
+
+
 ##### Settings #####
+# icon
+icon = pygame.image.load("n.png")
+pygame.display.set_icon(icon)
 
 # fps
 fps = 60
 clock = pygame.time.Clock()
   
 # color
-color = {"black" : (0,0,0),"white":(255,255,255),"green":(0,255,0),"grey":(175,173,169),"red":(255,0,0),"light green":(144,238,144)}
+color = {"black" : (0,0,0),"white":(255,255,255),"green":(0,255,0),
+         "grey":(175,173,169),"red":(255,0,0),"light green":(144,238,144),
+         "sky blue": (50,130,230)
+         }
 
 # FPS
 fps_clock = pygame.time.Clock()
@@ -38,6 +48,25 @@ lst_rendered_contents_2 = []
 
 number_of_questions = 4
 
+# Background
+
+# Main menu
+bg1 = pygame.image.load("bg1.png")
+bg2 = pygame.image.load("bg2.png")
+bg3 = pygame.image.load("bg3.png")
+bg4 = pygame.image.load("bg4.png")
+bg8 = pygame.image.load("bg8.png")
+scroll2 = 0
+scroll3 = 0
+scroll4 = 0
+bg2_width = bg2.get_width()
+bg3_width = bg3.get_width()
+bg4_width = bg4.get_width()
+
+# Game screen
+gamebg = pygame.image.load("bgspace.png")
+scroll5 = 0
+gamebg_width = gamebg.get_width()
 
 
 # Settings - Functions
@@ -160,6 +189,7 @@ def reset_all_sound_flags():
     game_start_sound_flag = False
     game_background_sound_flag = False
     clock_tick_sound_flag =False
+
 
 # buttons
 class Button:
@@ -304,7 +334,7 @@ class Button:
     def disappear(self):
         self.rect.center = -2000,-2000
     
-    def update(self,x,y):
+    def update_position(self,x,y):
         self.rect.x = x
         self.rect.y = y
 
@@ -315,14 +345,14 @@ class Button:
 
         
 
-##### From here is instantiations and calling functions #####
+"""From here is instantiations and calling functions """
 
 # Create screen
 create_screen(800,800)
 
 
 # Main Menu buttons
-main_mainmenu_button = Button("8bitwonder.ttf", 64, screenwidth / 2, 100, color['white'], "Main Menu", True)
+main_mainmenu_button = Button("8bitwonder.ttf", 84, screenwidth / 2, 100, color['white'], "N Back", True)
 main_start_button = Button("8bitwonder.ttf", 32, screenwidth / 2, 220, color['white'], "Start", True)
 main_howtoplay_button = Button("8bitwonder.ttf", 32, screenwidth / 2, 320, color['white'], "How to play", True)
 main_credit_button = Button("8bitwonder.ttf", 32, screenwidth / 2, 420, color['white'], "Credit", True)
@@ -339,6 +369,50 @@ howtoplay_back_button = Button("8bitwonder.ttf", 42, 250, 520, color['white'], "
 
 howtoplay_title_button.rect.center = screenwidth / 2, screenheight / 2 - 300
 howtoplay_back_button.rect.center = screenwidth / 2, screenheight / 2 + 300
+
+# countdown - how to play menu
+countdown_button = Button("gameplay.ttf", 18, screenwidth / 2, 400, color["white"], str(countdown), False)
+
+# buttons & objects in How to play menu
+n1 = Button("gameplay.ttf", 36, screenwidth / 8, 300, color["white"], "1")
+n2 = Button("gameplay.ttf", 36, screenwidth / 8 * 2, 300, color["white"], "2")
+n3 = Button("gameplay.ttf", 36, screenwidth / 8 * 3, 300, color["white"], "1")
+n4 = Button("gameplay.ttf", 36, screenwidth / 8 * 4, 300, color["white"], "1")
+n5 = Button("gameplay.ttf", 36, screenwidth / 8 * 5, 300, color["white"], "3")
+n6 = Button("gameplay.ttf", 36, screenwidth / 8 * 6, 300, color["white"], "5")
+n7 = Button("gameplay.ttf", 36, screenwidth / 8 * 7, 300, color["white"], "3")
+
+n1_clone = Button("gameplay.ttf", 36, screenwidth / 8, 300, color["white"], "1")
+n2_clone = Button("gameplay.ttf", 36, screenwidth / 8 * 2, 300, color["white"], "2")
+n3_clone = Button("gameplay.ttf", 36, screenwidth / 8 * 3 , 300, color["white"], "1")
+n4_clone = Button("gameplay.ttf", 36, screenwidth / 8 * 4, 300, color["white"], "1")
+n5_clone = Button("gameplay.ttf", 36, screenwidth / 8 * 5, 300, color["white"], "3")
+
+count_2back = Button("gameplay.ttf", 16, 120, 370, color["green"], "2-back")
+count_1back = Button("gameplay.ttf", 16, 230, 370, color["green"], "1-back")
+
+count_2back.rect.x = -200
+count_2back.rect.y = -200
+count_1back.rect.x = -200
+count_1back.rect.y = -200
+
+two_back = Button("8bitwonder.ttf", 42, screenwidth / 2, 190, color["green"], "2 Back", True)
+questions_text = Button("8bitwonder.ttf", 28, 50, 250, color["white"],"questions")
+answer_text = Button("8bitwonder.ttf", 28, 50, 500, color["white"], "answer")
+n3_answer = Button("gameplay.ttf", 36, screenwidth / 8 * 3, 500, color["green"], "O")
+n4_answer = Button("gameplay.ttf", 36, screenwidth / 8 * 4, 500, color["white"], "X")
+n5_answer = Button("gameplay.ttf", 36, screenwidth / 8 * 5, 500, color["white"], "X")
+n6_answer = Button("gameplay.ttf", 36, screenwidth / 8 * 6, 500, color["white"], "X")
+n7_answer = Button("gameplay.ttf", 36, screenwidth / 8 * 7, 500, color["green"], "O")
+
+matching_number_arrow1 = Object(-200, -200, 15, 15, 1, False, True, "left_arrow.png")
+matching_number_arrow2 = Object(-200, -200, 15, 15, 1, False, True, "left_arrow.png")
+
+matching_number_arrow2.rect.x = -200
+matching_number_arrow2.rect.y = -200
+matching_number_arrow1.rect.x = -200
+matching_number_arrow1.rect.y = -200
+
 
 # Credit Menu buttons
 credit_title_button = Button("8bitwonder.ttf", 42, 250, 220, color['white'], "Credit")
@@ -373,70 +447,18 @@ options_key = Object(5,5,32,3,1,True,False)
 options_key.rect.center = 357,280
 
 
-
-
-
-# countdown - how to play menu
-countdown_button = Button("gameplay.ttf", 18, screenwidth / 2, 400, color["white"], str(countdown), False)
-
-# buttons & objects in How to play menu
-n1 = Button("gameplay.ttf", 36, screenwidth / 8, 300, color["white"], "1")
-n2 = Button("gameplay.ttf", 36, screenwidth / 8 * 2, 300, color["white"], "2")
-n3 = Button("gameplay.ttf", 36, screenwidth / 8 * 3, 300, color["white"], "1")
-n4 = Button("gameplay.ttf", 36, screenwidth / 8 * 4, 300, color["white"], "1")
-n5 = Button("gameplay.ttf", 36, screenwidth / 8 * 5, 300, color["white"], "3")
-n6 = Button("gameplay.ttf", 36, screenwidth / 8 * 6, 300, color["white"], "5")
-n7 = Button("gameplay.ttf", 36, screenwidth / 8 * 7, 300, color["white"], "3")
-
-n1_clone = Button("gameplay.ttf", 36, screenwidth / 8, 300, color["white"], "1")
-n2_clone = Button("gameplay.ttf", 36, screenwidth / 8 * 2, 300, color["white"], "2")
-n3_clone = Button("gameplay.ttf", 36, screenwidth / 8 * 3 , 300, color["white"], "1")
-n4_clone = Button("gameplay.ttf", 36, screenwidth / 8 * 4, 300, color["white"], "1")
-n5_clone = Button("gameplay.ttf", 36, screenwidth / 8 * 5, 300, color["white"], "3")
-
-count_2back = Button("gameplay.ttf", 16, 120, 370, color["green"], "2-back")
-count_1back = Button("gameplay.ttf", 16, 230, 370, color["green"], "1-back")
-
-count_2back.rect.x = -200
-count_2back.rect.y = -200
-count_1back.rect.x = -200
-count_1back.rect.y = -200
-
-two_back = Button("8bitwonder.ttf", 42, screenwidth / 2, 210, color["green"], "2 Back", True)
-answer_text = Button("8bitwonder.ttf", 28, 50, 500, color["white"], "answer")
-n3_answer = Button("gameplay.ttf", 36, screenwidth / 8 * 3, 500, color["green"], "O")
-n4_answer = Button("gameplay.ttf", 36, screenwidth / 8 * 4, 500, color["white"], "X")
-n5_answer = Button("gameplay.ttf", 36, screenwidth / 8 * 5, 500, color["white"], "X")
-n6_answer = Button("gameplay.ttf", 36, screenwidth / 8 * 6, 500, color["white"], "X")
-n7_answer = Button("gameplay.ttf", 36, screenwidth / 8 * 7, 500, color["green"], "O")
-
-matching_number_arrow1 = Object(-200, -200, 15, 15, 1, False, True, "left_arrow.png")
-matching_number_arrow2 = Object(-200, -200, 15, 15, 1, False, True, "left_arrow.png")
-
-matching_number_arrow2.rect.x = -200
-matching_number_arrow2.rect.y = -200
-matching_number_arrow1.rect.x = -200
-matching_number_arrow1.rect.y = -200
-
-
-
-
-
 ########################## Buttons & objects in Game screen#############################
 
 # current n-back status
 current_nback_text_font = pygame.font.Font("8bitwonder.ttf",20)
 current_nback_text_content = current_nback_text_font.render(str(current_nback) + " Back",True,color["white"])
 
-# start, finish, car images
-start_image = pygame.image.load("start.png")
-finish_image = pygame.image.load("goal.png")
-car_image = pygame.image.load("sportcar.png")
-
-car_image_rect = car_image.get_rect()
-car_image_rect.x = 110
-car_image_rect.y = 110
-
+# start, finish, car, dashboard images
+earth_image = Object(110,90,50,50,1,False,True,"earth.png")
+space_station_image = Object(640,78,50,50,1,False,True,"spacestation.png")
+rocket_image = Object(110,80,50,50,1,center = False,does_image_exist=True,imagefile_name="rocket.png")
+odometer_image = Object(screenwidth/2,600,100,100,1,True,True,"speedometer.png")
+screen_image = Object(screenwidth/2,600,100,100,1,True,True,"tablet.png")
 
 # countdown before start
 countdown_before_start = -4
@@ -444,7 +466,7 @@ countdown_before_start_font = pygame.font.Font("gameplay.ttf", 130)
 countdown_before_start_content = countdown_before_start_font.render(str(countdown_before_start), True, color["white"])
 countdown_before_start_content_rect = countdown_before_start_content.get_rect()
 countdown_before_start_content_rect.x = screenwidth/2 - 40
-countdown_before_start_content_rect.y = screenheight/2 - 65
+countdown_before_start_content_rect.y = screenheight/2 - 60
 
 
 # how many seconds last during one number
@@ -464,8 +486,8 @@ counter_for_next_number_content_rect.y = -200
 
 
 # O, X button
-o_button = Button(None, 13, screenwidth / 2 + 120, 550, color["white"], "1", True, True, "o.png")
-x_button = Button(None, 13, screenwidth / 2 - 120, 550, color["white"], "1", True, True, "x.png")
+o_button = Button(None, 13, screenwidth / 2 + 120, 530, color["white"], "1", True, True, "o.png")
+x_button = Button(None, 13, screenwidth / 2 - 120, 530, color["white"], "1", True, True, "x.png")
 
 
 #########################################################################################
@@ -482,7 +504,7 @@ questions = Button("gameplay.ttf",20,165,280,color["white"],"questions",True)
 correct_answers = Button("gameplay.ttf",20,165,420,color["white"],"correct answer",True)
 user_answers = Button("gameplay.ttf",20,165,560,color["white"],"your answer",True)
 result_percentage_text = Button("gameplay.ttf",20,165,650,color["white"],"Score",True)
-go_back_to_main_menu_button = Button("gameplay.ttf",20,610,675,color["white"],"Main menu")
+go_back_to_main_menu_button = Button("gameplay.ttf",20,190,692,color["white"],"Press enter key to go to Main menu")
 
 number_of_correct_questions = 0
 
@@ -503,15 +525,30 @@ def update_score():
 
 while run:
     
-    update_screen(screen, color["black"])
+    update_screen(screen, color["sky blue"])
 
-    # print(pygame.mouse.get_pos())
-    # print(main_x_button.rect)
     # Main Menu screen
     if main == True:
         
+        for i in range(3):
+            screen.blit(bg2,(bg2_width * i + scroll2,0))
+        for i in range(3):
+            screen.blit(bg3,(bg3_width * i + scroll3,0))
+        for i in range(3):
+            screen.blit(bg4,(bg4_width * i + scroll4,0))
+        scroll2 -= 0.5
+        scroll3 -= 1
+        scroll4 -= 2
+        if abs(scroll2)>bg2_width:
+            scroll2 = 0
+        if abs(scroll3)>bg3_width:
+            scroll3 = 0
+        if abs(scroll4)>bg4_width:
+            scroll4 = 0
+
+        screen.blit(bg8,(0,150))
         if howtoplay == True:
-            #print(pygame.mouse.get_pos())
+            
             count_timer = pygame.time.get_ticks()
             screen.blit(matching_number_arrow1.image,(matching_number_arrow1.rect.x, matching_number_arrow1.rect.y))
             screen.blit(matching_number_arrow2.image,(matching_number_arrow2.rect.x, matching_number_arrow2.rect.y))
@@ -521,7 +558,7 @@ while run:
             if count_timer - last_count > 1000:
                 countdown -= 1
                 last_count = count_timer
-                print(f"countdown : {countdown}")
+                #print(f"countdown : {countdown}")
                 countdown_button.content = countdown_button.font_kind.render(str(countdown), True, countdown_button.color)
             
             two_back.draw_text(screen)
@@ -544,12 +581,12 @@ while run:
             if countdown <= 0:
                 matching_number_arrow1.rect.x = 230
                 matching_number_arrow1.rect.y = 330
-                count_1back.update(230, 370)
+                count_1back.update_position(230, 370)
             # draw 2- back
             if countdown <= -1:
                 matching_number_arrow2.rect.x = 120
                 matching_number_arrow2.rect.y = 330
-                count_2back.update(120, 370)
+                count_2back.update_position(120, 370)
             # number moving animation
             if countdown <= -2:
                 n1_clone.draw_text(screen)
@@ -570,8 +607,8 @@ while run:
                 n3_answer.draw_text(screen)
             # delete 1-back, 2-back, and arrows
             if countdown <= -6:
-                matching_number_arrow1.update(-200, -200)
-                matching_number_arrow2.update(-200, -200)
+                matching_number_arrow1.update_position(-200, -200)
+                matching_number_arrow2.update_position(-200, -200)
                 count_1back.disappear()
                 count_2back.disappear()
 
@@ -582,12 +619,12 @@ while run:
                 n4.draw_text(screen)
             # draw 1-back
             if countdown <= -8:
-                matching_number_arrow1.update(330, 330)
-                count_1back.update(330, 370)
+                matching_number_arrow1.update_position(330, 330)
+                count_1back.update_position(330, 370)
             # draw 2-back
             if countdown <= -9:
-                matching_number_arrow2.update(230, 330)
-                count_2back.update(230, 370)
+                matching_number_arrow2.update_position(230, 330)
+                count_2back.update_position(230, 370)
             # number moving animation
             if countdown <= -10:
                 n2_clone.draw_text(screen)
@@ -606,8 +643,8 @@ while run:
                 n4_answer.draw_text(screen)
             # delete 1-back, 2-back, and arrows
             if countdown <= - 14:
-                matching_number_arrow1.update(-200, -200)
-                matching_number_arrow2.update(-200, -200)
+                matching_number_arrow1.update_position(-200, -200)
+                matching_number_arrow2.update_position(-200, -200)
                 count_1back.disappear()
                 count_2back.disappear()
                 
@@ -618,12 +655,12 @@ while run:
                 n5.draw_text(screen)
             # draw 1-back
             if countdown <= -16:
-                matching_number_arrow1.update(430, 330)
-                count_1back.update(430, 370)
+                matching_number_arrow1.update_position(430, 330)
+                count_1back.update_position(430, 370)
             # draw 2-back
             if countdown <= -17:
-                matching_number_arrow2.update(330, 330)
-                count_2back.update(330, 370)
+                matching_number_arrow2.update_position(330, 330)
+                count_2back.update_position(330, 370)
             # number moving animation
             if countdown <= -18:
                 n3_clone.draw_text(screen)
@@ -642,8 +679,8 @@ while run:
                 n5_answer.draw_text(screen)
             # delete 1-back, 2-back, and arrows
             if countdown <= - 22:
-                matching_number_arrow1.update(-200, -200)
-                matching_number_arrow2.update(-200, -200)
+                matching_number_arrow1.update_position(-200, -200)
+                matching_number_arrow2.update_position(-200, -200)
                 count_1back.disappear()
                 count_2back.disappear()
 
@@ -655,10 +692,10 @@ while run:
                 n6.draw_text(screen)
             # draw 1-back, and 2-back
             if countdown <= -24:
-                matching_number_arrow1.update(530, 330)
-                count_1back.update(530, 370)
-                matching_number_arrow2.update(430, 330)
-                count_2back.update(430, 370)
+                matching_number_arrow1.update_position(530, 330)
+                count_1back.update_position(530, 370)
+                matching_number_arrow2.update_position(430, 330)
+                count_2back.update_position(430, 370)
 
             # number moving animation
             if countdown <= -25:
@@ -678,8 +715,8 @@ while run:
                 n6_answer.draw_text(screen)
             # delete 1-back, 2-back, and arrows
             if countdown <= -29:
-                matching_number_arrow1.update(-200, -200)
-                matching_number_arrow2.update(-200, -200)
+                matching_number_arrow1.update_position(-200, -200)
+                matching_number_arrow2.update_position(-200, -200)
                 count_1back.disappear()
                 count_2back.disappear()
 
@@ -709,8 +746,8 @@ while run:
                 n7_answer.draw_text(screen)
             # delete 1-back, 2-back, and arrows
             if countdown <= - 35:
-                matching_number_arrow1.update(-200, -200)
-                matching_number_arrow2.update(-200, -200)
+                matching_number_arrow1.update_position(-200, -200)
+                matching_number_arrow2.update_position(-200, -200)
                 count_1back.disappear()
                 count_2back.disappear()
                 n1_clone.disappear()
@@ -726,11 +763,11 @@ while run:
                 n7.color = color["white"]
                 n3.content = n3.font_kind.render(n3.text, True, n3.color)
                 n7.content = n7.font_kind.render(n7.text, True, n7.color)
-                n1_clone.update(100, 300)
-                n2_clone.update(200, 300)
-                n3_clone.update(300, 300)
-                n4_clone.update(400, 300)
-                n5_clone.update(500, 300)
+                n1_clone.update_position(100, 300)
+                n2_clone.update_position(200, 300)
+                n3_clone.update_position(300, 300)
+                n4_clone.update_position(400, 300)
+                n5_clone.update_position(500, 300)
                 count_1back.disappear()
                 count_2back.disappear()
                 n1_clone.color = color["white"]
@@ -748,7 +785,7 @@ while run:
                 
 
 
-           
+            questions_text.draw_text(screen)
             howtoplay_title_button.draw_text(screen)
             howtoplay_back_button.draw_text(screen)
 
@@ -1017,8 +1054,8 @@ while run:
             main_exit_button.draw_text(screen)
             main_x_button.draw_text(screen)
 
-            main_start_button.hovered(color['green'], 42, color['white'], 32, True, True, main_start_button.rect.x, main_start_button.rect.y)
-            main_howtoplay_button.hovered(color['green'], 36, color['white'], 32, False, 250, 320)
+            main_start_button.hovered(color['green'], 32, color['white'], 32, True, True, main_start_button.rect.x, main_start_button.rect.y)
+            main_howtoplay_button.hovered(color['green'], 32, color['white'], 32, False, 250, 320)
             main_credit_button.hovered(color['green'], 32, color['white'], 32, False)
             main_options_button.hovered(color["green"],32,color["white"],32,False)
             main_exit_button.hovered((130,130,130), 25, color['white'], 32, False)
@@ -1042,7 +1079,7 @@ while run:
                 options = True
             if main_exit_button.check_click():
                 run = False
-
+            
             if main_x_button.key_movement():
                 
                 if main_x_button.rect.y < 250:
@@ -1066,24 +1103,40 @@ while run:
                     print("EXIT pressed")
                     run = False
 
-            if main_x_button.rect.y < 205:
-                main_x_button.rect.y = 205
-            if main_x_button.rect.y > 605:
-                main_x_button.rect.y = 605
+            if main_x_button.rect.y < 208:
+                main_x_button.rect.y = 208
+            if main_x_button.rect.y < 250:
+                main_x_button.rect.x = 284
+            if 290 < main_x_button.rect.y <350:
+                main_x_button.rect.x = 195
+            if 390 < main_x_button.rect.y < 450:
+                main_x_button.rect.x = 276
+            if 490 < main_x_button.rect.y < 550:
+                main_x_button.rect.x = 261
+            if 590 < main_x_button.rect.y < 650:
+                main_x_button.rect.x = 310
+            if main_x_button.rect.y > 608:
+                main_x_button.rect.y = 608
     
     # Game screen
     elif game == True:
         main = False
         update_screen(screen,color["black"])
+        
+        screen.blit(gamebg,(0,0))
+        odometer_image.transform_image(1.2,1)
+        odometer_image.draw_on_screen(screen,100,660)
+        screen_image.transform_image(1.3,1.5)
+        screen_image.draw_on_screen(screen,75,-80)
         regenerate_numbers()
         current_nback_text_content = current_nback_text_font.render(str(current_nback)+" Back",True,color["white"])
-        screen.blit(current_nback_text_content,(10,10))
+        screen.blit(current_nback_text_content,(110,240))
+        earth_image.draw_on_screen(screen,100,82)
+        space_station_image.draw_on_screen(screen,640,78)
+        rocket_image.draw_on_screen(screen,rocket_image.rect.x,rocket_image.rect.y)
         
-        pygame.draw.line(screen,color["white"],(100,150),(700,150),2)
-        screen.blit(start_image,(120,92))
-        screen.blit(finish_image,(630,88))
-        screen.blit(car_image,(car_image_rect.x, car_image_rect.y))
-        
+        #print(pygame.mouse.get_pos())
+
         # blit images from lst_rendered_contents onto screen
         for i in range(len(lst_rendered_contents)):
             screen.blit(lst_rendered_contents[i], lst_rect[i])
@@ -1120,19 +1173,19 @@ while run:
                 lst_rect[quotient - 1].center = -200, -200
                 counter_for_next_number_content_rect.x = 680
                 counter_for_next_number_content_rect.y = 20
-                car_image_rect.x += 500/number_of_questions/25
+                rocket_image.rect.x += 500/number_of_questions/25
 
 
                 # every 5 second car moves
                 # if round(countdown_before_start,2) % 5 == 0.0:
-                #     car_image_rect.x += 500/number_of_questions
+                #     rocket_image_rect.x += 500/number_of_questions
                 
 
                 # this makes number disappear for a short time
                 if quotient*5 + 4.78 < countdown_before_start:
                     lst_rect[quotient].center = -200, -200
                 else:
-                    lst_rect[quotient].center = screenwidth / 2, screenheight / 2 - 100
+                    lst_rect[quotient].center = screenwidth / 2 + 10, screenheight / 2 - 45
 
 
             # show counter before the next number shows up - used remainder
@@ -1141,7 +1194,7 @@ while run:
                 if game_background_sound_flag == False:
                     game_background_sound_flag = True
                     pygame.mixer.music.load("game_loop_background.wav")
-                    pygame.mixer.music.set_volume(2)
+                    pygame.mixer.music.set_volume(3)
                     pygame.mixer.music.play(-1) 
 
                 if rem == 0:
@@ -1222,17 +1275,19 @@ while run:
     elif score == True:
         game = False
         screen.fill(color["black"])
-
-        # this allows to reset the previous score and update new result
+        
+        # this allows to reset the previous score and update_position new result
         update_score()
 
         pygame.draw.rect(screen, color["white"], rectangle_outside, 3)
         pygame.draw.line(screen,color["white"], (100,150), (700,150), 2)
         pygame.draw.line(screen,color["white"], (280,200), (280,680), 2)
 
-        screen.blit(start_image,(120,92))
-        screen.blit(finish_image,(630,88))
-        screen.blit(car_image,(600, car_image_rect.y))
+        #screen.blit(earth_image,(120,92))
+        earth_image.draw_on_screen(screen,100,82)
+        space_station_image.draw_on_screen(screen,640,78)
+        rocket_image.rotate_image(90)
+        rocket_image.draw_on_screen(screen,600,rocket_image.rect.y)
         screen.blit(result_text.content, result_text.rect)
         
         n_back_text.draw_text(screen)
@@ -1329,10 +1384,10 @@ while run:
                     countdown_before_start = -4
                     score_update_control = False
                     percentage_control = False
-                    car_image_rect.x = 110
-                    car_image_rect.y = 110
+                    rocket_image.rect.x = 110
+                    rocket_image.rect.y = 80
                     countdown_before_start_content_rect.x = screenwidth/2 - 40
-                    countdown_before_start_content_rect.y = screenwidth/2 - 65
+                    countdown_before_start_content_rect.y = screenwidth/2 - 60
                     number_of_correct_questions = 0
                     for i in range(len(lst_rendered_contents)):
                         lst_rendered_contents.pop(0)
@@ -1343,6 +1398,9 @@ while run:
                         lst_user_answer.pop(0)
                     random_number_control = False
                     screen.fill(color["black"])
+                    rocket_image.flag = False
+                    rocket_image.rotate_image(270)
+                    rocket_image.flag = False
                     main = True
                     score = False
         if go_back_to_main_menu_button.check_click():
@@ -1351,10 +1409,10 @@ while run:
             countdown_before_start = -4
             score_update_control = False
             percentage_control = False
-            car_image_rect.x = 110
-            car_image_rect.y = 110
+            rocket_image.rect.x = 110
+            rocket_image.rect.y = 80
             countdown_before_start_content_rect.x = screenwidth/2 - 40
-            countdown_before_start_content_rect.y = screenwidth/2 - 65
+            countdown_before_start_content_rect.y = screenwidth/2 - 60
             number_of_correct_questions = 0
             for i in range(len(lst_rendered_contents)):
                 lst_rendered_contents.pop(0)
@@ -1365,6 +1423,9 @@ while run:
                 lst_user_answer.pop(0)
             random_number_control = False
             screen.fill(color["black"])
+            rocket_image.flag = False
+            rocket_image.rotate_image(270)
+            rocket_image.flag = False
             main = True
             score = False
         
