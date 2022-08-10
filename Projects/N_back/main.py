@@ -415,6 +415,7 @@ lst_practice_answer = [" "," "]
 credit_title_button = Button("8bitwonder.ttf", 42, 250, 220, color['white'], "Creator")
 credit_made_by_button = Button("8bitwonder.ttf", 64, 250, 320, color['white'], "Jinsung Kim")
 credit_back_button = Button("8bitwonder.ttf", 42, 250, 520, color['white'], "Back")
+credit_email = "jsk.jinsung@gmail.com"
 
 credit_title_button.rect.center = screenwidth / 2, screenheight / 2 - 200
 credit_made_by_button.rect.center = screenwidth / 2, screenheight / 2 - 100
@@ -797,6 +798,7 @@ while run:
 
             credit_title_button.draw_text(screen)
             credit_made_by_button.draw_text(screen)
+            show_text(screen,credit_email,(screenwidth/2,375),color["white"],45)
             credit_back_button.draw_text(screen)
             
             credit_title_button.hovered(color['green'], 42, color['white'], 42, False, x = credit_title_button.rect.x, y = credit_title_button.rect.y)
