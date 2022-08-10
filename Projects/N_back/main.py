@@ -565,7 +565,7 @@ while run:
                      7:[screenwidth/2,450],
                      "2 back" : [140,165]
                     }"""
-            print(pygame.mouse.get_pos())
+            #print(pygame.mouse.get_pos())
             current_time = time.time()
             if time_reset == 0:
                 time_reset = 1
