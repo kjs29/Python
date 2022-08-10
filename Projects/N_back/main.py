@@ -564,6 +564,7 @@ while run:
                      7:[screenwidth/2,450],
                      "2 back" : [140,165]
                     }"""
+            print(pygame.mouse.get_pos())
             current_time = time.time()
             if time_reset == 0:
                 time_reset = 1
@@ -618,8 +619,8 @@ while run:
                     lst_texts[1] = " "
                     lst_texts[2] = 5
                     lst_texts[3] = 7
-                    o_button.rect.y = 548
-                    x_button.rect.y = 548
+                    o_button.rect.y = 530
+                    x_button.rect.y = 530
                     o_button.draw_text(screen)
                     x_button.draw_text(screen)
                 if time.time() - start_count > 35+1:
@@ -666,14 +667,14 @@ while run:
                     if lst_practice_answer[0] == "O":
                         lst_texts[1] = "Correct\n\nnumbers : 7  9  7"
                         texts["Every 5 seconds\na new number is displayed"][1] = 185
-                        frame_around_o_x_buttons_rect.center = 524,613
+                        frame_around_o_x_buttons_rect.center = 524,594
                         pygame.draw.rect(screen,color["light green"],frame_around_o_x_buttons_rect,3,border_radius=15)
                         start_count = time.time()
                         time_reset = 2
                     elif lst_practice_answer[0] == "X":
                         lst_texts[1] = "Wrong but it's okay\nCurrent number is 7\n2nd number ago was also 7"
                         texts["Every 5 seconds\na new number is displayed"][1] = 185
-                        frame_around_o_x_buttons_rect.center = 284,613
+                        frame_around_o_x_buttons_rect.center = 284,594
                         pygame.draw.rect(screen,color["light red"],frame_around_o_x_buttons_rect,3,border_radius=15)
                         
             
@@ -697,8 +698,8 @@ while run:
                     lst_texts[1] = " "
                     lst_texts[2] = 5
                     lst_texts[3] = 8
-                    o_button.rect.y = 548
-                    x_button.rect.y = 548
+                    o_button.rect.y = 530
+                    x_button.rect.y = 530
                     o_button.draw_text(screen)
                     x_button.draw_text(screen)
                 if time.time() - start_count > 4.01:
@@ -708,11 +709,11 @@ while run:
                         lst_practice_answer[1] = "X"
                     if lst_practice_answer[1] == "O":
                         lst_texts[1] = "Wrong answer"
-                        frame_around_o_x_buttons_rect.center = 524,613
+                        frame_around_o_x_buttons_rect.center = 524,594
                         pygame.draw.rect(screen,color["light green"],frame_around_o_x_buttons_rect,3,border_radius=15)
                     elif lst_practice_answer[1] == "X":
                         lst_texts[1] = "Correct answer"
-                        frame_around_o_x_buttons_rect.center = 284,613
+                        frame_around_o_x_buttons_rect.center = 284,594
                         pygame.draw.rect(screen,color["light red"],frame_around_o_x_buttons_rect,3,border_radius=15)
                 if time.time() - start_count > 5:
                     lst_texts[2] = 4
@@ -761,8 +762,8 @@ while run:
                 texts["Let's learn 2 back"] = [screenwidth/2,230]
                 if time_reset == 1:
                     start_count = time.time()
-                o_button.rect.y = 530
-                x_button.rect.y = 530
+                o_button.rect.y = 475
+                x_button.rect.y = 475
                 # game control - howtoplay menu exit
 
                 howtoplay = False
@@ -785,8 +786,8 @@ while run:
                         texts["Let's learn 2 back"] = [screenwidth/2,230]
                         if time_reset == 1:
                             start_count = time.time()
-                        o_button.rect.y = 530
-                        x_button.rect.y = 530
+                        o_button.rect.y = 475
+                        x_button.rect.y = 475
                         howtoplay = False
                         
                         
@@ -1168,7 +1169,8 @@ while run:
         earth_image.draw_on_screen(screen,100,82)
         space_station_image.draw_on_screen(screen,640,78)
         rocket_image.draw_on_screen(screen,rocket_image.rect.x,rocket_image.rect.y)
-        
+        o_button.rect.y = 475
+        x_button.rect.y = 475
         #print(pygame.mouse.get_pos())
         
 
@@ -1260,8 +1262,10 @@ while run:
 
 
         if 5 * current_nback <= round(countdown_before_start, 2) < 5 * number_of_questions:
+            
             o_button.draw_text(screen)
             x_button.draw_text(screen)
+            
             o_button.hovered(None, 12)
             x_button.hovered(None, 12)
             
@@ -1297,10 +1301,10 @@ while run:
                     #print("wrong choice!")
             
             if lst_user_answer[quotient-current_nback] == "O":
-                frame_around_o_x_buttons_rect.center = 524, 530
+                frame_around_o_x_buttons_rect.center = 524, 539
                 pygame.draw.rect(screen,color["light green"],frame_around_o_x_buttons_rect,3,border_radius = 15)
             elif lst_user_answer[quotient-current_nback] == "X":
-                frame_around_o_x_buttons_rect.center = 284, 530
+                frame_around_o_x_buttons_rect.center = 284, 539
                 pygame.draw.rect(screen,color["light red"],frame_around_o_x_buttons_rect,3,border_radius = 15)
             elif lst_user_answer[quotient-current_nback] == " ":
                 frame_around_o_x_buttons_rect.center = -200, -200
