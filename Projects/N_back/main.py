@@ -1,3 +1,4 @@
+from turtle import back
 import pygame, sys, time
 from object import Object
 from random import randint
@@ -21,7 +22,7 @@ pygame.display.set_icon(icon)
 color = {"black" : (0,0,0),"white":(255,255,255),"green":(0,255,0),
          "grey":(175,173,169),"red":(255,0,0),"light green":(144,238,144),
          "sky blue": (50,130,230), "light red": (255,127,127), "light green":(144,238,144),
-         "blue": (0,0,255), "purple" : (201,71,245)
+         "blue": (0,0,255), "purple" : (201,71,245), "dark grey":(120,120,120)
          }
 
 # FPS
@@ -97,7 +98,6 @@ main = True
 # How to play menu control - to exit the how to play menu
 howtoplay = False
 time_reset = 0
-howtoplay_answer_clicked = False
 
 # Credit menu control - to exit the credit menu
 credit = False
@@ -130,7 +130,8 @@ paused_sound_flag =  False
 # Score screen
 score_sound_flag = False
 
-
+# Background sound flag
+backgroundsound = 1
 
 
 percentage_control = False
@@ -181,7 +182,7 @@ def regenerate_numbers():
 
 def play_sound(filename = None, volume = 1, loop = False, channel = -1):
     
-    if channel == -1:
+    if channel == -1 and backgroundsound == 1:
         sound = pygame.mixer.Sound(filename)
         if volume != 1:
             sound.set_volume(volume)
@@ -189,26 +190,30 @@ def play_sound(filename = None, volume = 1, loop = False, channel = -1):
             sound.play(-1)
         else:
             sound.play()
+    # menu screen background music
     elif channel == 0:
         score_sound_channel.pause()
         game_sound_channel.pause()
         pause_sound_channel.pause()
         main_sound_channel.play(pygame.mixer.Sound("sound/moment.mp3"),-1,fade_ms = 500)
+    # game screen background music
     elif channel == 1:
         main_sound_channel.pause()
         pause_sound_channel.pause()
         game_sound_channel.play(pygame.mixer.Sound("sound/game_loop_background_edited.wav"),-1,fade_ms=500)
+    # score screen background music
     elif channel == 2:
         game_sound_channel.pause()
         pause_sound_channel.pause()
         score_sound_channel.set_volume(0.5)
         score_sound_channel.play(pygame.mixer.Sound("sound/gamescore.wav"),-1)
+    # pause screen background music
     elif channel == 3:
         game_sound_channel.pause()
         pause_sound_channel.play(pygame.mixer.Sound("sound/tobu_colors.mp3"),-1,fade_ms=500)
 
 def reset_all_sound_flags():
-    global main_background_sound_flag,number_appear_sound_flag,count_down_sound_flag,game_start_sound_flag,game_background_sound_flag,clock_tick_sound_flag,score_sound_flag,paused_sound_flag
+    global main_background_sound_flag, number_appear_sound_flag, count_down_sound_flag, game_start_sound_flag, game_background_sound_flag, clock_tick_sound_flag,score_sound_flag,paused_sound_flag
     main_background_sound_flag = False
     number_appear_sound_flag = False
     count_down_sound_flag = False
@@ -217,6 +222,25 @@ def reset_all_sound_flags():
     clock_tick_sound_flag =False
     score_sound_flag = False
     paused_sound_flag = False
+
+def mute_background_sound_flags():
+    global main_sound_channel, game_sound_channel, score_sound_channel, pause_sound_channel
+    
+    main_sound_channel.set_volume(0)
+    game_sound_channel.set_volume(0)
+    score_sound_channel.set_volume(0)
+    pause_sound_channel.set_volume(0)
+
+
+def resume_background_sound_flags():
+    global main_sound_channel, game_sound_channel, score_sound_channel, pause_sound_channel
+
+    main_sound_channel.set_volume(1)
+    game_sound_channel.set_volume(1)
+    score_sound_channel.set_volume(0.5)
+    pause_sound_channel.set_volume(1)
+
+
 
 def multiline_text(screen,size,text,color,coor,linespace= 10):
     
@@ -396,6 +420,12 @@ class Button:
 
 """From here is instantiations and calling functions """
 
+# sound mute
+main_sound_button = Button("8bitwonder.ttf",15,740,10,color["white"],"Mute sound",False,True,"img/backgroundsound1.png")
+main_sound_button_off = Button("8bitwonder.ttf",15,-200,10,color["white"],"Mute sound",False,True,"img/backgroundsound0.png")
+
+# press backspace text
+press_backspace_text = "Press backspace to\nreturn to the main menu"
 
 # Main Menu buttons
 main_mainmenu_button = Button("8bitwonder.ttf", 84, screenwidth / 2, 100, color['white'], "N back", True)
@@ -413,7 +443,7 @@ main_x_button = Button("8bitwonder.ttf", 24, screenwidth / 2 - 200, 0, color['wh
 howtoplay_title_button = Button("8bitwonder.ttf", 32, 250, 220, color['white'], "How to play")
 howtoplay_back_button = Button("8bitwonder.ttf", 42, 250, 520, color['white'], "Back")
 texts = {"Let's learn 2 back": [screenwidth/2,240],
-         "Every 5 seconds\na new number is displayed":[screenwidth/2,210],
+         "A new number is displayed\nEvery 5 seconds":[screenwidth/2,210],
          5:[650,380],
          7:[screenwidth/2,450],
          "2 back" : [140,165]
@@ -471,10 +501,15 @@ high_number = False
 
 # paused screen
 pause_text = "Paused"
+press_esc_to_pause_text = "<Esc> : pause"
+press_right_to_o_text = "<Right key> : 'O'" 
+press_left_to_x_text = "<Left key> : 'X' " 
 pause_button = Button("8bitwonder.ttf",15,screenwidth/2,365,color["black"]," ",True,True,"img/pause.png")
-resume_text = Button("KGPrimaryPenmanship.ttf",50,screenwidth/2,470,color["white"],"Resume",True)
-press_esc_text = Button("KGPrimaryPenmanship.ttf",50,screenwidth/2,520,color["white"],"Press <ESC> to continue",True)
+main_menu_text = Button("gameplay.ttf",30,screenwidth/2,540,color["white"],"Main Menu",True)
+press_esc_text = Button("KGPrimaryPenmanship.ttf",50,screenwidth/2,470,color["white"],"Press <ESC> to continue",True)
 quit_text = Button("gameplay.ttf",30,screenwidth/2,600,color["white"],"Quit",True)
+
+paused_sound_button = Button("8bitwonder.ttf",15,600,170,color["white"],"Mute sound",False,True,"img/backgroundsound1.png")
 
 
 # current n-back status
@@ -582,7 +617,7 @@ while run:
 
         if howtoplay == True:
             """texts = {"Let's learn 2 back": [screenwidth/2,240],
-                     "Every 5 seconds\na new number is displayed":[screenwidth/2,210],
+                     "A new number is displayed\nEvery 5 seconds":[screenwidth/2,210],
                      5:[650,380],
                      7:[screenwidth/2,450],
                      "2 back" : [140,165]
@@ -601,7 +636,7 @@ while run:
                 if current_time - start_count > 3:
                     texts["Let's learn 2 back"] = [2000,2000]
                 if current_time - start_count > 3.2:
-                    multiline_text(screen,50,lst_texts[1],color["white"],texts["Every 5 seconds\na new number is displayed"],15)
+                    multiline_text(screen,50,lst_texts[1],color["white"],texts["A new number is displayed\nEvery 5 seconds"],15)
                     show_text(screen,lst_texts[4],texts["2 back"],color["sky blue"],25)
                 if time.time() - start_count > 5.4:
                     show_text(screen,str(lst_texts[3]),texts[7],color["green"],200)
@@ -620,20 +655,20 @@ while run:
                     lst_texts[3] = 9
                 if time.time() - start_count > 13:
                     lst_texts[1] = "The number just\nchanged to 9"
-                    texts["Every 5 seconds\na new number is displayed"][1] = 210
+                    texts["A new number is displayed\nEvery 5 seconds"][1] = 210
                 if time.time() - start_count > 16:
                     lst_texts[1] = "Do you remember\nthe last number?"
                 if time.time() - start_count > 19:
-                    lst_texts[1] = "Good job!\nYes, it was 7"
+                    lst_texts[1] = "Good job!\nYes, it was the number 7"
                 if time.time() - start_count > 22:
-                    lst_texts[1] = "Last number would be \nN = 1 back number"
+                    lst_texts[1] = "The last number would be \nN = 1 back number"
                 if time.time() - start_count > 25:
                     lst_texts[1] = "Let me give you \nanother number"
                 if time.time() - start_count > 28:
                     lst_texts[1] = "Remember \nthe last two numbers"
                 if time.time() - start_count > 31:
                     lst_texts[1] = "3"
-                    texts["Every 5 seconds\na new number is displayed"][1] = 240
+                    texts["A new number is displayed\nEvery 5 seconds"][1] = 240
                 if time.time() - start_count > 32:
                     lst_texts[1] = "2"
                 if time.time() - start_count > 33:
@@ -646,6 +681,7 @@ while run:
                     x_button.rect.y = 530
                     o_button.draw_text(screen)
                     x_button.draw_text(screen)
+                    
                 if time.time() - start_count > 35+1:
                     lst_texts[2] = 4
                 if time.time() - start_count > 35+2:
@@ -656,47 +692,50 @@ while run:
                     lst_texts[2] = 1
                 if time.time() - start_count > 35+5:
                     lst_texts[1] = "What was the last number?"
-                    texts["Every 5 seconds\na new number is displayed"][1] = 240
+                    texts["A new number is displayed\nEvery 5 seconds"][1] = 240
                 if time.time() - start_count > 35+7:
-                    lst_texts[1] = "Yes, it was 9"
+                    lst_texts[1] = "Yes, it was the number 9"
                 if time.time() - start_count > 35+9:      
-                    lst_texts[1] = "What about\nthe last last number?(N = 2)\n(the first number)"
-                    texts["Every 5 seconds\na new number is displayed"][1] = 185
+                    lst_texts[1] = "What about\nthe second last number?(N = 2)\n(the first number)"
+                    texts["A new number is displayed\nEvery 5 seconds"][1] = 185
                 if time.time() - start_count > 35+13:      
-                    lst_texts[1] = "It was 7 which happens to be\nthe same number as current one"
-                    texts["Every 5 seconds\na new number is displayed"][1] = 210
+                    lst_texts[1] = "It was the number 7\nwhich is the same as\nthe current number"
+                    texts["A new number is displayed\nEvery 5 seconds"][1] = 185
                 if time.time() - start_count > 35+18:      
-                    lst_texts[1] = "You must have\nnoticed these two buttons\n'O' and 'X'"
-                    texts["Every 5 seconds\na new number is displayed"][1] = 185
+                    lst_texts[1] = "You might have noticed\nthese two buttons :\n'O' and 'X'"
+                    texts["A new number is displayed\nEvery 5 seconds"][1] = 185
+                if 35+19.2 < time.time() - start_count < 35+19.5:
+                    pygame.draw.rect(screen,color["light red"],(200,515,410,160),4)  
+                if 35 + 19.8 < time.time() - start_count < 35 + 22:
+                    pygame.draw.rect(screen,color["light red"],(200,515,410,160),4)
+                
                 if time.time() - start_count > 35+22:
-                    lst_texts[1] = "Click 'O' if 2nd number ago\nis the same as current number\n"
-                    texts["Every 5 seconds\na new number is displayed"][1] = 195
+                    lst_texts[1] = "Click 'O' if the second last number\nis the same as the current number\n"
+                    texts["A new number is displayed\nEvery 5 seconds"][1] = 195
                 if time.time() - start_count > 59.3:
-                    lst_texts[1] = "Click 'O' if 2nd number ago\nis the same as current number\nNumbers : 7  9  7"
-                    texts["Every 5 seconds\na new number is displayed"][1] = 185
+                    lst_texts[1] = "Click 'O' if the second last number\nis the same as the current number\nNumbers : 7  9  7"
+                    texts["A new number is displayed\nEvery 5 seconds"][1] = 185
                 if time.time() - start_count > 59.5:
                     if o_button.check_click():
                         print("o clicked")
                         lst_practice_answer[0] = "O"
                         print(lst_practice_answer)
-                        howtoplay_answer_clicked = True
-                        print(howtoplay_answer_clicked)
+                        
                     elif x_button.check_click():
                         print("x clicked")
                         lst_practice_answer[0] = "X"
                         print(lst_practice_answer)
-                        howtoplay_answer_clicked = True
-                        print(howtoplay_answer_clicked)
+                        
                     if lst_practice_answer[0] == "O":
                         lst_texts[1] = "Correct\n\nnumbers : 7  9  7"
-                        texts["Every 5 seconds\na new number is displayed"][1] = 185
+                        texts["A new number is displayed\nEvery 5 seconds"][1] = 185
                         frame_around_o_x_buttons_rect.center = 524,594
                         pygame.draw.rect(screen,color["light green"],frame_around_o_x_buttons_rect,3,border_radius=15)
                         start_count = time.time()
                         time_reset = 2
                     elif lst_practice_answer[0] == "X":
-                        lst_texts[1] = "Wrong but it's okay\nCurrent number is 7\n2nd number ago was also 7"
-                        texts["Every 5 seconds\na new number is displayed"][1] = 185
+                        lst_texts[1] = "The answer is wrong but it's okay\nThe current number is 7\nThe second last number was also 7"
+                        texts["A new number is displayed\nEvery 5 seconds"][1] = 185
                         frame_around_o_x_buttons_rect.center = 284,594
                         pygame.draw.rect(screen,color["light red"],frame_around_o_x_buttons_rect,3,border_radius=15)
                         
@@ -705,14 +744,14 @@ while run:
                 bubble = pygame.Surface((600,200),pygame.SRCALPHA)
                 bubble.fill((255,255,255,100))
                 screen.blit(bubble,(100,145))
-                multiline_text(screen,50,lst_texts[1],color["white"],texts["Every 5 seconds\na new number is displayed"],15)
+                multiline_text(screen,50,lst_texts[1],color["white"],texts["A new number is displayed\nEvery 5 seconds"],15)
                 show_text(screen,str(lst_texts[3]),texts[7],color["green"],200)
                 show_text(screen,str(lst_texts[2]),texts[5],color["purple"],45)
                 show_text(screen,lst_texts[4],texts["2 back"],color["sky blue"],25)
                 #print(time.time() - start_count)
                 if time.time() - start_count > 1:
                     lst_texts[1] = "3"
-                    texts["Every 5 seconds\na new number is displayed"][1] = 240
+                    texts["A new number is displayed\nEvery 5 seconds"][1] = 240
                 if time.time() - start_count > 2:
                     lst_texts[1] = "2"
                 if time.time() - start_count > 3:
@@ -748,19 +787,19 @@ while run:
                 if time.time() - start_count > 8:
                     lst_texts[2] = 1
                 if time.time() - start_count > 9:
-                    lst_texts[1] = "Correct answer is 'X'\n\nnumbers : 7  9  7  8"
-                    texts["Every 5 seconds\na new number is displayed"][1] = 190
+                    lst_texts[1] = "The correct answer is 'X'\n\nnumbers : 7  9  7  8"
+                    texts["A new number is displayed\nEvery 5 seconds"][1] = 190
                 if time.time() - start_count > 18:
-                    texts["Every 5 seconds\na new number is displayed"][1] = 240
+                    texts["A new number is displayed\nEvery 5 seconds"][1] = 240
                     lst_texts[1] = "Now let's play the game!"
                 if time.time() - start_count > 27:
                     time_reset = 1
                     lst_practice_answer = [" ", " "]
-                    lst_texts[1] = "Every 5 seconds\na new number is displayed"
+                    lst_texts[1] = "A new number is displayed\nEvery 5 seconds"
                     lst_texts[2] = 5
                     lst_texts[3] = 7
-                    texts["Every 5 seconds\na new number is displayed"] = [screenwidth/2,210]
-                    texts["Let's learn 2 back"] = [screenwidth/2,230]
+                    texts["A new number is displayed\nEvery 5 seconds"] = [screenwidth/2,210]
+                    texts["Let's learn 2 back"] = [screenwidth/2,240]
                     if time_reset == 1:
                         start_count = time.time()
                 
@@ -777,11 +816,11 @@ while run:
             if howtoplay_back_button.check_click():
                 play_sound("sound/back.wav")
                 lst_practice_answer = [" ", " "]
-                lst_texts[1] = "Every 5 seconds\na new number is displayed"
+                lst_texts[1] = "A new number is displayed\nEvery 5 seconds"
                 lst_texts[2] = 5
                 lst_texts[3] = 7
-                texts["Every 5 seconds\na new number is displayed"] = [screenwidth/2,210]
-                texts["Let's learn 2 back"] = [screenwidth/2,230]
+                texts["A new number is displayed\nEvery 5 seconds"] = [screenwidth/2,210]
+                texts["Let's learn 2 back"] = [screenwidth/2,240]
                 time_reset = 1
                 if time_reset == 1:
                     start_count = time.time()
@@ -801,10 +840,10 @@ while run:
                         main_x_button.content = main_x_button.font_kind.render(main_x_button.text, True, color['white'])
                         play_sound("sound/back.wav")
                         lst_practice_answer = [" ", " "]
-                        lst_texts[1] = "Every 5 seconds\na new number is displayed"
+                        lst_texts[1] = "A new number is displayed\nEvery 5 seconds"
                         lst_texts[2] = 5
                         lst_texts[3] = 7
-                        texts["Every 5 seconds\na new number is displayed"] = [screenwidth/2,210]
+                        texts["A new number is displayed\nEvery 5 seconds"] = [screenwidth/2,210]
                         texts["Let's learn 2 back"] = [screenwidth/2,230]
                         time_reset = 1
                         if time_reset == 1:
@@ -812,7 +851,7 @@ while run:
                         o_button.rect.y = 475
                         x_button.rect.y = 475
                         howtoplay = False
-                        
+            multiline_text(screen,25,press_backspace_text,color["dark grey"],(screenwidth/2,750),1)                
                         
                         
 
@@ -826,7 +865,7 @@ while run:
             credit_title_button.hovered(color['green'], 42, color['white'], 42, False, x = credit_title_button.rect.x, y = credit_title_button.rect.y)
             credit_made_by_button.hovered(color['green'], 64, color['white'], 64, False, x = credit_made_by_button.rect.x, y = credit_made_by_button.rect.y)
             credit_back_button.hovered(color['green'], 42, color['white'], 42, False, x = credit_back_button.rect.x, y = credit_back_button.rect.y)
-
+            multiline_text(screen,25,press_backspace_text,color["white"],(screenwidth/2,650),1)
 
             if credit_back_button.check_click():
                 play_sound("sound/back.wav")
@@ -869,37 +908,30 @@ while run:
             options_low_number_of_questions.hovered(color["white"],20,color["white"],20,True)
             options_med_number_of_questions.hovered(color["white"],20,color["white"],20,True)
             options_high_number_of_questions.hovered(color["white"],20,color["white"],20,True)
+            multiline_text(screen,25,press_backspace_text,color["white"],(screenwidth/2,644),1)
 
             if options_2back.check_click():
                 current_nback = 2
 
-                print(f"number_of_questions:{number_of_questions}")
-                print(f"current n_back : {current_nback}")
-                print(f"low_number:{low_number}\nmed_number:{med_number}\nhigh_number:{high_number}") 
+                # print(f"number_of_questions:{number_of_questions}")
+                # print(f"current n_back : {current_nback}")
+                # print(f"low_number:{low_number}\nmed_number:{med_number}\nhigh_number:{high_number}") 
                 play_sound("sound/sci.wav")
             if options_3back.check_click():
                 current_nback = 3
-                print(f"number_of_questions:{number_of_questions}")
-                print(f"current n_back : {current_nback}")
-                print(f"low_number:{low_number}\nmed_number:{med_number}\nhigh_number:{high_number}") 
+
                 play_sound("sound/sci.wav")
             if options_4back.check_click():
                 current_nback = 4
-                print(f"number_of_questions:{number_of_questions}")
-                print(f"current n_back : {current_nback}")
-                print(f"low_number:{low_number}\nmed_number:{med_number}\nhigh_number:{high_number}") 
+
                 play_sound("sound/sci.wav")
             if options_5back.check_click():
                 current_nback = 5
-                print(f"number_of_questions:{number_of_questions}")
-                print(f"current n_back : {current_nback}")
-                print(f"low_number:{low_number}\nmed_number:{med_number}\nhigh_number:{high_number}") 
+
                 play_sound("sound/sci.wav")
             if options_6back.check_click():
                 current_nback = 6
-                print(f"number_of_questions:{number_of_questions}")
-                print(f"current n_back : {current_nback}")
-                print(f"low_number:{low_number}\nmed_number:{med_number}\nhigh_number:{high_number}") 
+
                 play_sound("sound/sci.wav")
             if current_nback == 2:
                 options_2back.content = options_2back.font_kind.render("2",True,color["green"])
@@ -950,10 +982,11 @@ while run:
 
             
 
-
+            #print(pygame.mouse.get_pos())
             options_back_button.hovered(color["green"],options_back_button.size,color["white"],options_back_button.size,handshape = False)
             if options_back_button.check_click():
                 options = False
+                
                 play_sound("sound/back.wav")
                 # I set this because if I sound/ the back button, it also clicks exit button in main menu
                 pygame.time.delay(100)
@@ -980,9 +1013,13 @@ while run:
                             options_key.rect.x += 180
                         
                     if event.key == pygame.K_UP:
+
                         play_sound("sound/menuclick.wav")
                         options_key.rect.y -= 180
                         options_key.rect.width = 32
+                        if 450 < options_key.rect.x < 500:
+                            options_key.rect.x = 500
+                            options_key.rect.y = 280
                     if event.key == pygame.K_DOWN:
                         play_sound("sound/menuclick.wav")
                         if options_key.rect.y < 300:
@@ -996,39 +1033,18 @@ while run:
                             play_sound("sound/sci.wav")
                             if 340 < options_key.rect.x < 380:
                                 current_nback = 2
-                     
-                       
-                                print(f"number_of_questions:{number_of_questions}")
-                                print(f"current n_back : {current_nback}")
-                                print(f"low_number:{low_number}\nmed_number:{med_number}\nhigh_number:{high_number}") 
-                            if 420 < options_key.rect.x < 460:
-                                current_nback = 3
-                                print(f"low_number:{low_number}\nmed_number:{med_number}\nhigh_number:{high_number}")   
-                        
-                     
-                                print(f"number_of_questions:{number_of_questions}")
-                                print(f"current n_back : {current_nback}")
-                                print(f"low_number:{low_number}\nmed_number:{med_number}\nhigh_number:{high_number}")   
-                            
-                                
-                            if 500 < options_key.rect.x < 540:
+
+                            if 390 < options_key.rect.x < 460:
+                                current_nback = 3  
+
+                            if 480 < options_key.rect.x < 540:
                                 current_nback = 4
                
-                                print(f"number_of_questions:{number_of_questions}")
-                                print(f"current n_back : {current_nback}")
-                                print(f"low_number:{low_number}\nmed_number:{med_number}\nhigh_number:{high_number}") 
-                            if 580 < options_key.rect.x < 620:
+                            if 550 < options_key.rect.x < 620:
                                 current_nback = 5
-                   
-                                print(f"number_of_questions:{number_of_questions}")
-                                print(f"current n_back : {current_nback}")
-                                print(f"low_number:{low_number}\nmed_number:{med_number}\nhigh_number:{high_number}") 
-                            if 660 < options_key.rect.x < 700:
+
+                            if 640 < options_key.rect.x < 700:
                                 current_nback = 6
-                            
-                                print(f"number_of_questions:{number_of_questions}")
-                                print(f"current n_back : {current_nback}")
-                                print(f"low_number:{low_number}\nmed_number:{med_number}\nhigh_number:{high_number}") 
                                     
                         if 455 < options_key.rect.y < 475:
                             play_sound("sound/clicks.wav")
@@ -1045,18 +1061,13 @@ while run:
                                 low_number = False
                                 med_number = False
                                 high_number = True
-                                
-                                
-                            print(f"number_of_questions:{number_of_questions}")
-                            print(f"current n_back : {current_nback}")
-                            print(f"low_number:{low_number}\nmed_number:{med_number}\nhigh_number:{high_number}")
 
                     
             if options_key.rect.y < 360:
                 if options_key.rect.x <= 341:
                     options_key.rect.x = 341
-                if options_key.rect.x >= 661:
-                    options_key.rect.x = 661
+                if options_key.rect.x >= 660:
+                    options_key.rect.x = 660
                 if options_key.rect.y <= 280:
                     options_key.rect.y = 280
  
@@ -1107,6 +1118,22 @@ while run:
             main_credit_button.hovered(color['green'], 32, color['white'], 32, False)
             main_options_button.hovered(color["green"],32,color["white"],32,False)
             main_exit_button.hovered((130,130,130), 25, color['white'], 32, False)
+
+            main_sound_button.draw_text(screen)
+           
+            if main_sound_button.check_click():
+                if backgroundsound == 1:
+                    backgroundsound = 0
+                    main_sound_button.image = pygame.image.load("img/backgroundsound0.png")
+                    mute_background_sound_flags()
+                    
+                elif backgroundsound == 0:
+                    backgroundsound = 1
+                    resume_background_sound_flags()
+                    main_sound_button.image = pygame.image.load("img/backgroundsound1.png")
+                    print(f"backgroundsound : {backgroundsound}")
+            
+
 
             if main_start_button.check_click():
                 play_sound("sound/gamestart.ogg")
@@ -1174,38 +1201,83 @@ while run:
     # Game screen
     elif game == True:
         if gamepaused == 1:
-            if paused_sound_flag == False:
+            #print(pygame.mouse.get_pos())
+            if paused_sound_flag == False and backgroundsound == 1:
                 paused_sound_flag = True
                 play_sound("sound/menuclick.wav")
                 play_sound(channel=3)
             screen.blit(gamebg,(0,0))
-            pygame.draw.rect(screen,color["white"],pygame.rect.Rect(150,150,500,500),2,15)
+            pygame.draw.rect(screen,color["white"],pygame.rect.Rect(150,150,500,500),4,15)
             #show_text(screen,pause_text,(screenwidth/2,220), color["white"],90)
             paused_message = font55.render(pause_text,True,color["white"])
             paused_message_rect = paused_message.get_rect()
             paused_message_rect.center = screenwidth/2,220
             screen.blit(paused_message,paused_message_rect)
             pause_button.draw_text(screen)
-            resume_text.draw_text(screen)
+            
             press_esc_text.draw_text(screen)
+            
             quit_text.draw_text(screen)
 
+            main_menu_text.draw_text(screen)
+            paused_sound_button.draw_text(screen)
+            if paused_sound_button.check_click():
+                if backgroundsound == 1:
+                    backgroundsound = 0
+                    mute_background_sound_flags()
+                    paused_sound_button.image = pygame.image.load("img/backgroundsound0.png")
+                elif backgroundsound == 0:
+                    paused_sound_button.image = pygame.image.load("img/backgroundsound1.png")
+                    backgroundsound = 1
+                    resume_background_sound_flags()
+
+
             pause_button.hovered(None,None)
-            resume_text.hovered(color["green"],50,color["white"],50)
             press_esc_text.hovered(color["green"],50,color["white"],50)
+            main_menu_text.hovered(color["green"],30,color["white"],30)
             quit_text.hovered(color["grey"],30,color["white"],30)
-            if pause_button.check_click() or resume_text.check_click() or press_esc_text.check_click():
+            if pause_button.check_click() or press_esc_text.check_click():
                 paused_sound_flag = False
                 game_background_sound_flag = False
                 pygame.mouse.set_cursor(pygame.SYSTEM_CURSOR_ARROW)
                 gamepaused = 0
+            if main_menu_text.check_click():
+                #screen.fill(color["black"])
+                last_count = 0
+                current_count = 0
+                countdown_before_start = -4
+                percentage_control = False
+                rocket_image.rect.x = 110
+                rocket_image.rect.y = 80
+                countdown_before_start_content_rect.x = screenwidth/2 - 40
+                countdown_before_start_content_rect.y = screenwidth/2 - 60
+                number_of_correct_questions = 0
+                lst_rendered_contents = []
+                lst = []
+                lst_rendered_contents_2 = []
+                lst_answer = []
+                lst_user_answer = []
+                random_number_control = False
+                rocket_image.flag = False
+                rocket_x_position = 110
+                paused_sound_flag = False
+                game_background_sound_flag = False
+                game_start_sound_flag = False
+                count_down_sound_flag = False
+                number_appear_sound_flag = False
+                clock_tick_sound_flag = False
+                pygame.mouse.set_cursor(pygame.SYSTEM_CURSOR_ARROW)
+                gamepaused = 0
+                main = True
+                score = False
+                pygame.time.delay(100)
             if quit_text.check_click():
                 run = False
             
 
         else:
             #print(pygame.mouse.get_pos())
-            if main_background_sound_flag:
+            if main_background_sound_flag and backgroundsound == 1:
                 main_background_sound_flag = False
                 main_sound_channel.fadeout(500)
 
@@ -1225,8 +1297,9 @@ while run:
             o_button.rect.y = 475
             x_button.rect.y = 475
             #print(pygame.mouse.get_pos())
-            
-
+            show_text(screen,press_esc_to_pause_text,(70,20),color["white"],25)
+            show_text(screen,press_right_to_o_text,(80,40),color["white"],25)
+            show_text(screen,press_left_to_x_text,(80,60),color["white"],25)
             # blit images from lst_rendered_contents onto screen
             for i in range(len(lst_rendered_contents)):
                 screen.blit(lst_rendered_contents[i], lst_rect[i])
@@ -1234,7 +1307,7 @@ while run:
 
             # every 0.2 second - before start
             current_count = pygame.time.get_ticks()
-
+           
             if current_count - last_count > 200:
                 countdown_before_start += 0.2
                 last_count = current_count
@@ -1380,7 +1453,7 @@ while run:
     elif score == True:
         game = False
         screen.fill(color["black"])
-        if score_sound_flag == False:
+        if score_sound_flag == False and backgroundsound == 1:
             score_sound_flag = True
             play_sound(channel=2)
             
@@ -1565,7 +1638,12 @@ while run:
             main = True
             score = False
         
-    
+    if backgroundsound == 0:
+        mute_background_sound_flags()
+    elif backgroundsound == 1:
+        resume_background_sound_flags()
+
+
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             run = False
