@@ -23,7 +23,7 @@ color = {"black" : (0,0,0),"white":(255,255,255),"green":(0,255,0),
          "grey":(175,173,169),"red":(255,0,0),"light green":(144,238,144),
          "sky blue": (50,130,230), "light red": (255,127,127), "light green":(144,238,144),
          "blue": (0,0,255), "purple" : (201,71,245), "dark grey":(120,120,120)
-         }
+        }
 
 # FPS
 fps_clock = pygame.time.Clock()
@@ -210,6 +210,7 @@ def play_sound(filename = None, volume = 1, loop = False, channel = -1):
     # pause screen background music
     elif channel == 3:
         game_sound_channel.pause()
+        main_sound_channel.pause()
         pause_sound_channel.play(pygame.mixer.Sound("sound/tobu_colors.mp3"),-1,fade_ms=500)
 
 def reset_all_sound_flags():
@@ -614,6 +615,21 @@ while run:
             scroll4 = 0
         screen.blit(bg8,(0,150))
         
+        main_sound_button.draw_text(screen)
+           
+        if main_sound_button.check_click():
+            if backgroundsound == 1:
+                backgroundsound = 0
+                mute_background_sound_flags()
+                    
+            elif backgroundsound == 0:
+                backgroundsound = 1
+                resume_background_sound_flags()
+            
+        if backgroundsound == 0:
+            main_sound_button.image = pygame.image.load("img/backgroundsound0.png")
+        elif backgroundsound == 1:
+            main_sound_button.image = pygame.image.load("img/backgroundsound1.png")
 
         if howtoplay == True:
             """texts = {"Let's learn 2 back": [screenwidth/2,240],
@@ -852,8 +868,6 @@ while run:
                         x_button.rect.y = 475
                         howtoplay = False
             multiline_text(screen,25,press_backspace_text,color["dark grey"],(screenwidth/2,750),1)                
-                        
-                        
 
         elif credit == True:
 
@@ -1099,9 +1113,6 @@ while run:
                 options_low_number_of_questions.content = options_low_number_of_questions.font_kind.render("low",True,color["white"])
                 options_med_number_of_questions.content = options_med_number_of_questions.font_kind.render("med",True,color["white"])
                 options_high_number_of_questions.content = options_high_number_of_questions.font_kind.render("high",True,color["green"])
-            
-
-                        
 
         else:
 
@@ -1117,23 +1128,9 @@ while run:
             main_howtoplay_button.hovered(color['green'], 32, color['white'], 32, False, 250, 320)
             main_credit_button.hovered(color['green'], 32, color['white'], 32, False)
             main_options_button.hovered(color["green"],32,color["white"],32,False)
-            main_exit_button.hovered((130,130,130), 25, color['white'], 32, False)
+            main_exit_button.hovered(color["dark grey"], 32, color['white'], 32, True)
 
-            main_sound_button.draw_text(screen)
-           
-            if main_sound_button.check_click():
-                if backgroundsound == 1:
-                    backgroundsound = 0
-                    main_sound_button.image = pygame.image.load("img/backgroundsound0.png")
-                    mute_background_sound_flags()
-                    
-                elif backgroundsound == 0:
-                    backgroundsound = 1
-                    resume_background_sound_flags()
-                    main_sound_button.image = pygame.image.load("img/backgroundsound1.png")
-                    print(f"backgroundsound : {backgroundsound}")
             
-
 
             if main_start_button.check_click():
                 play_sound("sound/gamestart.ogg")
@@ -1214,9 +1211,7 @@ while run:
             paused_message_rect.center = screenwidth/2,220
             screen.blit(paused_message,paused_message_rect)
             pause_button.draw_text(screen)
-            
             press_esc_text.draw_text(screen)
-            
             quit_text.draw_text(screen)
 
             main_menu_text.draw_text(screen)
@@ -1225,12 +1220,15 @@ while run:
                 if backgroundsound == 1:
                     backgroundsound = 0
                     mute_background_sound_flags()
-                    paused_sound_button.image = pygame.image.load("img/backgroundsound0.png")
+                    #paused_sound_button.image = pygame.image.load("img/backgroundsound0.png")
                 elif backgroundsound == 0:
-                    paused_sound_button.image = pygame.image.load("img/backgroundsound1.png")
+                    #paused_sound_button.image = pygame.image.load("img/backgroundsound1.png")
                     backgroundsound = 1
                     resume_background_sound_flags()
-
+            if backgroundsound == 0:
+                paused_sound_button.image = pygame.image.load("img/backgroundsound0.png")
+            elif backgroundsound == 1:
+                paused_sound_button.image = pygame.image.load("img/backgroundsound1.png")
 
             pause_button.hovered(None,None)
             press_esc_text.hovered(color["green"],50,color["white"],50)
