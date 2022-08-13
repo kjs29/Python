@@ -130,7 +130,7 @@ paused_sound_flag =  False
 # Score screen
 score_sound_flag = False
 
-# Background sound flag
+# Background sound flag/ 1 = yes, 0 = no
 backgroundsound = 1
 
 
@@ -159,9 +159,8 @@ def regenerate_numbers():
             each_rect_1 = each_content_1.get_rect()
             lst_rendered_contents.append(each_content_1)
             lst_rect.append(each_rect_1)
-        print(f"{current_nback}-back, {lst}")
-        print(f"number of questions :{number_of_questions}")
         # answer list
+
         lst_answer = []
         for i in range(len(lst)):
             if i >= current_nback:
@@ -169,7 +168,7 @@ def regenerate_numbers():
                     lst_answer.append("O")
                 else:
                     lst_answer.append("X")
-        print(f"answer : {lst_answer}")
+        #print(f"answer : {lst_answer}")
 
         # user answer list
         lst_user_answer = [" " for _ in range(len(lst_answer))]
@@ -488,6 +487,7 @@ options_high_number_of_questions = Button("8bitwonder.ttf",20,710,430,color["whi
 options_back_button = Button("8bitwonder.ttf",42,250,520,color["white"],"Back")
 options_back_button.rect.center = screenwidth / 2, screenheight / 2 + 200
 
+# some underline that indicates where the cursor is
 options_key = Object(5,5,32,3,1,True,False)
 options_key.rect.center = 357,280
 
@@ -733,14 +733,14 @@ while run:
                     texts["A new number is displayed\nEvery 5 seconds"][1] = 185
                 if time.time() - start_count > 59.5:
                     if o_button.check_click():
-                        print("o clicked")
+                        #print("o clicked")
                         lst_practice_answer[0] = "O"
-                        print(lst_practice_answer)
+                        #print(lst_practice_answer)
                         
                     elif x_button.check_click():
-                        print("x clicked")
+                        #print("x clicked")
                         lst_practice_answer[0] = "X"
-                        print(lst_practice_answer)
+                        #print(lst_practice_answer)
                         
                     if lst_practice_answer[0] == "O":
                         lst_texts[1] = "Correct\n\nnumbers : 7  9  7"
@@ -1159,6 +1159,7 @@ while run:
                 
                 if main_x_button.rect.y < 250:
                     #print("START!!!")
+                    
                     game = True
                     main = False
 
@@ -1401,7 +1402,7 @@ while run:
                 if o_button.check_click() or x_button.right_key_pressed:
                     #print(f"quotient - 2 : {quotient-current_nback}")
                     lst_user_answer[quotient-current_nback] = "O"
-                    print(lst_user_answer)
+                    #print(lst_user_answer)
                     
                     #print("o clicked")
                     #print(f"current number:{lst[quotient]}")
@@ -1414,7 +1415,7 @@ while run:
 
                 if x_button.check_click() or x_button.left_key_pressed:
                     lst_user_answer[quotient-current_nback] = "X"
-                    print(lst_user_answer)
+                    #print(lst_user_answer)
                     #print("x clicked")
                     #print(f"current number:{lst[quotient]}")
                     #print(f"current_nback-back number:{lst[quotient - current_nback]}")
@@ -1568,6 +1569,27 @@ while run:
                 if lst_answer[i] == lst_user_answer[i]:
                     number_of_correct_questions += 1
             percentage = number_of_correct_questions / len(lst_answer) * 100
+            print("\n################## Report ##################")
+            print(f"{current_nback}-back / {number_of_questions} numbers\nQuestions, Correct answers, User answers :\n")
+            for i in range(len(lst)):
+                if i != len(lst) - 1:
+                    print(f"|{lst[i]}", end ="")
+                else:
+                    print(f"|{lst[i]}", end="|\n")
+            print(" "*2*current_nback,end= "")
+            for i in range(len(lst_answer)):
+                if i != len(lst_answer) - 1:
+                    print(f"|{lst_answer[i]}", end ="")
+                else:
+                    print(f"|{lst_answer[i]}", end="|\n")
+            print(" "*2*current_nback,end= "")
+            for i in range(len(lst_user_answer)):
+                if i != len(lst_user_answer) - 1:
+                    print(f"|{lst_user_answer[i]}", end ="")
+                else:
+                    print(f"|{lst_user_answer[i]}", end="|")
+            print(f"\n\nScore : {round(percentage,2)} %")
+            print("############################################")
         percentage_font = pygame.font.Font("gamecube.ttf",20)
         percentage_message = percentage_font.render(str(round(percentage,2)) + " %",True, color["white"])
         if percentage >= 80:
@@ -1577,6 +1599,7 @@ while run:
         percentage_message_rect = percentage_message.get_rect()
         percentage_message_rect.center = 525, 645
         screen.blit(percentage_message,percentage_message_rect)
+        
         
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
