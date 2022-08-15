@@ -38,3 +38,16 @@ How would you write the code?
   print(new_set)
   ```
 </details>
+
+<details>
+  <summary>answer3 I came up with on 8/14</summary>
+  
+  ```py
+  a = [{1,2,3},{4,5}]
+  new_set = set()
+  for each_set in a:
+      for aa in each_set:
+          new_set.add(aa)
+  print(new_set)
+  ```
+</details>
