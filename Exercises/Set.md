@@ -1,3 +1,5 @@
+# Tried on 8/14 (o)
+
 Let's say there is a list of sets
 
 ```py
