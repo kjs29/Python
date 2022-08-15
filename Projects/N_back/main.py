@@ -1,10 +1,8 @@
-from turtle import back
 import pygame, sys, time
 from object import Object
 from random import randint
 
 pygame.init()
-
 
 # Create screen
 screenwidth = 800
@@ -19,10 +17,10 @@ icon = pygame.image.load("img/n.png")
 pygame.display.set_icon(icon)
   
 # color
-color = {"black" : (0,0,0),"white":(255,255,255),"green":(0,255,0),
-         "grey":(175,173,169),"red":(255,0,0),"light green":(144,238,144),
-         "sky blue": (50,130,230), "light red": (255,127,127), "light green":(144,238,144),
-         "blue": (0,0,255), "purple" : (201,71,245), "dark grey":(120,120,120)
+color = {"black" : (0, 0, 0), "white" : (255, 255, 255), "green" : (0, 255, 0),
+         "grey" : (175,173,169), "red" : (255,0,0), "light green" : (144,238, 144),
+         "sky blue" : (50,130,230), "light red" : (255,127,127), "light green" : (144,238,144),
+         "blue" : (0,0,255), "purple" : (201,71,245), "dark grey" : (120,120,120)
         }
 
 # FPS
@@ -154,7 +152,7 @@ def regenerate_numbers():
         random_number_control = True
         font = pygame.font.Font("gameplay.ttf", 164)
         for i in range(number_of_questions):
-            lst.append(randint(1,9))
+            lst.append(randint(1, 9))
             each_content_1 = font.render(str(lst[i]), True, color["white"])
             each_rect_1 = each_content_1.get_rect()
             lst_rendered_contents.append(each_content_1)
@@ -421,8 +419,8 @@ class Button:
 """From here is instantiations and calling functions """
 
 # sound mute
-main_sound_button = Button("8bitwonder.ttf",15,740,10,color["white"],"Mute sound",False,True,"img/backgroundsound1.png")
-main_sound_button_off = Button("8bitwonder.ttf",15,-200,10,color["white"],"Mute sound",False,True,"img/backgroundsound0.png")
+main_sound_button = Button("8bitwonder.ttf", 15, 740, 10, color["white"], "Mute sound", False, True, "img/backgroundsound1.png")
+main_sound_button_off = Button("8bitwonder.ttf", 15, -200, 10, color["white"], "Mute sound", False, True, "img/backgroundsound0.png")
 
 # press backspace text
 press_backspace_text = "Press backspace to\nreturn to the main menu"
@@ -432,7 +430,7 @@ main_mainmenu_button = Button("8bitwonder.ttf", 84, screenwidth / 2, 100, color[
 main_start_button = Button("8bitwonder.ttf", 32, screenwidth / 2, 220, color['white'], "start", True)
 main_howtoplay_button = Button("8bitwonder.ttf", 32, screenwidth / 2, 320, color['white'], "how to play", True)
 main_credit_button = Button("8bitwonder.ttf", 32, screenwidth / 2, 420, color['white'], "credits", True)
-main_options_button = Button("8bitwonder.ttf",32,screenwidth/2,520,color["white"],"options",True)
+main_options_button = Button("8bitwonder.ttf", 32, screenwidth / 2, 520, color["white"], "options", True)
 main_exit_button = Button("8bitwonder.ttf", 32, screenwidth / 2, 620, color['white'], "exit", True)
 
 # Main Menu key scroll X
@@ -442,11 +440,11 @@ main_x_button = Button("8bitwonder.ttf", 24, screenwidth / 2 - 200, 0, color['wh
 # How to play buttons
 howtoplay_title_button = Button("8bitwonder.ttf", 32, 250, 220, color['white'], "How to play")
 howtoplay_back_button = Button("8bitwonder.ttf", 42, 250, 520, color['white'], "Back")
-texts = {"Let's learn 2 back": [screenwidth/2,240],
-         "A new number is displayed\nEvery 5 seconds":[screenwidth/2,210],
+texts = {"Let's learn 2 back": [screenwidth / 2, 240],
+         "A new number is displayed\nEvery 5 seconds":[screenwidth / 2, 210],
          5:[650,380],
-         7:[screenwidth/2,450],
-         "2 back" : [140,165]
+         7:[screenwidth / 2, 450],
+         "2 back" : [140, 165]
         }
 lst_texts = list(texts)
 howtoplay_title_button.rect.center = screenwidth / 2, screenheight / 2 - 300
@@ -468,28 +466,28 @@ credit_made_by_button.rect.center = screenwidth / 2, screenheight / 2 - 100
 credit_back_button.rect.center = screenwidth / 2, screenheight / 2 + 200
 
 # Option menu buttons
-options_title_button = Button("8bitwonder.ttf",42,screenwidth / 2, screenheight / 2 - 300,color["white"],"Options",True)
-options_n_back_text = Button("gameplay.ttf",32,150,250,color["white"],"# n",True)
-options_number_of_questions_text1 = Button("8bitwonder.ttf",20,150,400,color["white"],"number",True)
-options_number_of_questions_text2 = Button("8bitwonder.ttf",20,150,430,color["white"],"of",True)
-options_number_of_questions_text3 = Button("8bitwonder.ttf",20,150,460,color["white"],"questions",True)
+options_title_button = Button("8bitwonder.ttf", 42, screenwidth / 2, screenheight / 2 - 300, color["white"], "Options", True)
+options_n_back_text = Button("gameplay.ttf", 32, 150, 250, color["white"], "# n", True)
+options_number_of_questions_text1 = Button("8bitwonder.ttf", 20, 150, 400, color["white"], "number", True)
+options_number_of_questions_text2 = Button("8bitwonder.ttf", 20, 150, 430, color["white"], "of", True)
+options_number_of_questions_text3 = Button("8bitwonder.ttf", 20, 150, 460, color["white"], "questions", True)
 
-options_2back = Button("8bitwonder.ttf",32,360,250,color["white"],"2",True)
-options_3back = Button("8bitwonder.ttf",32,440,250,color["white"],"3",True)
-options_4back = Button("8bitwonder.ttf",32,520,250,color["white"],"4",True)
-options_5back = Button("8bitwonder.ttf",32,600,250,color["white"],"5",True)
-options_6back = Button("8bitwonder.ttf",32,680,250,color["white"],"6",True)
+options_2back = Button("8bitwonder.ttf", 32, 360, 250, color["white"], "2", True)
+options_3back = Button("8bitwonder.ttf", 32, 440, 250, color["white"], "3", True)
+options_4back = Button("8bitwonder.ttf", 32, 520, 250, color["white"], "4", True)
+options_5back = Button("8bitwonder.ttf", 32, 600, 250, color["white"], "5", True)
+options_6back = Button("8bitwonder.ttf", 32, 680, 250, color["white"], "6", True)
 
-options_low_number_of_questions = Button("8bitwonder.ttf",20,350,430,color["white"],"Low",True)
-options_med_number_of_questions = Button("8bitwonder.ttf",20,530,430,color["white"],"Med",True)
-options_high_number_of_questions = Button("8bitwonder.ttf",20,710,430,color["white"],"High",True)
+options_low_number_of_questions = Button("8bitwonder.ttf", 20, 350, 430, color["white"], "Low", True)
+options_med_number_of_questions = Button("8bitwonder.ttf", 20, 530, 430, color["white"], "Med", True)
+options_high_number_of_questions = Button("8bitwonder.ttf", 20, 710, 430, color["white"], "High", True)
 
-options_back_button = Button("8bitwonder.ttf",42,250,520,color["white"],"Back")
+options_back_button = Button("8bitwonder.ttf", 42, 250, 520, color["white"], "Back")
 options_back_button.rect.center = screenwidth / 2, screenheight / 2 + 200
 
 # some underline that indicates where the cursor is
-options_key = Object(5,5,32,3,1,True,False)
-options_key.rect.center = 357,280
+options_key = Object(5, 5, 32, 3, 1, True, False)
+options_key.rect.center = 357, 280
 
 low_number = True
 med_number = False
@@ -505,32 +503,31 @@ pause_text = "Paused"
 press_esc_to_pause_text = "<Esc> : pause"
 press_right_to_o_text = "<Right key> : 'O'" 
 press_left_to_x_text = "<Left key> : 'X' " 
-pause_button = Button("8bitwonder.ttf",15,screenwidth/2,365,color["black"]," ",True,True,"img/pause.png")
-main_menu_text = Button("gameplay.ttf",30,screenwidth/2,540,color["white"],"Main Menu",True)
-press_esc_text = Button("KGPrimaryPenmanship.ttf",50,screenwidth/2,470,color["white"],"Press <ESC> to continue",True)
-quit_text = Button("gameplay.ttf",30,screenwidth/2,600,color["white"],"Quit",True)
-
-paused_sound_button = Button("8bitwonder.ttf",15,600,170,color["white"],"Mute sound",False,True,"img/backgroundsound1.png")
+pause_button = Button("8bitwonder.ttf", 15, screenwidth / 2, 365, color["black"], " ", True, True, "img/pause.png")
+main_menu_text = Button("gameplay.ttf", 30, screenwidth / 2, 540, color["white"], "Main Menu", True)
+press_esc_text = Button("KGPrimaryPenmanship.ttf", 50, screenwidth / 2, 470, color["white"], "Press <ESC> to continue", True)
+quit_text = Button("gameplay.ttf", 30, screenwidth / 2, 600, color["white"], "Quit", True)
+paused_sound_button = Button("8bitwonder.ttf", 15, 600, 170, color["white"], "Mute sound", False, True, "img/backgroundsound1.png")
 
 
 # current n-back status
-current_nback_text_font = pygame.font.Font("gameplay.ttf",20)
-current_nback_text_content = current_nback_text_font.render(str(current_nback) + " Back",True,color["white"])
+current_nback_text_font = pygame.font.Font("gameplay.ttf", 20)
+current_nback_text_content = current_nback_text_font.render(str(current_nback) + " Back", True, color["white"])
 
 # start, finish, car, dashboard images
-earth_image = Object(110,90,50,50,1,False,True,"img/earth.png")
-space_station_image = Object(640,78,50,50,1,False,True,"img/spacestation.png")
-rocket_image = Object(110,80,50,50,1,center = False,does_image_exist=True,imagefile_name="img/rocket.png")
-odometer_image = Object(screenwidth/2,600,100,100,1,True,True,"img/speedometer.png")
-screen_image = Object(screenwidth/2,600,100,100,1,True,True,"img/tablet.png")
+earth_image = Object(110, 90, 50, 50, 1, False, True, "img/earth.png")
+space_station_image = Object(640, 78, 50, 50, 1, False, True, "img/spacestation.png")
+rocket_image = Object(110, 80, 50, 50, 1, center = False, does_image_exist = True, imagefile_name = "img/rocket.png")
+odometer_image = Object(screenwidth / 2, 600, 100, 100, 1, True, True, "img/speedometer.png")
+screen_image = Object(screenwidth / 2, 600, 100, 100, 1, True, True, "img/tablet.png")
 
 # countdown before start
 countdown_before_start = -4
 countdown_before_start_font = pygame.font.Font("gameplay.ttf", 130)
 countdown_before_start_content = countdown_before_start_font.render(str(countdown_before_start), True, color["white"])
 countdown_before_start_content_rect = countdown_before_start_content.get_rect()
-countdown_before_start_content_rect.x = screenwidth/2 - 40
-countdown_before_start_content_rect.y = screenheight/2 - 60
+countdown_before_start_content_rect.x = screenwidth / 2 - 40
+countdown_before_start_content_rect.y = screenheight / 2 - 60
 rocket_x_position = 110
 
 # how many seconds last during one number
@@ -540,7 +537,7 @@ counter = 0
 # counter for countdown before next number
 counter_for_next_number = 5
 counter_for_next_number_font = pygame.font.Font("gameplay.ttf",25)
-counter_for_next_number_content = counter_for_next_number_font.render(str(counter_for_next_number),True,color["white"])
+counter_for_next_number_content = counter_for_next_number_font.render(str(counter_for_next_number), True, color["white"])
 counter_for_next_number_content_rect = counter_for_next_number_content.get_rect()
 counter_for_next_number_content_rect.x = -200
 counter_for_next_number_content_rect.y = -200
@@ -549,9 +546,9 @@ counter_for_next_number_content_rect.y = -200
 # O, X button
 o_button = Button(None, 13, 524, 530, color["white"], "1", True, True, "img/o.png")
 x_button = Button(None, 13, 284, 530, color["white"], "1", True, True, "img/x.png")
-frame_around_o_x_buttons = pygame.Surface((140,140))
+frame_around_o_x_buttons = pygame.Surface((140, 140))
 frame_around_o_x_buttons_rect = frame_around_o_x_buttons.get_rect()
-frame_around_o_x_buttons_rect.center = -200,-200
+frame_around_o_x_buttons_rect.center = -200, -200
 
 #########################################################################################
 
@@ -559,23 +556,23 @@ frame_around_o_x_buttons_rect.center = -200,-200
 
 # score screen
 
-rectangle_outside = pygame.rect.Rect(50,40,700,700)
-result_text = Button("8bitwonder.ttf",55,screenwidth/2,100,color["white"],"Result",True)
-n_back_text = Button("gameplay.ttf",20,165,200,color["white"],"n-back",True)
-questions = Button("gameplay.ttf",20,165,270,color["white"],"questions",True)
-correct_answers = Button("gameplay.ttf",20,165,410,color["white"],"correct answer",True)
-user_answers = Button("gameplay.ttf",20,165,540,color["white"],"your answer",True)
-result_percentage_text = Button("gameplay.ttf",20,165,645,color["white"],"Score",True)
-go_back_to_main_menu_button = Button("gameplay.ttf",20,190,692,color["white"],"Press enter key to go to Main menu")
+rectangle_outside = pygame.rect.Rect(50, 40, 700, 700)
+result_text = Button("8bitwonder.ttf", 55, screenwidth / 2, 100, color["white"], "Result", True)
+n_back_text = Button("gameplay.ttf", 20, 165, 200, color["white"], "n-back", True)
+questions = Button("gameplay.ttf", 20, 165, 270, color["white"], "questions", True)
+correct_answers = Button("gameplay.ttf", 20, 165, 410, color["white"], "correct answer", True)
+user_answers = Button("gameplay.ttf", 20, 165, 540, color["white"], "your answer", True)
+result_percentage_text = Button("gameplay.ttf", 20, 165, 645, color["white"], "Score", True)
+go_back_to_main_menu_button = Button("gameplay.ttf", 20, 190, 692, color["white"], "Press enter key to go to Main menu")
 
 number_of_correct_questions = 0
 
-n_back_answer = Button("gameplay.ttf",20,520,200,color["white"],str(current_nback),True)
+n_back_answer = Button("gameplay.ttf", 20, 520, 200, color["white"], str(current_nback), True)
 
 
 
 def update_score():
-    global lst_rendered_contents_2,score_update_control
+    global lst_rendered_contents_2, score_update_control
 
     if score_update_control == False:
         score_update_control = True
@@ -589,9 +586,7 @@ def update_score():
 
 
 while run:
-    
     update_screen(screen, color["sky blue"])
-            
 
     # Main Menu screen
     if main == True:
@@ -600,20 +595,20 @@ while run:
             play_sound(channel=0)
             
         for i in range(3):
-            screen.blit(bg2,(bg2_width * i + scroll2,0))
-            screen.blit(bg3,(bg3_width * i + scroll3,0))
-            screen.blit(bg4,(bg4_width * i + scroll4,0))
+            screen.blit(bg2, (bg2_width * i + scroll2, 0))
+            screen.blit(bg3, (bg3_width * i + scroll3, 0))
+            screen.blit(bg4, (bg4_width * i + scroll4, 0))
 
         scroll2 -= 0.5
         scroll3 -= 1
         scroll4 -= 2
-        if abs(scroll2)>bg2_width:
+        if abs(scroll2) > bg2_width:
             scroll2 = 0
-        if abs(scroll3)>bg3_width:
+        if abs(scroll3) > bg3_width:
             scroll3 = 0
-        if abs(scroll4)>bg4_width:
+        if abs(scroll4) > bg4_width:
             scroll4 = 0
-        screen.blit(bg8,(0,150))
+        screen.blit(bg8, (0, 150))
         
         main_sound_button.draw_text(screen)
            
@@ -621,16 +616,13 @@ while run:
             if backgroundsound == 1:
                 backgroundsound = 0
                 mute_background_sound_flags()
-                    
             elif backgroundsound == 0:
                 backgroundsound = 1
                 resume_background_sound_flags()
-            
         if backgroundsound == 0:
             main_sound_button.image = pygame.image.load("img/backgroundsound0.png")
         elif backgroundsound == 1:
             main_sound_button.image = pygame.image.load("img/backgroundsound1.png")
-
         if howtoplay == True:
             """texts = {"Let's learn 2 back": [screenwidth/2,240],
                      "A new number is displayed\nEvery 5 seconds":[screenwidth/2,210],
@@ -644,20 +636,20 @@ while run:
                 time_reset = 1
             if time_reset == 1:
                 if current_time - start_count > 0:
-                    bubble = pygame.Surface((600,200),pygame.SRCALPHA)
-                    bubble.fill((255,255,255,100))
-                    screen.blit(bubble,(100,145))
+                    bubble = pygame.Surface((600,200), pygame.SRCALPHA)
+                    bubble.fill((255, 255, 255, 100))
+                    screen.blit(bubble, (100, 145))
                 if current_time - start_count > 1:
-                    show_text(screen,lst_texts[0],texts["Let's learn 2 back"],color["white"],50)
+                    show_text(screen, lst_texts[0], texts["Let's learn 2 back"], color["white"], 50)
                 if current_time - start_count > 3:
-                    texts["Let's learn 2 back"] = [2000,2000]
+                    texts["Let's learn 2 back"] = [2000, 2000]
                 if current_time - start_count > 3.2:
-                    multiline_text(screen,50,lst_texts[1],color["white"],texts["A new number is displayed\nEvery 5 seconds"],15)
-                    show_text(screen,lst_texts[4],texts["2 back"],color["sky blue"],25)
+                    multiline_text(screen, 50, lst_texts[1], color["white"], texts["A new number is displayed\nEvery 5 seconds"], 15)
+                    show_text(screen, lst_texts[4], texts["2 back"], color["sky blue"], 25)
                 if time.time() - start_count > 5.4:
-                    show_text(screen,str(lst_texts[3]),texts[7],color["green"],200)
+                    show_text(screen, str(lst_texts[3]), texts[7], color["green"], 200)
                 if time.time() - start_count > 5.9:
-                    show_text(screen,str(lst_texts[2]),texts[5],color["purple"],45)
+                    show_text(screen, str(lst_texts[2]), texts[5], color["purple"], 45)
                 if time.time() - start_count > 7.4:
                     lst_texts[2] = 4
                 if time.time() - start_count > 8.4:
@@ -698,38 +690,38 @@ while run:
                     o_button.draw_text(screen)
                     x_button.draw_text(screen)
                     
-                if time.time() - start_count > 35+1:
+                if time.time() - start_count > 35 + 1:
                     lst_texts[2] = 4
-                if time.time() - start_count > 35+2:
+                if time.time() - start_count > 35 + 2:
                     lst_texts[2] = 3
-                if time.time() - start_count > 35+3:
+                if time.time() - start_count > 35 + 3:
                     lst_texts[2] = 2
-                if time.time() - start_count > 35+4:
+                if time.time() - start_count > 35 + 4:
                     lst_texts[2] = 1
-                if time.time() - start_count > 35+5:
+                if time.time() - start_count > 35 + 5:
                     lst_texts[1] = "What was the last number?"
                     texts["A new number is displayed\nEvery 5 seconds"][1] = 240
-                if time.time() - start_count > 35+7:
+                if time.time() - start_count > 35 + 7:
                     lst_texts[1] = "Yes, it was the number 9"
-                if time.time() - start_count > 35+9:      
+                if time.time() - start_count > 35 + 9:      
                     lst_texts[1] = "What about\nthe second last number?(N = 2)\n(the first number)"
                     texts["A new number is displayed\nEvery 5 seconds"][1] = 185
-                if time.time() - start_count > 35+13:      
-                    lst_texts[1] = "It was the number 7\nwhich is the same as\nthe current number"
+                if time.time() - start_count > 35 + 13:      
+                    lst_texts[1] = "It was the number 7\nwhich is the same as\nthe current number 7"
                     texts["A new number is displayed\nEvery 5 seconds"][1] = 185
-                if time.time() - start_count > 35+18:      
+                if time.time() - start_count > 35 + 18:      
                     lst_texts[1] = "You might have noticed\nthese two buttons :\n'O' and 'X'"
                     texts["A new number is displayed\nEvery 5 seconds"][1] = 185
-                if 35+19.2 < time.time() - start_count < 35+19.5:
-                    pygame.draw.rect(screen,color["light red"],(200,515,410,160),4)  
+                if 35 + 19.2 < time.time() - start_count < 35 + 19.5:
+                    pygame.draw.rect(screen, color["light red"], (200, 515, 410, 160), 4)  
                 if 35 + 19.8 < time.time() - start_count < 35 + 22:
-                    pygame.draw.rect(screen,color["light red"],(200,515,410,160),4)
+                    pygame.draw.rect(screen, color["light red"], (200, 515, 410, 160), 4)
                 
-                if time.time() - start_count > 35+22:
+                if time.time() - start_count > 35 + 22:
                     lst_texts[1] = "Click 'O' if the second last number\nis the same as the current number\n"
                     texts["A new number is displayed\nEvery 5 seconds"][1] = 195
                 if time.time() - start_count > 59.3:
-                    lst_texts[1] = "Click 'O' if the second last number\nis the same as the current number\nNumbers : 7  9  7"
+                    lst_texts[1] = "Click 'O' if the second last number\nis the same as the current number\nThe previous numbers : 7  9"
                     texts["A new number is displayed\nEvery 5 seconds"][1] = 185
                 if time.time() - start_count > 59.5:
                     if o_button.check_click():
@@ -743,27 +735,27 @@ while run:
                         #print(lst_practice_answer)
                         
                     if lst_practice_answer[0] == "O":
-                        lst_texts[1] = "Correct\n\nnumbers : 7  9  7"
+                        lst_texts[1] = "Correct\n\nThe previous numbers : 7  9"
                         texts["A new number is displayed\nEvery 5 seconds"][1] = 185
-                        frame_around_o_x_buttons_rect.center = 524,594
-                        pygame.draw.rect(screen,color["light green"],frame_around_o_x_buttons_rect,3,border_radius=15)
+                        frame_around_o_x_buttons_rect.center = 524, 594
+                        pygame.draw.rect(screen, color["light green"], frame_around_o_x_buttons_rect, 3, border_radius = 15)
                         start_count = time.time()
                         time_reset = 2
                     elif lst_practice_answer[0] == "X":
                         lst_texts[1] = "The answer is wrong but it's okay\nThe current number is 7\nThe second last number was also 7"
                         texts["A new number is displayed\nEvery 5 seconds"][1] = 185
-                        frame_around_o_x_buttons_rect.center = 284,594
-                        pygame.draw.rect(screen,color["light red"],frame_around_o_x_buttons_rect,3,border_radius=15)
+                        frame_around_o_x_buttons_rect.center = 284, 594
+                        pygame.draw.rect(screen, color["light red"], frame_around_o_x_buttons_rect, 3, border_radius = 15)
                         
             
             elif time_reset == 2:
-                bubble = pygame.Surface((600,200),pygame.SRCALPHA)
-                bubble.fill((255,255,255,100))
-                screen.blit(bubble,(100,145))
-                multiline_text(screen,50,lst_texts[1],color["white"],texts["A new number is displayed\nEvery 5 seconds"],15)
-                show_text(screen,str(lst_texts[3]),texts[7],color["green"],200)
-                show_text(screen,str(lst_texts[2]),texts[5],color["purple"],45)
-                show_text(screen,lst_texts[4],texts["2 back"],color["sky blue"],25)
+                bubble = pygame.Surface((600, 200), pygame.SRCALPHA)
+                bubble.fill((255, 255, 255, 100))
+                screen.blit(bubble, (100, 145))
+                multiline_text(screen, 50, lst_texts[1], color["white"], texts["A new number is displayed\nEvery 5 seconds"], 15)
+                show_text(screen, str(lst_texts[3]), texts[7], color["green"], 200)
+                show_text(screen, str(lst_texts[2]), texts[5], color["purple"], 45)
+                show_text(screen, lst_texts[4], texts["2 back"], color["sky blue"], 25)
                 #print(time.time() - start_count)
                 if time.time() - start_count > 1:
                     lst_texts[1] = "3"
@@ -787,15 +779,16 @@ while run:
                         lst_practice_answer[1] = "X"
                     if lst_practice_answer[1] == "O":
                         lst_texts[1] = "Wrong answer"
-                        frame_around_o_x_buttons_rect.center = 524,594
-                        pygame.draw.rect(screen,color["light green"],frame_around_o_x_buttons_rect,3,border_radius=15)
+                        frame_around_o_x_buttons_rect.center = 524, 594
+                        pygame.draw.rect(screen, color["light green"], frame_around_o_x_buttons_rect, 3, border_radius = 15)
                     elif lst_practice_answer[1] == "X":
                         lst_texts[1] = "Correct answer"
-                        frame_around_o_x_buttons_rect.center = 284,594
-                        pygame.draw.rect(screen,color["light red"],frame_around_o_x_buttons_rect,3,border_radius=15)
+                        frame_around_o_x_buttons_rect.center = 284, 594
+                        pygame.draw.rect(screen, color["light red"], frame_around_o_x_buttons_rect, 3, border_radius = 15)
                 if time.time() - start_count > 5:
                     lst_texts[2] = 4
-                    lst_texts[1] = "Choose 'O' or 'X'"
+                    lst_texts[1] = "Choose 'O' or 'X'\nThe previous numbers : 7  9  7"
+                    texts["A new number is displayed\nEvery 5 seconds"][1] = 210
                 if time.time() - start_count > 6:
                     lst_texts[2] = 3
                 if time.time() - start_count > 7:
@@ -803,7 +796,7 @@ while run:
                 if time.time() - start_count > 8:
                     lst_texts[2] = 1
                 if time.time() - start_count > 9:
-                    lst_texts[1] = "The correct answer is 'X'\n\nnumbers : 7  9  7  8"
+                    lst_texts[1] = "The correct answer is 'X'\nnumbers : 7  9  7  8\nCorrect answer : O  X"
                     texts["A new number is displayed\nEvery 5 seconds"][1] = 190
                 if time.time() - start_count > 18:
                     texts["A new number is displayed\nEvery 5 seconds"][1] = 240
@@ -835,8 +828,8 @@ while run:
                 lst_texts[1] = "A new number is displayed\nEvery 5 seconds"
                 lst_texts[2] = 5
                 lst_texts[3] = 7
-                texts["A new number is displayed\nEvery 5 seconds"] = [screenwidth/2,210]
-                texts["Let's learn 2 back"] = [screenwidth/2,240]
+                texts["A new number is displayed\nEvery 5 seconds"] = [screenwidth / 2, 210]
+                texts["Let's learn 2 back"] = [screenwidth / 2, 240]
                 time_reset = 1
                 if time_reset == 1:
                     start_count = time.time()
@@ -859,27 +852,26 @@ while run:
                         lst_texts[1] = "A new number is displayed\nEvery 5 seconds"
                         lst_texts[2] = 5
                         lst_texts[3] = 7
-                        texts["A new number is displayed\nEvery 5 seconds"] = [screenwidth/2,210]
-                        texts["Let's learn 2 back"] = [screenwidth/2,230]
+                        texts["A new number is displayed\nEvery 5 seconds"] = [screenwidth / 2, 210]
+                        texts["Let's learn 2 back"] = [screenwidth / 2, 230]
                         time_reset = 1
                         if time_reset == 1:
                             start_count = time.time()
                         o_button.rect.y = 475
                         x_button.rect.y = 475
                         howtoplay = False
-            multiline_text(screen,25,press_backspace_text,color["dark grey"],(screenwidth/2,750),1)                
-
+            multiline_text(screen, 25, press_backspace_text, color["dark grey"], (screenwidth / 2, 750), 1)                
         elif credit == True:
 
             credit_title_button.draw_text(screen)
             credit_made_by_button.draw_text(screen)
-            show_text(screen,credit_email,(screenwidth/2,375),color["white"],45)
+            show_text(screen, credit_email, (screenwidth / 2, 375), color["white"], 45)
             credit_back_button.draw_text(screen)
 
             credit_title_button.hovered(color['green'], 42, color['white'], 42, False, x = credit_title_button.rect.x, y = credit_title_button.rect.y)
             credit_made_by_button.hovered(color['green'], 64, color['white'], 64, False, x = credit_made_by_button.rect.x, y = credit_made_by_button.rect.y)
             credit_back_button.hovered(color['green'], 42, color['white'], 42, False, x = credit_back_button.rect.x, y = credit_back_button.rect.y)
-            multiline_text(screen,25,press_backspace_text,color["white"],(screenwidth/2,650),1)
+            multiline_text(screen, 25, press_backspace_text,color["white"], (screenwidth / 2, 650), 1)
 
             if credit_back_button.check_click():
                 play_sound("sound/back.wav")
@@ -914,15 +906,15 @@ while run:
             options_low_number_of_questions.draw_text(screen)
             options_med_number_of_questions.draw_text(screen)
             options_high_number_of_questions.draw_text(screen)
-            options_2back.hovered(color["white"],32,color["white"],32,True)
-            options_3back.hovered(color["white"],32,color["white"],32,True)
-            options_4back.hovered(color["white"],32,color["white"],32,True)
-            options_5back.hovered(color["white"],32,color["white"],32,True)
-            options_6back.hovered(color["white"],32,color["white"],32,True)
-            options_low_number_of_questions.hovered(color["white"],20,color["white"],20,True)
-            options_med_number_of_questions.hovered(color["white"],20,color["white"],20,True)
-            options_high_number_of_questions.hovered(color["white"],20,color["white"],20,True)
-            multiline_text(screen,25,press_backspace_text,color["white"],(screenwidth/2,644),1)
+            options_2back.hovered(color["white"], 32, color["white"], 32, True)
+            options_3back.hovered(color["white"], 32, color["white"], 32, True)
+            options_4back.hovered(color["white"], 32, color["white"], 32, True)
+            options_5back.hovered(color["white"], 32, color["white"], 32, True)
+            options_6back.hovered(color["white"], 32, color["white"], 32, True)
+            options_low_number_of_questions.hovered(color["white"], 20, color["white"], 20, True)
+            options_med_number_of_questions.hovered(color["white"], 20, color["white"], 20, True)
+            options_high_number_of_questions.hovered(color["white"], 20, color["white"], 20, True)
+            multiline_text(screen,25,press_backspace_text, color["white"], (screenwidth / 2, 644), 1)
 
             if options_2back.check_click():
                 current_nback = 2
@@ -948,35 +940,35 @@ while run:
 
                 play_sound("sound/sci.wav")
             if current_nback == 2:
-                options_2back.content = options_2back.font_kind.render("2",True,color["green"])
-                options_3back.content = options_3back.font_kind.render("3",True,color["white"])
-                options_4back.content = options_4back.font_kind.render("4",True,color["white"])
-                options_5back.content = options_5back.font_kind.render("5",True,color["white"])
-                options_6back.content = options_6back.font_kind.render("6",True,color["white"])
+                options_2back.content = options_2back.font_kind.render("2", True, color["green"])
+                options_3back.content = options_3back.font_kind.render("3", True, color["white"])
+                options_4back.content = options_4back.font_kind.render("4", True, color["white"])
+                options_5back.content = options_5back.font_kind.render("5", True, color["white"])
+                options_6back.content = options_6back.font_kind.render("6", True, color["white"])
             elif current_nback == 3:
-                options_2back.content = options_2back.font_kind.render("2",True,color["white"])
-                options_3back.content = options_3back.font_kind.render("3",True,color["green"])
-                options_4back.content = options_4back.font_kind.render("4",True,color["white"])
-                options_5back.content = options_5back.font_kind.render("5",True,color["white"])
-                options_6back.content = options_6back.font_kind.render("6",True,color["white"])
+                options_2back.content = options_2back.font_kind.render("2", True, color["white"])
+                options_3back.content = options_3back.font_kind.render("3", True, color["green"])
+                options_4back.content = options_4back.font_kind.render("4", True, color["white"])
+                options_5back.content = options_5back.font_kind.render("5", True, color["white"])
+                options_6back.content = options_6back.font_kind.render("6", True, color["white"])
             elif current_nback == 4:
-                options_2back.content = options_2back.font_kind.render("2",True,color["white"])
-                options_3back.content = options_3back.font_kind.render("3",True,color["white"])
-                options_4back.content = options_4back.font_kind.render("4",True,color["green"])
-                options_5back.content = options_5back.font_kind.render("5",True,color["white"])
-                options_6back.content = options_6back.font_kind.render("6",True,color["white"])
+                options_2back.content = options_2back.font_kind.render("2", True, color["white"])
+                options_3back.content = options_3back.font_kind.render("3", True, color["white"])
+                options_4back.content = options_4back.font_kind.render("4", True, color["green"])
+                options_5back.content = options_5back.font_kind.render("5", True, color["white"])
+                options_6back.content = options_6back.font_kind.render("6", True, color["white"])
             elif current_nback == 5:
-                options_2back.content = options_2back.font_kind.render("2",True,color["white"])
-                options_3back.content = options_3back.font_kind.render("3",True,color["white"])
-                options_4back.content = options_4back.font_kind.render("4",True,color["white"])
-                options_5back.content = options_5back.font_kind.render("5",True,color["green"])
-                options_6back.content = options_6back.font_kind.render("6",True,color["white"])
+                options_2back.content = options_2back.font_kind.render("2", True, color["white"])
+                options_3back.content = options_3back.font_kind.render("3", True, color["white"])
+                options_4back.content = options_4back.font_kind.render("4", True, color["white"])
+                options_5back.content = options_5back.font_kind.render("5", True, color["green"])
+                options_6back.content = options_6back.font_kind.render("6", True, color["white"])
             elif current_nback == 6:
-                options_2back.content = options_2back.font_kind.render("2",True,color["white"])
-                options_3back.content = options_3back.font_kind.render("3",True,color["white"])
-                options_4back.content = options_4back.font_kind.render("4",True,color["white"])
-                options_5back.content = options_5back.font_kind.render("5",True,color["white"])
-                options_6back.content = options_6back.font_kind.render("6",True,color["green"])
+                options_2back.content = options_2back.font_kind.render("2", True, color["white"])
+                options_3back.content = options_3back.font_kind.render("3", True, color["white"])
+                options_4back.content = options_4back.font_kind.render("4", True, color["white"])
+                options_5back.content = options_5back.font_kind.render("5", True, color["white"])
+                options_6back.content = options_6back.font_kind.render("6", True, color["green"])
             
             if options_low_number_of_questions.check_click():
                 low_number = True
@@ -997,7 +989,7 @@ while run:
             
 
             #print(pygame.mouse.get_pos())
-            options_back_button.hovered(color["green"],options_back_button.size,color["white"],options_back_button.size,handshape = False)
+            options_back_button.hovered(color["green"], options_back_button.size, color["white"], options_back_button.size, handshape = False)
             if options_back_button.check_click():
                 options = False
                 
@@ -1096,23 +1088,23 @@ while run:
             if low_number:
                 med_number = False
                 high_number = False
-                options_low_number_of_questions.content = options_low_number_of_questions.font_kind.render("low",True,color["green"])
-                options_med_number_of_questions.content = options_med_number_of_questions.font_kind.render("med",True,color["white"])
-                options_high_number_of_questions.content = options_high_number_of_questions.font_kind.render("high",True,color["white"])
+                options_low_number_of_questions.content = options_low_number_of_questions.font_kind.render("low", True, color["green"])
+                options_med_number_of_questions.content = options_med_number_of_questions.font_kind.render("med", True, color["white"])
+                options_high_number_of_questions.content = options_high_number_of_questions.font_kind.render("high", True, color["white"])
             
             elif med_number:
                 low_number = False
                 high_number = False
-                options_low_number_of_questions.content = options_low_number_of_questions.font_kind.render("low",True,color["white"])
-                options_med_number_of_questions.content = options_med_number_of_questions.font_kind.render("med",True,color["green"])
-                options_high_number_of_questions.content = options_high_number_of_questions.font_kind.render("high",True,color["white"])
+                options_low_number_of_questions.content = options_low_number_of_questions.font_kind.render("low", True, color["white"])
+                options_med_number_of_questions.content = options_med_number_of_questions.font_kind.render("med", True, color["green"])
+                options_high_number_of_questions.content = options_high_number_of_questions.font_kind.render("high", True, color["white"])
                
             elif high_number:
                 low_number = False
                 med_number = False
-                options_low_number_of_questions.content = options_low_number_of_questions.font_kind.render("low",True,color["white"])
-                options_med_number_of_questions.content = options_med_number_of_questions.font_kind.render("med",True,color["white"])
-                options_high_number_of_questions.content = options_high_number_of_questions.font_kind.render("high",True,color["green"])
+                options_low_number_of_questions.content = options_low_number_of_questions.font_kind.render("low", True, color["white"])
+                options_med_number_of_questions.content = options_med_number_of_questions.font_kind.render("med", True, color["white"])
+                options_high_number_of_questions.content = options_high_number_of_questions.font_kind.render("high", True, color["green"])
 
         else:
 
@@ -1124,12 +1116,11 @@ while run:
             main_exit_button.draw_text(screen)
             main_x_button.draw_text(screen)
 
-            main_start_button.hovered(color['green'], 32, color['white'], 32, True, True, main_start_button.rect.x, main_start_button.rect.y)
-            main_howtoplay_button.hovered(color['green'], 32, color['white'], 32, False, 250, 320)
+            main_start_button.hovered(color['green'], 32, color['white'], 32, True)
+            main_howtoplay_button.hovered(color['green'], 32, color['white'], 32, False)
             main_credit_button.hovered(color['green'], 32, color['white'], 32, False)
-            main_options_button.hovered(color["green"],32,color["white"],32,False)
+            main_options_button.hovered(color["green"], 32, color["white"], 32, False)
             main_exit_button.hovered(color["dark grey"], 32, color['white'], 32, True)
-
             
 
             if main_start_button.check_click():
@@ -1203,14 +1194,14 @@ while run:
             if paused_sound_flag == False and backgroundsound == 1:
                 paused_sound_flag = True
                 play_sound("sound/menuclick.wav")
-                play_sound(channel=3)
-            screen.blit(gamebg,(0,0))
-            pygame.draw.rect(screen,color["white"],pygame.rect.Rect(150,150,500,500),4,15)
+                play_sound(channel = 3)
+            screen.blit(gamebg, (0, 0))
+            pygame.draw.rect(screen, color["white"], pygame.rect.Rect(150, 150, 500, 500), 4, 15)
             #show_text(screen,pause_text,(screenwidth/2,220), color["white"],90)
-            paused_message = font55.render(pause_text,True,color["white"])
+            paused_message = font55.render(pause_text, True, color["white"])
             paused_message_rect = paused_message.get_rect()
-            paused_message_rect.center = screenwidth/2,220
-            screen.blit(paused_message,paused_message_rect)
+            paused_message_rect.center = screenwidth / 2, 220
+            screen.blit(paused_message, paused_message_rect)
             pause_button.draw_text(screen)
             press_esc_text.draw_text(screen)
             quit_text.draw_text(screen)
@@ -1231,10 +1222,10 @@ while run:
             elif backgroundsound == 1:
                 paused_sound_button.image = pygame.image.load("img/backgroundsound1.png")
 
-            pause_button.hovered(None,None)
-            press_esc_text.hovered(color["green"],50,color["white"],50)
-            main_menu_text.hovered(color["green"],30,color["white"],30)
-            quit_text.hovered(color["grey"],30,color["white"],30)
+            pause_button.hovered(None, None)
+            press_esc_text.hovered(color["green"], 50, color["white"], 50)
+            main_menu_text.hovered(color["green"], 30, color["white"], 30)
+            quit_text.hovered(color["grey"], 30, color["white"], 30)
             if pause_button.check_click() or press_esc_text.check_click():
                 paused_sound_flag = False
                 game_background_sound_flag = False
@@ -1248,8 +1239,8 @@ while run:
                 percentage_control = False
                 rocket_image.rect.x = 110
                 rocket_image.rect.y = 80
-                countdown_before_start_content_rect.x = screenwidth/2 - 40
-                countdown_before_start_content_rect.y = screenwidth/2 - 60
+                countdown_before_start_content_rect.x = screenwidth / 2 - 40
+                countdown_before_start_content_rect.y = screenwidth / 2 - 60
                 number_of_correct_questions = 0
                 lst_rendered_contents = []
                 lst = []
@@ -1282,23 +1273,22 @@ while run:
 
             update_screen(screen,color["black"])
             
-            screen.blit(gamebg,(0,0))
-            odometer_image.transform_image(1.2,1)
-            odometer_image.draw_on_screen(screen,92,660)
-            screen_image.transform_image(1.3,1.5)
-            screen_image.draw_on_screen(screen,68,-80)
+            screen.blit(gamebg, (0, 0))
+            odometer_image.transform_image(1.2, 1)
+            odometer_image.draw_on_screen(screen, 92, 660)
+            screen_image.transform_image(1.3, 1.5)
+            screen_image.draw_on_screen(screen, 68, -80)
             regenerate_numbers()
-            current_nback_text_content = current_nback_text_font.render(str(current_nback)+" Back",True,color["white"])
+            current_nback_text_content = current_nback_text_font.render(str(current_nback) + " Back", True, color["white"])
             screen.blit(current_nback_text_content,(610, 243))
-            earth_image.draw_on_screen(screen,100,82)
-            space_station_image.draw_on_screen(screen,640,78)
-            rocket_image.draw_on_screen(screen,rocket_image.rect.x,rocket_image.rect.y)
+            earth_image.draw_on_screen(screen, 100, 82)
+            space_station_image.draw_on_screen(screen, 640, 78)
+            rocket_image.draw_on_screen(screen,rocket_image.rect.x, rocket_image.rect.y)
             o_button.rect.y = 475
             x_button.rect.y = 475
-            #print(pygame.mouse.get_pos())
-            show_text(screen,press_esc_to_pause_text,(70,20),color["white"],25)
-            show_text(screen,press_right_to_o_text,(80,40),color["white"],25)
-            show_text(screen,press_left_to_x_text,(80,60),color["white"],25)
+            show_text(screen,press_esc_to_pause_text, (70, 20), color["white"], 25)
+            show_text(screen,press_right_to_o_text, (80, 40), color["white"], 25)
+            show_text(screen,press_left_to_x_text, (80, 60), color["white"], 25)
             # blit images from lst_rendered_contents onto screen
             for i in range(len(lst_rendered_contents)):
                 screen.blit(lst_rendered_contents[i], lst_rect[i])
@@ -1324,19 +1314,17 @@ while run:
 
                 elif int(countdown_before_start) == 0 :
                     countdown_before_start_content = countdown_before_start_font.render(str("Start!"), True, color["white"])
-                    countdown_before_start_content_rect.x = screenwidth/2 - 260
+                    countdown_before_start_content_rect.x = screenwidth / 2 - 260
                     if game_start_sound_flag == False:
                         game_start_sound_flag = True
                         play_sound("sound/countdown_start.wav")
-                    
-                
-                
+
                 if 0 < countdown_before_start < len(lst_rect) * 5 :
                     countdown_before_start_content_rect.center = -200, -200
                     lst_rect[quotient - 1].center = -200, -200
                     counter_for_next_number_content_rect.x = 680
                     counter_for_next_number_content_rect.y = 20
-                    rocket_x_position += 495/25/number_of_questions
+                    rocket_x_position += 495 / 25 / number_of_questions
                     rocket_image.rect.x = rocket_x_position
 
                     # every 5 second car moves
@@ -1345,7 +1333,7 @@ while run:
                     
 
                     # this makes number disappear for a short time
-                    if quotient*5 + 4.78 < countdown_before_start:
+                    if quotient * 5 + 4.78 < countdown_before_start:
                         lst_rect[quotient].center = -200, -200
                     else:
                         lst_rect[quotient].center = screenwidth / 2 + 8, screenheight / 2 - 45
@@ -1357,40 +1345,37 @@ while run:
                     
                     if game_background_sound_flag == False:
                         game_background_sound_flag = True
-                        play_sound(channel=1)
+                        play_sound(channel = 1)
 
                     if rem == 0:
                         if number_appear_sound_flag == False:
                             number_appear_sound_flag = True
                             play_sound("sound/number_appear_edited.mp3")
                         
-                        counter_for_next_number_content = counter_for_next_number_font.render(" ",True,color["white"])
+                        counter_for_next_number_content = counter_for_next_number_font.render(" ", True, color["white"])
                         
                         
                     if rem == 1:
-                        counter_for_next_number_content = counter_for_next_number_font.render(" ",True,color["white"])
+                        counter_for_next_number_content = counter_for_next_number_font.render(" ", True, color["white"])
                         number_appear_sound_flag = False
                     if rem == 2:
-                        counter_for_next_number_content = counter_for_next_number_font.render("3",True,color["white"])
+                        counter_for_next_number_content = counter_for_next_number_font.render("3", True, color["white"])
                         if clock_tick_sound_flag == False:
                             clock_tick_sound_flag = True
                             play_sound("sound/clock_tick.wav")
                     if rem == 3:
                         clock_tick_sound_flag = False
-                        counter_for_next_number_content = counter_for_next_number_font.render("2",True,color["white"])
+                        counter_for_next_number_content = counter_for_next_number_font.render("2", True, color["white"])
                     if rem == 4:
-                        counter_for_next_number_content = counter_for_next_number_font.render("1",True,color["white"])
+                        counter_for_next_number_content = counter_for_next_number_font.render("1", True, color["white"])
                         
-
-                elif round(countdown_before_start,2) >= number_of_questions * 5:
-                    counter_for_next_number_content = counter_for_next_number_font.render(" ",True,color["white"])
-
+                elif round(countdown_before_start, 2) >= number_of_questions * 5:
+                    counter_for_next_number_content = counter_for_next_number_font.render(" ", True, color["white"])
 
             if 5 * current_nback <= round(countdown_before_start, 2) < 5 * number_of_questions:
                 
                 o_button.draw_text(screen)
                 x_button.draw_text(screen)
-                
                 o_button.hovered(None, 12)
                 x_button.hovered(None, 12)
                 
@@ -1427,48 +1412,46 @@ while run:
                 
                 if lst_user_answer[quotient-current_nback] == "O":
                     frame_around_o_x_buttons_rect.center = 524, 539
-                    pygame.draw.rect(screen,color["light green"],frame_around_o_x_buttons_rect,3,border_radius = 15)
+                    pygame.draw.rect(screen, color["light green"], frame_around_o_x_buttons_rect, 3, border_radius = 15)
                 elif lst_user_answer[quotient-current_nback] == "X":
                     frame_around_o_x_buttons_rect.center = 284, 539
-                    pygame.draw.rect(screen,color["light red"],frame_around_o_x_buttons_rect,3,border_radius = 15)
+                    pygame.draw.rect(screen, color["light red"], frame_around_o_x_buttons_rect, 3, border_radius = 15)
                 elif lst_user_answer[quotient-current_nback] == " ":
                     frame_around_o_x_buttons_rect.center = -200, -200
-                    pygame.draw.rect(screen,color["white"],frame_around_o_x_buttons_rect,3,border_radius = 15)
+                    pygame.draw.rect(screen, color["white"], frame_around_o_x_buttons_rect, 3, border_radius = 15)
             
-            if round(countdown_before_start,2) > number_of_questions * 5:
+            if round(countdown_before_start, 2) > number_of_questions * 5:
                 reset_all_sound_flags()
                 pygame.mouse.set_cursor(pygame.SYSTEM_CURSOR_ARROW)
                 
                 score = True
                 game = False
             
-            screen.blit(counter_for_next_number_content,(counter_for_next_number_content_rect.x, counter_for_next_number_content_rect.y))
-            screen.blit(countdown_before_start_content,(countdown_before_start_content_rect.x, countdown_before_start_content_rect.y))
+            screen.blit(counter_for_next_number_content, (counter_for_next_number_content_rect.x, counter_for_next_number_content_rect.y))
+            screen.blit(countdown_before_start_content, (countdown_before_start_content_rect.x, countdown_before_start_content_rect.y))
             #pygame.draw.rect(screen,color["white"],frame_around_o_x_buttons_rect,3,border_radius = 15)
             first = quotient + 1
-            progress = font20.render(str(quotient + 1)+" / " + str(number_of_questions),True,color["white"])
-            screen.blit(progress,(110,243))
+            progress = font20.render(str(quotient + 1) + " / " + str(number_of_questions), True, color["white"])
+            screen.blit(progress, (110, 243))
         
     elif score == True:
         game = False
         screen.fill(color["black"])
         if score_sound_flag == False and backgroundsound == 1:
             score_sound_flag = True
-            play_sound(channel=2)
-            
-
+            play_sound(channel = 2)
+        
         # this allows to reset the previous score and update_position new result
         update_score()
-
         pygame.draw.rect(screen, color["white"], rectangle_outside, 3)
-        pygame.draw.line(screen,color["white"], (100,150), (700,150), 2)
-        pygame.draw.line(screen,color["white"], (280,185), (280,680), 2)
+        pygame.draw.line(screen,color["white"], (100, 150), (700, 150), 2)
+        pygame.draw.line(screen,color["white"], (280, 185), (280, 680), 2)
 
      
-        earth_image.draw_on_screen(screen,100,82)
-        space_station_image.draw_on_screen(screen,640,78)
+        earth_image.draw_on_screen(screen, 100, 82)
+        space_station_image.draw_on_screen(screen, 640, 78)
         rocket_image.rotate_image(90)
-        rocket_image.draw_on_screen(screen,600,rocket_image.rect.y)
+        rocket_image.draw_on_screen(screen, 600, rocket_image.rect.y)
         screen.blit(result_text.content, result_text.rect)
         
         n_back_text.draw_text(screen)
@@ -1476,86 +1459,77 @@ while run:
         correct_answers.draw_text(screen)
         user_answers.draw_text(screen)
         n_back_answer.draw_text(screen)
-        n_back_answer.content = n_back_answer.font_kind.render(str(current_nback),True,color["white"])
+        n_back_answer.content = n_back_answer.font_kind.render(str(current_nback), True, color["white"])
         result_percentage_text.draw_text(screen)
         go_back_to_main_menu_button.draw_text(screen)
-        go_back_to_main_menu_button.hovered(color['green'],20, color['white'], 20, handshape = True)
+        go_back_to_main_menu_button.hovered(color['green'], 20, color['white'], 20, handshape = True)
         
         
         # questions 
         if len(lst_rendered_contents_2) <= 10:
             for index, each in enumerate(lst_rendered_contents_2):
                 screen.blit(each, ((280 + (470 * (index + 1) / (len(lst_rendered_contents_2) + 1))), 255))
-        
         elif 10 < len(lst_rendered_contents_2) <= 30:
-            
             for index, each in enumerate(lst_rendered_contents_2):
-
                 if index <= 9:
                     screen.blit(each, ((280 + (470 * (index + 1) / (11))), 255))
                 if 9 < index <= 19:
-                    screen.blit(each, ((280 + (470 * (index%10 + 1) / (11))), 255 + 40))
+                    screen.blit(each, ((280 + (470 * (index % 10 + 1) / (11))), 255 + 40))
                 if 19 < index:
-                    screen.blit(each, ((280 + (470 * (index%10 + 1) / (11))), 255 + 80))
+                    screen.blit(each, ((280 + (470 * (index % 10 + 1) / (11))), 255 + 80))
 
-        elif 30 < len(lst_rendered_contents_2):
-            
+        elif 30 < len(lst_rendered_contents_2):            
             long_lst = []
             for each in lst:
                 font15 = pygame.font.Font("gameplay.ttf",15)
-                each_content = font15.render(str(each),True,color["white"])
+                each_content = font15.render(str(each), True, color["white"])
                 long_lst.append(each_content)
-            for i,e in enumerate(long_lst):
+            for i, e in enumerate(long_lst):
                 if i <= 9:
                     screen.blit(e, ((280 + (470 * (i + 1) / (11))), 247))
                 if 9 < i <= 19:
-                    screen.blit(e, ((280 + (470 * (i%10 + 1) / (11))), 247 + 30))
+                    screen.blit(e, ((280 + (470 * (i % 10 + 1) / (11))), 247 + 30))
                 if 19 < i <= 29:
-                    screen.blit(e, ((280 + (470 * (i%10 + 1) / (11))), 247 + 60))
+                    screen.blit(e, ((280 + (470 * (i % 10 + 1) / (11))), 247 + 60))
                 if 29 < i:
-                    screen.blit(e, ((280 + (470 * (i%10 + 1) / (11))), 247 + 90))
-
-        
+                    screen.blit(e, ((280 + (470 * (i % 10 + 1) / (11))), 247 + 90))
 
         # correct answer 
         if len(lst_answer) <= 10:
             for index, each in enumerate(lst_answer):
-                answer_font = pygame.font.Font("gameplay.ttf",20)
-                answer_content = answer_font.render(str(each),True,color["white"])
-                screen.blit(answer_content,((280 + (470 * (index + 1) / (len(lst_answer) + 1))), 395))
+                answer_font = pygame.font.Font("gameplay.ttf", 20)
+                answer_content = answer_font.render(str(each), True, color["white"])
+                screen.blit(answer_content, ((280 + (470 * (index + 1) / (len(lst_answer) + 1))), 395))
  
         elif 10 < len(lst_answer):
 
             for index, each in enumerate(lst_answer):
-                answer_font = pygame.font.Font("gameplay.ttf",20)
-                answer_content = answer_font.render(str(each),True,color["white"])
+                answer_font = pygame.font.Font("gameplay.ttf", 20)
+                answer_content = answer_font.render(str(each), True, color["white"])
 
                 if index <= 9:
                     screen.blit(answer_content, ((280 + (470 * (index + 1) / (11))), 395))
                 if 9 < index <= 19:
-                    screen.blit(answer_content, ((280 + (470 * (index%10 + 1) / (11))), 395 + 40))
+                    screen.blit(answer_content, ((280 + (470 * (index % 10 + 1) / (11))), 395 + 40))
                 if 19 < index:
-                    screen.blit(answer_content, ((280 + (470 * (index%10 + 1) / (11))), 395 + 80))
-        
-  
- 
+                    screen.blit(answer_content, ((280 + (470 * (index % 10 + 1) / (11))), 395 + 80))
 
         # user answer
         if len(lst_user_answer) <= 10:
             for index, each in enumerate(lst_user_answer):
-                user_answer_font = pygame.font.Font("gameplay.ttf",20)
+                user_answer_font = pygame.font.Font("gameplay.ttf", 20)
                 if each == " ":
                     each = "n/a"
-                    user_answer_font = pygame.font.Font("gameplay.ttf",10)
-                user_answer_content = user_answer_font.render(str(each),True,color["white"])
+                    user_answer_font = pygame.font.Font("gameplay.ttf", 10)
+                user_answer_content = user_answer_font.render(str(each), True, color["white"])
                 screen.blit(user_answer_content,((280 + (470 * (index + 1) / (len(lst_user_answer) + 1))), 530))
         elif len(lst_user_answer) > 10:
             for index, each in enumerate(lst_user_answer):
-                user_answer_font = pygame.font.Font("gameplay.ttf",20)
+                user_answer_font = pygame.font.Font("gameplay.ttf", 20)
                 if each == " ":
                     each = "n/a"
-                    user_answer_font = pygame.font.Font("gameplay.ttf",10)
-                user_answer_content = user_answer_font.render(str(each),True,color["white"])
+                    user_answer_font = pygame.font.Font("gameplay.ttf", 10)
+                user_answer_content = user_answer_font.render(str(each), True, color["white"])
                 if index <= 9:
                     screen.blit(user_answer_content, ((280 + (470 * (index + 1) / (11))), 530))
                 if 9 < index <= 19:
@@ -1590,12 +1564,12 @@ while run:
                     print(f"|{lst_user_answer[i]}", end="|")
             print(f"\n\nScore : {round(percentage,2)} %")
             print("############################################")
-        percentage_font = pygame.font.Font("gamecube.ttf",20)
-        percentage_message = percentage_font.render(str(round(percentage,2)) + " %",True, color["white"])
+        percentage_font = pygame.font.Font("gamecube.ttf", 20)
+        percentage_message = percentage_font.render(str(round(percentage, 2)) + " %", True, color["white"])
         if percentage >= 80:
-            percentage_message = percentage_font.render(str(round(percentage,2)) + " %",True, color["green"])
+            percentage_message = percentage_font.render(str(round(percentage,2)) + " %", True, color["green"])
         elif percentage <= 40:
-            percentage_message = percentage_font.render(str(round(percentage,2)) + " %",True, color["red"])
+            percentage_message = percentage_font.render(str(round(percentage,2)) + " %", True, color["red"])
         percentage_message_rect = percentage_message.get_rect()
         percentage_message_rect.center = 525, 645
         screen.blit(percentage_message,percentage_message_rect)
@@ -1614,8 +1588,8 @@ while run:
                     percentage_control = False
                     rocket_image.rect.x = 110
                     rocket_image.rect.y = 80
-                    countdown_before_start_content_rect.x = screenwidth/2 - 40
-                    countdown_before_start_content_rect.y = screenwidth/2 - 60
+                    countdown_before_start_content_rect.x = screenwidth / 2 - 40
+                    countdown_before_start_content_rect.y = screenwidth / 2 - 60
                     number_of_correct_questions = 0
                     for i in range(len(lst_rendered_contents)):
                         lst_rendered_contents.pop(0)
@@ -1640,8 +1614,8 @@ while run:
             percentage_control = False
             rocket_image.rect.x = 110
             rocket_image.rect.y = 80
-            countdown_before_start_content_rect.x = screenwidth/2 - 40
-            countdown_before_start_content_rect.y = screenwidth/2 - 60
+            countdown_before_start_content_rect.x = screenwidth / 2 - 40
+            countdown_before_start_content_rect.y = screenwidth / 2 - 60
             number_of_correct_questions = 0
             for i in range(len(lst_rendered_contents)):
                 lst_rendered_contents.pop(0)
@@ -1663,7 +1637,6 @@ while run:
         mute_background_sound_flags()
     elif backgroundsound == 1:
         resume_background_sound_flags()
-
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
