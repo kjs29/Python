@@ -1,0 +1,19 @@
+# 8/19 Today I learned...
+
+```py
+import pygame
+
+pygame.init()
+screen = pygame.display.set_mode((1000,1000))
+run = True
+while run:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            run = False
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_ESCAPE:
+                run = False
+
+    pygame.display.flip()
+
+```
