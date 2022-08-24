@@ -6,11 +6,14 @@ For example, every_three_nums(91) should return the list [91, 94, 97, 100].
 
 If start is greater than 100, the function should return an empty list.
 
-```py
-
-def every_three_nums(start):
-    if start > 100:
-        return False
-    else:
-        return list(range(start, 101, 3))
-```
+<details>
+  <summary>answer</summary>
+  
+  ```py
+  def every_three_nums(start):
+      if start > 100:
+          return False
+      else:
+          return list(range(start, 101, 3))
+  ```
+</details>
