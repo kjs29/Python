@@ -55,3 +55,15 @@ should return
       return {a:lst.count(a) for a in lst}
   ```
 </details>
+
+<details>
+  <summary>answer 8.25</summary>
+  
+  ```py
+  def frequency_dictionary(words):
+      dic = {}
+      for each in words:
+          dic.setdefault(each, words.count(each))
+      return dic
+  ```
+</details>
