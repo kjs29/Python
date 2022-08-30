@@ -11,7 +11,7 @@ b = [1,5,3,4,7]
   
   ```py
   
-  def shows_how_many_tries_until_two_5numbers_are_the_same():
+  def shows_how_many_tries_until_two_lists_of_5_numbers_are_the_same():
       import secrets
       a = []
       b = []
@@ -36,7 +36,7 @@ b = [1,5,3,4,7]
               break
 
 
-  shows_how_many_tries_until_two_5numbers_are_the_same()
+  shows_how_many_tries_until_two_lists_of_5_numbers_are_the_same()
 
 
   ```
