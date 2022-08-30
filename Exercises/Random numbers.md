@@ -5,7 +5,11 @@ Create a function that makes two lists of 5 numbers and also shows how many trie
 a = [1,5,3,4,7]
 b = [1,5,3,4,7]
 ```
-
+<em>These are not identical</em>
+```py
+a = [1,5,3,4,7]
+b = [5,2,3,7,4]
+```
 <details>
   <summary>answer</summary>
   
