@@ -1,0 +1,43 @@
+Create a function that makes two lists of 5 numbers and also shows how many tries it takes until two lists of 5 randomly generated numbers are identical
+
+<em>These are identical</em>
+```py
+a = [1,5,3,4,7]
+b = [1,5,3,4,7]
+```
+
+<details>
+  <summary>answer</summary>
+  
+  ```py
+  
+  def shows_how_many_tries_until_two_5numbers_are_the_same():
+      import secrets
+      a = []
+      b = []
+      for _ in range(5):
+          a.append(secrets.randbelow(9)+1)
+          b.append(secrets.randbelow(9)+1)
+      print(a,b)
+
+      count = 0
+      while True:
+          if a != b:
+              a = []
+              b = []
+              for _ in range(5):
+                  a.append(secrets.randbelow(9)+1)
+                  b.append(secrets.randbelow(9)+1)
+              count += 1
+              print(count)
+          else:
+              print(a,b)
+              print(f"count : {count}")
+              break
+
+
+  shows_how_many_tries_until_two_5numbers_are_the_same()
+
+
+  ```
+</details>
