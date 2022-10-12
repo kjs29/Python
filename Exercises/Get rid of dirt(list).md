@@ -32,3 +32,15 @@ You want to remove all ```'dirt'``` in the ```house```
   ```
   
 </details>
+
+<details>
+  <summary>answer on 10/12</summary>
+  
+  ```py
+  for each in house:
+      if each == "dirt":
+          house.remove(each)
+
+  print(house)
+  ```
+</details>
