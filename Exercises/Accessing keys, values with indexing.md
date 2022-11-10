@@ -1,4 +1,4 @@
-Tried on 6/12(x), 7/10(o)
+Tried on 6/12(x), 7/10(o), 11/10(o)
 ---
 
 We have a dictionary below,
@@ -41,4 +41,24 @@ How would we get it?
           print(f"Third key:value is {k.title()}:{v}")
       count += 1
   ```
+</details>
+
+<details>
+    
+  <summary>Answer 11/10</summary>
+    
+  ```py
+  favourite_languages = {
+      "sarah":["c"],
+      "jin":["python"],
+      "scott":["c++","C"],
+      "jules":["ruby"]
+      }
+
+  a = list(favourite_languages.keys())
+  b = list(favourite_languages.values())
+
+  print(f"Third key:value is {a[2].title()} : {favourite_languages[a[2]]}")
+  ```
+    
 </details>
