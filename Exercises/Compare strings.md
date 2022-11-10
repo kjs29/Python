@@ -1,4 +1,4 @@
-Tried on 7/10(o)
+Tried on 7/10(o) 11/10(o)
 ----
 
 We have two strings
@@ -69,3 +69,33 @@ Answer #2
       return dic
   ```
 </details>
+
+# Answer 11/10
+<details>
+  <summary>answer</summary>
+  
+  ```py
+  s1 = "abc"
+  s2 = "bs0ck02poa"
+  def aaa(first,second):
+      for each in first:
+          if each not in second:
+              return False
+
+      return True
+
+
+  def bbb(first,second):
+      if aaa(first,second) == True:
+          dic = {}
+
+          for each in first:
+              dic[each] = second.find(each)
+
+          return dic
+
+  print(aaa(s1,s2))
+  print(bbb(s1,s2))
+  ```
+</details>
+    
