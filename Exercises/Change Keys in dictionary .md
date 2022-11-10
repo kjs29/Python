@@ -1,4 +1,4 @@
-Tried on 6/12(x) 7/10(x)
+Tried on 6/12(x) 7/10(x) 11/10(x)
 ---
 
 # Change Keys
@@ -41,5 +41,33 @@ And for the ```personal3```, ```name3```, ```address3```
       k = k + str(3)
       personal3_new[k] = v
   print(personal3_new)
+  ```
+</details>
+
+
+<details>
+  <summary>answer 11/10</summary>
+  
+  ```py
+  personal = {"name":"J","address": "somewhere over the rainbow",}
+  personal2 = {"name":"H","address": "heeee"}
+  personal3 = {"name":"R","address":"earth"}
+
+  personal2 = {}
+  for k,v in personal.items():
+      if k == "name":
+          personal2[k+str(2)] = "H"
+      elif k == "address":
+          personal2[k+str(2)] = "heeee"
+
+  personal3 = {}
+  for k,v in personal.items():
+      if k == "name":
+          personal3[k+str(3)] = "R"
+      elif k == "address":
+          personal3[k+str(3)] = "earth"
+
+  print(personal2)
+  print(personal3)
   ```
 </details>
