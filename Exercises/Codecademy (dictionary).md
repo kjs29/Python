@@ -1,4 +1,4 @@
-Tried on 6/12(x), 7/2(x), 7/10(o)
+Tried on 6/12(x), 7/2(x), 7/10(o), 11/10(o)
 ---
 
 This function accepts a dictionary where the keys are last names and the values are lists of first names of people who have that last name. 
@@ -64,4 +64,27 @@ into
               dic[key[0]] += len(value)
       return dic
   ```
+</details>
+
+<details>
+  <summary>answer 11/10</summary>
+  
+  ```py
+  names = {"Stark": ["Ned", "Robb", "Sansa"], "Snow" : ["Jon"], "Lannister": ["Jaime", "Cersei", "Tywin"]}
+
+  def count(s):
+      dict1 = {}
+
+      for k,v in s.items():
+          alphabets = k[0]
+          if alphabets not in list(dict1.keys()):
+              dict1[alphabets] = 0
+          if alphabets in list(dict1.keys()):
+              dict1[alphabets] += len(s[k])
+
+      return dict1
+
+  print(count(names))
+  ```
+  
 </details>
