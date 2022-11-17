@@ -1,4 +1,4 @@
-Tried on 5/28(o), 6/20(x), 7/10(o)
+Tried on 5/28(o), 6/20(x), 7/10(o), 11/17(o)
 
 
 Let's say there are a list,
@@ -45,5 +45,20 @@ should return
           return lst
       else:
           return lst
+  ```
+</details>
+  
+<details>
+  <summary>answer on 11/17</summary>
+  
+  ```py
+  def double_index(a,b):
+      if b >= len(a):
+          return a
+      else:
+          a[b]= a[b]*2
+          return a
+
+  print(double_index([1,21,25,8],4))
   ```
 </details>
