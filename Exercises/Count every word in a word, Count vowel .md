@@ -1,4 +1,4 @@
-Tried on 7/10(o)
+Tried on 7/10(o), 11/17(o)
 ---
 
 Create a function that takes one parameter that is string, and prints the 'vowel count' and returns dictionary of every word as key, and its count as value.
