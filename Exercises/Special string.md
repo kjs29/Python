@@ -1,4 +1,4 @@
-Tried on 7/10(o)
+Tried on 7/10(o), 11/16(x)
 ---
 
 We have a string
