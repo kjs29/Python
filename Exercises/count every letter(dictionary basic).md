@@ -1,4 +1,4 @@
-# Tried on 7/11(o)
+# Tried on 7/11(o), 11/23(o)
 
 Create a function that counts every letter and stores in a dictionary with {"word":"count"}
 
