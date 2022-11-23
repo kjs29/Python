@@ -1,4 +1,4 @@
-# Tried on 6/17(o),7/11(o)
+# Tried on 6/17(o),7/11(o),11/23(o)
 
 # Create a dictionary
 Get a random number from a user
@@ -46,4 +46,20 @@ If the number is 30
       sqr.update({a:a**2})
   print(sqr)
   ```
+</details>
+
+<details>
+  <summary> answer on 11/23</summary>
+  
+  ```py
+  a = int(input())
+
+  dic = {}
+
+  for each in range(1, a+1):
+      dic.setdefault(each,each**2)
+
+  print(dic)
+  ```
+  
 </details>
