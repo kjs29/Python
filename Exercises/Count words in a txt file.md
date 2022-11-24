@@ -1,4 +1,4 @@
-Tried on 7/10(x)
+Tried on 7/10(x),11/24(x)
 ---
 
 ### Let's say we have a text file called `science of getting rich.txt`.
