@@ -1,4 +1,4 @@
-Tried on 7/10(o)
+Tried on 7/10(o), 11/24(o)
 
 ---
 We want to find out how many times 'love' is mentioned in the given text.
