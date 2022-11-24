@@ -61,3 +61,26 @@ How would you write the code?
           print(f"\t{each_value.title()}")
   ```
 </details>
+
+<details>
+  <summary>answer 11/24</summary>
+  
+  ```py
+  favourite_languages = {
+      "jen": ["python","ruby"],
+      "sarah": ["c"],
+      "edward":["ruby","go"],
+      "phil":["python","haskell"]
+      }
+
+  for k, v in favourite_languages.items():
+      if len(v) > 1:
+          print(f"{k.capitalize()}'s favourite languages are:")
+      else:
+          print(f"{k.capitalize()}'s favourite language is:")
+        
+      for each in v:
+          print(f"\t{each.capitalize()}")
+      print("\n")
+  ```
+</details>
