@@ -1,11 +1,11 @@
-Tried on 5/28(x, didn't read the question correctly), 6/18(o), 7/10(o)
+Tried on 5/28(x, didn't read the question correctly), 6/18(o), 7/10(o),11/25(o)
 
 Question
 -
 We have a basic dictionary
 Create two different functions which figures out 
-1. that returns keys
-2. that returns values
+1. that prints keys
+2. that prints values
 
 For example, 
 ```
@@ -35,13 +35,12 @@ iron
     #this prints out keys in a dictionary
     for a in dic:
       print(a)
-    return a
+    
 
   #Create a function to print out values
   def values_dictionary(dic):
     for b in dic:
       print(dic[b])
-    return dic[b]
 
   ```
 </details>
