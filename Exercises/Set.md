@@ -1,4 +1,4 @@
-# Tried on 8/14 (o)
+# Tried on 8/14 (o), 11/30(x)
 
 Let's say there is a list of sets
 
