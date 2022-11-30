@@ -1,4 +1,4 @@
-# Tried on 7/26(o)
+# Tried on 7/26(o), 11/30(x)
 
 Create a function that returns only element, if there is a nested list as an element.
 
