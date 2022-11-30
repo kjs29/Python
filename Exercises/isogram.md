@@ -1,3 +1,5 @@
+# Tried on 11/30(o)
+
 Isogram uses only one letter in a word
 
 For example of isograms
