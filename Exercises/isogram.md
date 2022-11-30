@@ -52,3 +52,24 @@ create a function if a word is isogram or not
   print(is_isogram("six-year-old"))     #True
   ```
 </details>
+
+<details>
+  <summary>Answer on 11/30</summary>
+  
+  ```py
+  def is_isogram(word):
+      word = word.replace("-","")
+      dic= {}
+      for each in word:
+          dic.setdefault(each, word.count(each))
+      for v in dic.values():
+          if v >1:
+              return False
+      return True
+  
+  print(is_isogram("lumberjacks"))      #True
+  print(is_isogram("background"))       #True
+  print(is_isogram("downstream"))       #True
+  print(is_isogram("six-year-old"))     #True
+  ```
+</details>
