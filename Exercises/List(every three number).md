@@ -1,3 +1,5 @@
+# Tried on 11/30(o)
+
 Create a function called every_three_nums that has one parameter named start.
 
 The function should return a list of every third number between start and 100 (inclusive). 
