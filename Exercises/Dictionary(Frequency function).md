@@ -1,4 +1,4 @@
-Tried 5/28(x), 6/12(o),7/10(o),11/10(o)
+Tried 5/28(x), 6/12(o),7/10(o),11/10(o),02/15(o)
 ---
 
 # Write a function named 'frequency_dictionary'
