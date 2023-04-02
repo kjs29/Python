@@ -4,7 +4,7 @@ Tried on 6/12(o),7/10(o)
 You have a list
 
 ```
-house = ['dirt','furniture','tv','plant','cup','furniture','lamp','dirt','drapes','sofa','computer','dirt']
+house = ["dirt", "furniture", "tv", "dirt", "dirt", "plant", "lamp"]
 ```
 
 You want to remove all ```'dirt'``` in the ```house```
@@ -33,14 +33,3 @@ You want to remove all ```'dirt'``` in the ```house```
   
 </details>
 
-<details>
-  <summary>answer on 10/12</summary>
-  
-  ```py
-  for each in house:
-      if each == "dirt":
-          house.remove(each)
-
-  print(house)
-  ```
-</details>
