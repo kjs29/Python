@@ -1,4 +1,4 @@
-Tried on 7/10(o), 11/17(o)
+Tried on 7/10(o), 11/17(o), 4/8(o)
 ---
 
 Create a function that takes one parameter that is string, and prints the 'vowel count' and returns dictionary of every word as key, and its count as value.
@@ -61,5 +61,49 @@ Vowel count : 8
 
      print(f"Vowel count : {count}")
      return dic
+  ```
+</details>
+
+<details>
+ 
+  <summary>answer on 4/8</summary>
+ 
+  ```py
+  """
+  We are given a sentence, where whitespaces don't count. -> remove whitespaces
+
+  for the vowel count part
+      1. create counter variable
+      2. create vowels variable
+      3. iterate through the string, 
+          a. if each letter is in vowels, increment counter by 1
+      4. print counter
+
+  for the dictionary part
+      1. create an empty dictionary
+      2. iterate through the sentence
+          set a dictionary where
+          a. key is each letter in a sentence
+          b. value is the number of occurrences in the sentence
+  """
+
+  def every_word_count(sentence):
+
+      sentence = sentence.replace(" ", "")
+      counter = 0
+      vowels = "aeiou"
+
+      for each_char in sentence:
+          if each_char in vowels:
+              counter += 1
+
+      print(f"Vowel count : {counter}")
+
+      dic = {}
+
+      for each_letter in sentence:
+          dic.setdefault(each_letter, sentence.count(each_letter))
+
+      print(dic)
   ```
 </details>
