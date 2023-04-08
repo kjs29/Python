@@ -70,9 +70,8 @@ Answer #2
   ```
 </details>
 
-# Answer 11/10
 <details>
-  <summary>answer</summary>
+  <summary>answer 11/10</summary>
   
   ```py
   s1 = "abc"
