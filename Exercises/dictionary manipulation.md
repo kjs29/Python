@@ -46,14 +46,16 @@ Your function should return
   if the value('teacher') doesnt exist in the new dictionary, create a list and add the value of the name.
   return dictionary
   """
-
-  dic = {}
-  for individual in a:
-      for k,v in individual.items():
-          if k == 'occupation':
-              if v not in dic:
-                  dic.setdefault(v, [individual['name']])
-              else:
-                  dic[v].append(individual['name'])
+  
+  def group(lst):
+      dic = {}
+      for individual in a:
+          for k,v in individual.items():
+              if k == 'occupation':
+                  if v not in dic:
+                      dic.setdefault(v, [individual['name']])
+                  else:
+                      dic[v].append(individual['name'])
+      return dic
   ```
 </details>
