@@ -111,7 +111,6 @@ into
 
       for key, value in dic.items():
           first_capital_char = key[0].upper()
-          print(first_capital_char in newdic)
           if first_capital_char not in newdic:
               newdic[first_capital_char] = len(value)
           else:
