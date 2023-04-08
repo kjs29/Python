@@ -1,3 +1,6 @@
+4/8(o)
+
+
 Create a function that takes one integer as an argument and returns the factorial of that integer
 
 ```py
