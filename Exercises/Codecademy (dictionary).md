@@ -107,7 +107,6 @@ into
 
       for k,v in dic.items():
           firstCapital = k[0].upper()
-          print(firstCapital in newdic)
           if firstCapital not in newdic:
               newdic[firstCapital] = len(v)
           else:
