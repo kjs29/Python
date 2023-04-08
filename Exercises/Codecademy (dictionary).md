@@ -96,21 +96,26 @@ into
   
   ```py
   def count(dic):
-
-      # 1. create a new dictionary 'newdic' because we can't modify keys in the existing 'dic'. 
-      # 2. iterate through the 'dic', and create a variable 'firstCapital' that stores the first capical letter of each keys
-      #       a. if the variable exists in the new dictionary, add the length of the corresponding value in the 'dic' to the value of 'newdic'.
-      #       b. if the varible doesn't exist in the new dictionary, set the length of the corresponding value in the 'dic' as the value of 'newdic'.
-      # 3. return 'newdic'
+      """ Instruction
+      1. create a new dictionary 'newdic' because we can't modify keys in the existing 'dic'. 
+      2. iterate through the 'dic',
+          a. create a variable 'first_capital_char' that stores the first capical letter of each keys
+          b. if the varible doesn't exist in the new dictionary, 
+             set length of the corresponding value in the 'dic' as the value. 
+          c. if the variable exists in the new dictionary, 
+             add the length of the corresponding value in the 'dic' to the value of 'newdic'.
+      3. return 'newdic'
+      """
 
       newdic = {}
 
-      for k,v in dic.items():
-          firstCapital = k[0].upper()
-          if firstCapital not in newdic:
-              newdic[firstCapital] = len(v)
+      for key, value in dic.items():
+          first_capital_char = key[0].upper()
+          print(first_capital_char in newdic)
+          if first_capital_char not in newdic:
+              newdic[first_capital_char] = len(value)
           else:
-              newdic[firstCapital] += len(v)
+              newdic[first_capital_char] += len(value)
 
       return newdic
   ```
