@@ -1,4 +1,4 @@
-Tried on 6/12(x), 7/10(o), 11/10(o)
+Tried on 6/12(x), 7/10(o), 11/10(o), 04/08(o)
 ---
 
 We have a dictionary below,
@@ -59,6 +59,17 @@ How would we get it?
   b = list(favourite_languages.values())
 
   print(f"Third key:value is {a[2].title()} : {favourite_languages[a[2]]}")
+  ```
+    
+</details>
+
+<details>
+  <summary>Answer 04/08</summary>
+    
+  ```py
+  for i in list(favourite_languages.keys()):
+      if i == 2:
+          print(f"{i} : {favourite_languages[i]}")
   ```
     
 </details>
