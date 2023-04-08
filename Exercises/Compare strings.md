@@ -1,4 +1,4 @@
-Tried on 7/10(o) 11/10(o)
+Tried on 7/10(o) 11/10(o), 4/8(o)
 ----
 
 We have two strings
@@ -99,3 +99,36 @@ Answer #2
   ```
 </details>
     
+<details>
+  <summary>Answer on 4.8</summary>
+    
+  ```py
+  def first(substring, string):
+      """Introduction
+      Returns True if all letters in a substring exist in string"""
+
+      for each_char in substring:
+          if each_char not in string:
+              return False
+
+      return True
+
+
+  def new_dictionary(substring, string):
+      """Introduction
+      If each letter in a substring exists in a string,
+      it returns dictionary where each letter in a substring is key,
+      and position of the letter in a string is value.
+      """
+
+      if not first(substring, string):
+          return "There are some letters that don't exist in string."
+
+      dic = {}
+
+      for each in substring:
+          dic.setdefault(each, string.index(each))
+
+      return dic
+  ```
+</details>
