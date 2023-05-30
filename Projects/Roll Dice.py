@@ -33,7 +33,7 @@ class Die:
             if number == key:
                 print(value)
                 percentage = value / total_case * 100
-                print(f"\nProbability of hitting {number} with {self.sides} sided dice out of {total_case} : {percentage:.2f} %")
+                print(f"\nProbability of hitting {number} with {self.sides} sided dice out of {total_case} cases : {percentage:.2f} %")
     
     #calculate the probability of hitting the 'number's out of total cases
     def calculate_multiple(self, *number):
