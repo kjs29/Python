@@ -12,9 +12,9 @@ class Die:
     def roll_die(self):
         print(randint(1,self.sides))
         
-    #this module shows the results in a list, this takes parameter that tells the program how many times it will roll
+    #this method shows the results in a list, this takes parameter that tells the program how many times it will roll
     def show_results(self, num=10):
-        for a in range(1, num+1):
+        for _ in range(1, num+1):
             self.result.append(randint(1, self.sides))
         print(self.result)
     
@@ -23,7 +23,8 @@ class Die:
         for key in self.result:
             if key not in self.dic:
                 self.dic[key] = 0
-            self.dic[key] += 1
+            else:
+                self.dic[key] += 1
         print(self.dic)
         
     #calculate the probability of hitting the 'number' out of total cases
@@ -31,9 +32,8 @@ class Die:
         total_case = sum(self.dic.values())
         for key, value in self.dic.items():
             if number == key:
-                print(value)
                 percentage = value / total_case * 100
-                print(f"\nProbability of hitting {number} with {self.sides} sided dice out of {total_case} cases : {percentage:.2f} %")
+                print(f"\nProbability of hitting '{number}' with {self.sides} sided dice out of {total_case} cases : {percentage:.2f} %")
     
     #calculate the probability of hitting the 'number's out of total cases
     def calculate_multiple(self, *number):
@@ -45,7 +45,7 @@ class Die:
                     case += value
         print(f"\n{number}'s # of cases : {case}")
         percentage = case / total_case * 100
-        print(f"\nProbability of hitting {number} with {self.sides} sided dice out of {total_case} : {percentage:.2f} %")
+        print(f"\nProbability of hitting {number} with {self.sides} sided dice out of {total_case} cases : {percentage:.2f} %")
         
         
         
